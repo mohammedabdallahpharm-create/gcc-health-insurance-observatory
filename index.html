@@ -80,7 +80,7 @@
 <header class="topbar">
 <a class="brand" href="#"><span class="mark"></span><span class="brandname">UAE HEALTH INSURANCE<span>OBSERVATORY · RESEARCH</span></span></a>
 <nav class="nav"><a href="#uae-overview">UAE Overview</a><a href="#signals">Signals</a><a href="#ai">AI Observatory</a><a href="#markets">GCC Context</a><a href="#timeline">Timeline</a></nav>
-<div class="topright"><span class="status"><i></i> OBSERVING</span><button class="lang" id="langBtn">عربي</button></div>
+<div class="topright"><span class="status"><i></i> FRAMEWORK MODE</span><button class="lang" id="langBtn">عربي</button></div>
 </header>
 <main>
 <section class="hero">
@@ -98,12 +98,6 @@
 
 <section id="uae-overview">
 <div class="section-head"><div><div class="section-kicker">01 / UAE MARKET OVERVIEW</div><h2 data-en="The UAE health insurance landscape" data-ar="مشهد التأمين الصحي في الإمارات">The UAE health insurance landscape</h2></div><span class="demo" data-en="UAE core · Source-led framework" data-ar="السوق الأساسي · إطار قائم على المصادر">UAE core · Source-led framework</span></div>
-<div class="metrics">
-<div class="metric"><small data-en="MARKET SCOPE" data-ar="نطاق السوق">MARKET SCOPE</small><strong>07 <span>Emirates</span></strong></div>
-<div class="metric"><small data-en="PRIMARY LENS" data-ar="محور الرصد">PRIMARY LENS</small><strong style="font-size:17px">UAE Health</strong></div>
-<div class="metric"><small data-en="EVIDENCE MODE" data-ar="منهج الأدلة">EVIDENCE MODE</small><strong style="font-size:17px">Source-led</strong></div>
-<div class="metric"><small data-en="RELEASE" data-ar="الإصدار">RELEASE</small><strong style="font-size:17px;color:var(--cyan)">UAE Core v0.2</strong></div>
-</div>
 <div class="uae-overview-grid">
 <article class="panel uae-card">
 <div class="panel-head"><h3 data-en="REGULATORY LANDSCAPE" data-ar="المشهد التنظيمي">REGULATORY LANDSCAPE</h3><small>ROLES · NOT A SINGLE REGULATOR</small></div>
@@ -210,6 +204,6 @@ document.querySelectorAll('[data-open]').forEach(n=>n.addEventListener('click',(
 document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#registryRows tr').forEach(r=>r.style.display=b.dataset.filter==='all'||r.dataset.kind===b.dataset.filter?'':'none')}));
-let arabic=false;document.getElementById('langBtn').addEventListener('click',()=>{arabic=!arabic;document.documentElement.lang=arabic?'ar':'en';document.documentElement.dir=arabic?'rtl':'ltr';document.getElementById('langBtn').textContent=arabic?'EN':'عربي';document.querySelectorAll('[data-en]').forEach(el=>el.innerHTML=arabic?el.dataset.ar:el.dataset.en)});
+let arabic=false;document.getElementById('langBtn').addEventListener('click',()=>{arabic=!arabic;document.documentElement.lang=arabic?'ar':'en';document.documentElement.dir=arabic?'rtl':'ltr';document.getElementById('langBtn').textContent=arabic?'EN':'عربي';document.querySelectorAll('[data-en]').forEach(el=>el.innerHTML=arabic?(el.dataset.ar||el.dataset.en):el.dataset.en)});
 </script>
 </body></html>
