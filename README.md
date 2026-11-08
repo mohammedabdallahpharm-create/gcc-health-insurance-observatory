@@ -4,7 +4,7 @@ A regional, evidence-led observatory interface for detecting, documenting and mo
 
 ## Navigation model
 
-The GCC landing page is the regional entry point. The schematic GCC map is an interactive country selector: select a country label or marker to open that country's observatory. The country directory cards provide a second accessible entry point.
+The GCC landing page is the regional entry point. The geographic GCC map is an interactive country selector: select a country polygon, label or marker to open that country's observatory. The country directory cards provide a second accessible entry point.
 
 All six country observatories use the same shared workflow. Selecting a country changes the market identity while preserving the common methodology. Country-specific evidence is added only after research and review.
 
@@ -22,20 +22,20 @@ All six country observatories use the same shared workflow. Selecting a country 
 **Interactive GCC country entry + shared workflow**
 
 - Preserves the GCC landing page and regional signal map.
-- Makes all six country labels and map markers interactive, with a clear instruction to select a country.
+- Renders country polygons and international boundaries from Natural Earth Admin 0 geography, redistributed as TopoJSON by `world-atlas` at 1:50m scale.
+- Makes all six GCC country shapes, labels and markers interactive, with a clear instruction to select a country.
 - Keeps a country directory as an alternative navigation route.
 - Opens a shared country observatory view with the unified four-stage workflow and continuous-learning layer.
-- Keeps the observation stream clearly marked as illustrative demo content.
 - Supports English and Arabic, including right-to-left layout and accessible map-control labels.
 - Keeps the AI Observatory and timeline concepts out of the primary navigation until those views are ready for release.
 
 ## Evidence and limitations
 
-The map is schematic, not geospatial. Country markers are navigation controls, not evidence of signal volume or market activity. Observation-stream cards are illustrative interface content only; they are not verified market events or sourced research.
+The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:50m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
 
 No live monitoring, automated ingestion, database, API or evidence-verification workflow is implemented in this interface-only release. Country-specific signals, entities and sources must be added only after research and evidence review.
 
-## Research principles
+## Geographic data attribution\n\n- Boundary source: [Natural Earth — 1:50m Cultural Vectors](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/)\n- Browser distribution: [world-atlas](https://github.com/topojson/world-atlas), a TopoJSON redistribution of Natural Earth 4.1.0.\n- Boundary type: Admin 0 country polygons; 1:50m medium-scale geography.\n- Natural Earth data is public domain. The map is intended for regional market orientation, not legal or cadastral use.\n\n## Research principles
 
 - Discover signals openly; do not let predefined categories limit discovery.
 - Preserve original sources and distinguish event date from observation date.
@@ -45,7 +45,7 @@ No live monitoring, automated ingestion, database, API or evidence-verification 
 
 ## Run locally
 
-Open `index.html` in a browser. No build step, backend, API or database is required.
+Open `index.html` in a browser. No build step, backend or database is required. The geographic map loads D3 Geo, TopoJSON Client and the Natural Earth-derived `world-atlas` country data from jsDelivr.
 
 ## Roadmap
 
