@@ -42,6 +42,9 @@
 
 
 .country-link{cursor:pointer;transition:border-color .2s,transform .2s;outline:none}
+.map-uae-target{cursor:pointer;fill:var(--cyan);font-weight:700;filter:drop-shadow(0 0 5px #5ee3d0)}
+.map-uae-target:focus{outline:none;stroke:#fff;stroke-width:1.5}
+#uaeSignalDot{cursor:pointer}
 .country-link:hover,.country-link:focus-visible{border-color:var(--cyan);transform:translateY(-2px)}
 .market-detail[hidden]{display:none!important}
 .uae-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
@@ -99,8 +102,8 @@
 <path class="borderline" d="M248 93L251 142 276 160 M350 150L348 208 M399 198L426 211 M429 244L445 263"/>
 <ellipse class="orbit" cx="365" cy="207" rx="174" ry="112"/><ellipse class="orbit" cx="365" cy="207" rx="135" ry="78"/>
 <text class="sea-label" x="100" y="225">RED SEA</text><text class="sea-label" x="510" y="145">GULF</text>
-<text class="country-label" x="151" y="83">KSA</text><text class="country-label" x="306" y="181">UAE</text><text class="country-label" x="355" y="161">QAT</text><text class="country-label" x="396" y="187">BHR</text><text class="country-label" x="442" y="221">KWT</text><text class="country-label" x="380" y="283">OMN</text>
-<circle class="signal-dot" cx="318" cy="192" r="5" data-title="UAE · Regulatory observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/><circle class="signal-dot blue" cx="165" cy="100" r="5" data-title="KSA · Market observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/><circle class="signal-dot gold" cx="390" cy="211" r="5" data-title="Qatar · Operational observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/><circle class="signal-dot blue" cx="447" cy="232" r="4" data-title="Kuwait · Market observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/>
+<text class="country-label" x="151" y="83">KSA</text><text class="country-label map-uae-target" id="uaeMapTarget" x="306" y="181" role="button" tabindex="0" aria-label="Open UAE Observatory">UAE</text><text class="country-label" x="355" y="161">QAT</text><text class="country-label" x="396" y="187">BHR</text><text class="country-label" x="442" y="221">KWT</text><text class="country-label" x="380" y="283">OMN</text>
+<circle class="signal-dot" id="uaeSignalDot" cx="318" cy="192" r="5" role="button" tabindex="0" aria-label="Open UAE Observatory" data-title="UAE · Regulatory observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/><circle class="signal-dot blue" cx="165" cy="100" r="5" data-title="KSA · Market observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/><circle class="signal-dot gold" cx="390" cy="211" r="5" data-title="Qatar · Operational observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/><circle class="signal-dot blue" cx="447" cy="232" r="4" data-title="Kuwait · Market observation" data-info="Illustrative marker only. No real-world event or evidence is represented in this demo."/>
 </svg><div class="map-legend"><span class="legend"><b></b>Regulatory</span><span class="legend"><b></b>Corporate</span><span class="legend"><b></b>Operational</span><span class="legend"><b></b>Healthcare</span></div><span class="map-foot">MARKET LABELS ≠ SIGNAL COVERAGE</span></div></div>
 <div class="panel"><div class="panel-head"><h3 data-en="OBSERVATION STREAM" data-ar="تدفق الرصد">OBSERVATION STREAM</h3><small>DEMO</small></div><div class="signal-list">
 <div class="signal-row"><i class="signal-bullet"></i><div><h4>Regulatory landscape</h4><p>Illustrative signal card · sample only</p><span class="tag">REGULATORY</span></div><span class="signal-meta">DEMO 01</span></div>
@@ -170,7 +173,8 @@
 <script>
 const modal=document.getElementById('modal'),title=document.getElementById('modalTitle'),info=document.getElementById('modalInfo');
 function showDetail(t,d){title.textContent=t;info.textContent=d;modal.classList.add('open')}
-document.querySelectorAll('.signal-dot').forEach(n=>n.addEventListener('click',()=>showDetail(n.dataset.title,n.dataset.info)));
+document.querySelectorAll('.signal-dot').forEach(n=>n.addEventListener('click',()=>{if(n.id==='uaeSignalDot'){openUAE();return}showDetail(n.dataset.title,n.dataset.info)}));
+document.getElementById('uaeSignalDot').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openUAE()}});
 document.querySelectorAll('[data-open]').forEach(n=>n.addEventListener('click',()=>showDetail(n.dataset.open,'Illustrative sample record. No real event, source or evidence is represented in this demo.')));
 document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
@@ -179,6 +183,8 @@ const uaeCard=document.getElementById('uaeMarketCard'),uaeDetails=document.getEl
 function openUAE(){uaeDetails.hidden=false;uaeCard.setAttribute('aria-expanded','true');marketSection.hidden=true;uaeDetails.scrollIntoView({behavior:'smooth',block:'start'})}
 function closeUAE(){uaeDetails.hidden=true;uaeCard.setAttribute('aria-expanded','false');marketSection.hidden=false;marketSection.scrollIntoView({behavior:'smooth',block:'start'})}
 uaeCard.addEventListener('click',openUAE);uaeCard.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openUAE()}});
+const uaeMapTarget=document.getElementById('uaeMapTarget');
+uaeMapTarget.addEventListener('click',openUAE);uaeMapTarget.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openUAE()}});
 document.getElementById('backToMarkets').addEventListener('click',closeUAE);
 document.querySelectorAll('[data-return-signals]').forEach(a=>a.addEventListener('click',()=>{uaeDetails.hidden=true;uaeCard.setAttribute('aria-expanded','false');marketSection.hidden=false}));
 let arabic=false;document.getElementById('langBtn').addEventListener('click',()=>{arabic=!arabic;document.documentElement.lang=arabic?'ar':'en';document.documentElement.dir=arabic?'rtl':'ltr';document.getElementById('langBtn').textContent=arabic?'EN':'عربي';document.querySelectorAll('[data-en]').forEach(el=>el.innerHTML=arabic?(el.dataset.ar||el.dataset.en):el.dataset.en)});
