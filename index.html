@@ -109,7 +109,7 @@
 <text class="sea-label" x="330" y="326" data-en="ARABIAN SEA" data-ar="بحر العرب">ARABIAN SEA</text>
 </g>
 <g id="mapMarkers"></g><g id="mapLabels"></g>
-</svg><div class="map-action-hint" data-en="CLICK A COUNTRY TO OPEN ITS OBSERVATORY" data-ar="اضغط على الدولة لفتح مرصدها">CLICK A COUNTRY TO OPEN ITS OBSERVATORY</div><a class="map-foot" href="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/" target="_blank" rel="noopener" data-en="DATA: NATURAL EARTH · ADMIN 0 · 1:10M" data-ar="البيانات: NATURAL EARTH · حدود الدول · مقياس 1:10M">DATA: NATURAL EARTH · ADMIN 0 · 1:50M</a></div></div>
+</svg><div class="map-action-hint" data-en="CLICK A COUNTRY TO OPEN ITS OBSERVATORY" data-ar="اضغط على الدولة لفتح مرصدها">CLICK A COUNTRY TO OPEN ITS OBSERVATORY</div><a class="map-foot" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/" target="_blank" rel="noopener" data-en="DATA: NATURAL EARTH · ADMIN 0 · 1:10M" data-ar="البيانات: NATURAL EARTH · حدود الدول · مقياس 1:10M">DATA: NATURAL EARTH · ADMIN 0 · 1:10M</a></div></div>
 </div>
 </section>
 <section id="marketDetails" class="market-detail" hidden>
@@ -168,7 +168,8 @@ async function renderAccurateMap(){
   const countriesLayer=document.getElementById('mapCountries');
   const labelsLayer=document.getElementById('mapLabels');
   const markersLayer=document.getElementById('mapMarkers');
-  if(!svg||!window.d3||!window.topojson)return;
+  if(!svg)return;
+  if(!window.d3||!window.topojson){countriesLayer.innerHTML='<text class="map-loading" x="325" y="170" text-anchor="middle">Map libraries did not load. Refresh or use the country directory below.</text>';return;}
   const marketById={'784':'UAE','682':'KSA','414':'KWT','634':'QAT','048':'BHR','512':'OMN'};
   const names={UAE:'UAE',KSA:'KSA',KWT:'KWT',QAT:'QAT',BHR:'BHR',OMN:'OMN'};
   const labelCoords={KSA:[43.9,24.4,-15,0],UAE:[54.1,24.2,21,13],KWT:[47.5,29.5,0,-13],QAT:[51.2,25.3,12,-14],BHR:[50.55,26.05,-18,-8],OMN:[56.0,20.8,18,14]};
