@@ -22,7 +22,7 @@ All six country observatories use the same shared workflow. Selecting a country 
 **Interactive GCC country entry + shared workflow**
 
 - Preserves the GCC landing page and regional signal map.
-- Renders country polygons and international boundaries from Natural Earth Admin 0 geography, redistributed as TopoJSON by `world-atlas` at 1:50m scale.
+- Renders country polygons and international boundaries from Natural Earth Admin 0 geography, redistributed as TopoJSON by `world-atlas` at 1:10m scale.
 - Makes all six GCC country shapes, labels and markers interactive, with a clear instruction to select a country.
 - Keeps a country directory as an alternative navigation route.
 - Opens a shared country observatory view with the unified four-stage workflow and continuous-learning layer.
@@ -35,7 +35,7 @@ The map uses Natural Earth country-boundary geography through the `world-atlas` 
 
 No live monitoring, automated ingestion, database, API or evidence-verification workflow is implemented in this interface-only release. Country-specific signals, entities and sources must be added only after research and evidence review.
 
-## Geographic data attribution\n\n- Boundary source: [Natural Earth — 1:50m Cultural Vectors](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/)\n- Browser distribution: [world-atlas](https://github.com/topojson/world-atlas), a TopoJSON redistribution of Natural Earth 4.1.0.\n- Boundary type: Admin 0 country polygons; 1:50m medium-scale geography.\n- Natural Earth data is public domain. The map is intended for regional market orientation, not legal or cadastral use.\n\n## Research principles
+## Geographic data attribution\n\n- Boundary source: [Natural Earth — 1:10m Cultural Vectors](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)\n- Browser distribution: [world-atlas](https://github.com/topojson/world-atlas), a TopoJSON redistribution of Natural Earth 4.1.0.\n- Boundary type: Admin 0 country polygons; 1:10m large-scale geography.\n- Natural Earth data is public domain. The map is intended for regional market orientation, not legal or cadastral use.\n\n## Research principles
 
 - Discover signals openly; do not let predefined categories limit discovery.
 - Preserve original sources and distinguish event date from observation date.
