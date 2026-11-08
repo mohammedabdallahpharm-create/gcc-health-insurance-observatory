@@ -1,25 +1,26 @@
-# UAE Health Insurance Observatory
+# GCC Health Insurance Observatory
 
-An independent, evidence-led observatory focused on documenting signals, structural changes and emerging patterns across the UAE health insurance ecosystem. The GCC markets are retained as a regional comparison layer within the same observatory.
+An independent, evidence-led observatory interface for exploring signals, structural changes and emerging patterns across the GCC health insurance ecosystem.
+
+## Navigation model
+
+The GCC landing page remains the regional entry point, preserving the original six-market overview and observatory interface. Selecting **United Arab Emirates (UAE)** opens the UAE market detail view inside the same experience. The other GCC markets remain visible as regional market entry points for future development.
 
 ## Current release
 
-**v0.2 — UAE Market Overview**
+**v0.2 — UAE market drill-down**
 
-This release establishes the UAE as the primary observation market and introduces:
-- UAE health insurance market overview
-- Regulatory landscape role map (CBUAE, DoH Abu Dhabi, DHA, MOHAP and MoHRE)
-- Coverage framework across Abu Dhabi, Dubai and the Northern Emirates
-- Market participant categories: insurers, TPAs/claims managers, brokers, providers, employers and members
-- Official evidence anchors linking to primary institutional sources
-- GCC regional context retained as a comparison layer
-- Existing signal map, illustrative registry, AI Observatory, timeline concepts, responsive layout and EN/AR toggle
+- Original GCC landing page and visual identity retained.
+- Six GCC market cards remain on the regional overview.
+- UAE card opens a dedicated UAE health-insurance detail view.
+- UAE detail view introduces regulatory roles, high-level coverage framework, market participant categories and official source links.
+- GCC signal map, illustrative signal registry, AI Observatory, timeline concepts, responsive layout and EN/AR toggle remain part of the experience.
 
 ## Important data note
 
-The UAE Market Overview is a source-led orientation layer, not a live market database. It describes institutional roles and the broad coverage framework using linked official sources. Signal cards, map markers and registry entries in this release remain **illustrative demo content only**. They are not real market events, verified observations, or sourced research. The regional map is schematic and does not represent geospatial data.
+The UAE detail view is an orientation layer, not a live market database or legal advice. Institutional roles and coverage summaries should be checked against linked official sources. Signal cards, map markers and registry entries remain **illustrative demo content only**; they are not real market events, verified observations or sourced research. The regional map is schematic and does not represent geospatial data.
 
-No live monitoring, automated data ingestion, database, API, or verification workflow is implemented in v0.2.
+No live monitoring, automated data ingestion, database, API or evidence-verification workflow is implemented in v0.2.
 
 ## Research principles
 
