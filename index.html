@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111f"><meta name="description" content="GCC Health Insurance Observatory — Signals, evidence and market evolution.">
-<title>GCC Health Insurance Observatory</title>
+<meta name="theme-color" content="#07111f"><meta name="description" content="UAE Health Insurance Observatory — Evidence, signals and market evolution.">
+<title>UAE Health Insurance Observatory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -40,30 +40,110 @@
   .map-wrap{height:255px}
 }
 
+
+.uae-overview-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+.uae-card-body{padding:8px 19px 16px}
+.uae-item{padding:12px 0;border-bottom:1px solid #1a3044}
+.uae-item:last-child{border:0}
+.uae-code{font:9px var(--mono);letter-spacing:.12em;color:var(--cyan)}
+.uae-item h4{font:600 12px var(--display);margin:5px 0}
+.uae-item p{font-size:11px;color:var(--muted);margin:0;line-height:1.65}
+.coverage-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:17px 0;border-bottom:1px solid #1a3044}
+.coverage-row b,.coverage-row span{display:block}
+.coverage-row b{font:600 13px var(--display)}
+.coverage-row span{font-size:10px;color:var(--muted);margin-top:4px}
+.coverage-row i{font:9px var(--mono);font-style:normal;color:var(--cyan);white-space:nowrap}
+.coverage-note{font-size:10px;line-height:1.7;color:#9eb0c1;padding:14px 0 2px}
+.uae-actors{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.uae-actors>div{background:#0b1a29;border:1px solid var(--line);border-radius:6px;padding:15px 13px}
+.uae-actors span{display:block;color:var(--cyan);font:10px var(--mono);margin-bottom:12px}
+.uae-actors b,.uae-actors small{display:block}
+.uae-actors b{font:600 11px var(--display);line-height:1.45}
+.uae-actors small{font-size:9px;color:var(--muted);line-height:1.5;margin-top:6px}
+.source-panel{margin-top:15px}
+.source-links{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.source-links a{display:block;padding:16px;border-right:1px solid var(--line);min-width:0}
+.source-links a:last-child{border:0}
+.source-links b,.source-links span{display:block}
+.source-links b{font:600 11px var(--display);color:var(--cyan)}
+.source-links span{font-size:10px;color:var(--muted);line-height:1.5;margin-top:6px;min-height:30px}
+.source-links i{display:block;font-style:normal;color:#7893a8;font-size:12px;margin-top:8px}
+[dir=rtl] .source-links a{border-right:0;border-left:1px solid var(--line)}
+[dir=rtl] .source-links a:last-child{border:0}
+@media(max-width:900px){.uae-overview-grid{grid-template-columns:1fr}.uae-actors{grid-template-columns:repeat(3,1fr)}.source-links{grid-template-columns:repeat(3,1fr)}.source-links a:nth-child(3){border-right:0}}
+@media(max-width:600px){.uae-actors{grid-template-columns:repeat(2,1fr)}.source-links{grid-template-columns:repeat(2,1fr)}.source-links a:nth-child(2n){border-right:0}.source-links a:nth-child(3){border-right:1px solid var(--line)}.source-links span{min-height:0}.coverage-row{align-items:flex-start}}
+
 </style>
 </head>
 <body>
 <div class="shell">
 <header class="topbar">
-<a class="brand" href="#"><span class="mark"></span><span class="brandname">GCC HEALTH INSURANCE<span>OBSERVATORY · RESEARCH</span></span></a>
-<nav class="nav"><a href="#signals">Signals</a><a href="#markets">Markets</a><a href="#ai">AI Observatory</a><a href="#timeline">Timeline</a></nav>
+<a class="brand" href="#"><span class="mark"></span><span class="brandname">UAE HEALTH INSURANCE<span>OBSERVATORY · RESEARCH</span></span></a>
+<nav class="nav"><a href="#uae-overview">UAE Overview</a><a href="#signals">Signals</a><a href="#ai">AI Observatory</a><a href="#markets">GCC Context</a><a href="#timeline">Timeline</a></nav>
 <div class="topright"><span class="status"><i></i> OBSERVING</span><button class="lang" id="langBtn">عربي</button></div>
 </header>
 <main>
 <section class="hero">
-<div><div class="eyebrow" data-en="INDEPENDENT MARKET OBSERVATORY" data-ar="مرصد مستقل للسوق">INDEPENDENT MARKET OBSERVATORY</div>
+<div><div class="eyebrow" data-en="UAE HEALTH INSURANCE OBSERVATORY" data-ar="مرصد مستقل للسوق">INDEPENDENT MARKET OBSERVATORY</div>
 <h1 data-en="Reading the market.<br><em>One signal at a time.</em>" data-ar="نراقب السوق.<br><em>إشارةً بعد إشارة.</em>">Reading the market.<br><em>One signal at a time.</em></h1>
-<p data-en="An evidence-led observatory documenting signals, structural changes and emerging patterns across the GCC health insurance ecosystem." data-ar="مرصد قائم على الأدلة يوثّق الإشارات والتغيرات الهيكلية والأنماط الناشئة عبر منظومة التأمين الصحي في دول مجلس التعاون الخليجي.">An evidence-led observatory documenting signals, structural changes and emerging patterns across the GCC health insurance ecosystem.</p></div>
+<p data-en="An evidence-led observatory documenting signals, structural changes and emerging patterns across the UAE health insurance ecosystem." data-ar="مرصد قائم على الأدلة يوثّق الإشارات والتغيرات الهيكلية والأنماط الناشئة في منظومة التأمين الصحي الإماراتية.">An evidence-led observatory documenting signals, structural changes and emerging patterns across the GCC health insurance ecosystem.</p></div>
 <div class="hero-note"><strong>OBSERVATORY PRINCIPLE <span> / 01</span></strong><span data-en="We do not predict the future.</span><span data-ar="لا نتنبأ بالمستقبل.">We do not predict the future.</span><br><span data-en="We document the signals from which it may emerge." data-ar="نوثّق الإشارات التي قد يتشكّل منها.">We document the signals from which it may emerge.</span></div>
 </section>
 <div class="metrics">
-<div class="metric"><small data-en="CORE MARKETS" data-ar="الأسواق الأساسية">CORE MARKETS</small><strong>06 <span>GCC</span></strong></div>
-<div class="metric"><small data-en="OBSERVATION LAYERS" data-ar="طبقات الرصد">OBSERVATION LAYERS</small><strong>08 <span>layers</span></strong></div>
+<div class="metric"><small data-en="CORE MARKET" data-ar="السوق الأساسي">CORE MARKET</small><strong>UAE <span>Primary</span></strong></div>
+<div class="metric"><small data-en="MARKET SCOPE" data-ar="نطاق السوق">MARKET SCOPE</small><strong>07 <span>Emirates</span></strong></div>
 <div class="metric"><small data-en="RESEARCH MODE" data-ar="منهج البحث">RESEARCH MODE</small><strong style="font-size:18px">Evidence-led</strong></div>
-<div class="metric"><small data-en="SYSTEM STATUS" data-ar="حالة النظام">SYSTEM STATUS</small><strong style="font-size:18px;color:var(--cyan)">Interface v0.1</strong></div>
+<div class="metric"><small data-en="RELEASE" data-ar="الإصدار">RELEASE</small><strong style="font-size:18px;color:var(--cyan)">UAE Core v0.2</strong></div>
 </div>
+
+<section id="uae-overview">
+<div class="section-head"><div><div class="section-kicker">01 / UAE MARKET OVERVIEW</div><h2 data-en="The UAE health insurance landscape" data-ar="مشهد التأمين الصحي في الإمارات">The UAE health insurance landscape</h2></div><span class="demo" data-en="UAE core · Source-led framework" data-ar="السوق الأساسي · إطار قائم على المصادر">UAE core · Source-led framework</span></div>
+<div class="metrics">
+<div class="metric"><small data-en="MARKET SCOPE" data-ar="نطاق السوق">MARKET SCOPE</small><strong>07 <span>Emirates</span></strong></div>
+<div class="metric"><small data-en="PRIMARY LENS" data-ar="محور الرصد">PRIMARY LENS</small><strong style="font-size:17px">UAE Health</strong></div>
+<div class="metric"><small data-en="EVIDENCE MODE" data-ar="منهج الأدلة">EVIDENCE MODE</small><strong style="font-size:17px">Source-led</strong></div>
+<div class="metric"><small data-en="RELEASE" data-ar="الإصدار">RELEASE</small><strong style="font-size:17px;color:var(--cyan)">UAE Core v0.2</strong></div>
+</div>
+<div class="uae-overview-grid">
+<article class="panel uae-card">
+<div class="panel-head"><h3 data-en="REGULATORY LANDSCAPE" data-ar="المشهد التنظيمي">REGULATORY LANDSCAPE</h3><small>ROLES · NOT A SINGLE REGULATOR</small></div>
+<div class="uae-card-body">
+<div class="uae-item"><span class="uae-code">FEDERAL / INSURANCE</span><h4>Central Bank of the UAE (CBUAE)</h4><p data-en="Regulates and supervises the UAE insurance sector." data-ar="ينظّم ويشرف على قطاع التأمين في دولة الإمارات.">Regulates and supervises the UAE insurance sector.</p></div>
+<div class="uae-item"><span class="uae-code">ABU DHABI / HEALTH</span><h4>Department of Health – Abu Dhabi (DoH)</h4><p data-en="Shapes and oversees the health-system and health-insurance framework in Abu Dhabi." data-ar="يضع ويشرف على إطار النظام الصحي والتأمين الصحي في أبوظبي.">Shapes and oversees the health-system and health-insurance framework in Abu Dhabi.</p></div>
+<div class="uae-item"><span class="uae-code">DUBAI / HEALTH INSURANCE</span><h4>Dubai Health Authority (DHA)</h4><p data-en="Administers health-insurance permits for insurers, brokers, TPAs and healthcare providers in Dubai." data-ar="يدير تصاريح التأمين الصحي لشركات التأمين والوسطاء ومديري المطالبات ومقدمي الرعاية الصحية في دبي.">Administers health-insurance permits for insurers, brokers, TPAs and healthcare providers in Dubai.</p></div>
+<div class="uae-item"><span class="uae-code">FEDERAL / HEALTH POLICY</span><h4>MOHAP & MoHRE</h4><p data-en="Federal health and employment authorities involved in the basic health-insurance scheme across the UAE." data-ar="جهات اتحادية معنية بالصحة والعمل، وتشارك في منظومة التأمين الصحي الأساسي على مستوى الدولة.">Federal health and employment authorities involved in the basic health-insurance scheme across the UAE.</p></div>
+</div></article>
+<article class="panel uae-card">
+<div class="panel-head"><h3 data-en="COVERAGE FRAMEWORK" data-ar="إطار التغطية التأمينية">COVERAGE FRAMEWORK</h3><small>PRIVATE-SECTOR EMPLOYEES</small></div>
+<div class="uae-card-body">
+<div class="coverage-row"><div><b>Abu Dhabi</b><span data-en="Emirate-level health-insurance scheme" data-ar="منظومة تأمين صحي على مستوى الإمارة">Emirate-level health-insurance scheme</span></div><i>AE-AD</i></div>
+<div class="coverage-row"><div><b>Dubai</b><span data-en="Mandatory health insurance under Dubai Health Law" data-ar="تأمين صحي إلزامي بموجب قانون دبي الصحي">Mandatory health insurance under Dubai Health Law</span></div><i>AE-DU</i></div>
+<div class="coverage-row"><div><b data-en="Northern Emirates" data-ar="الإمارات الشمالية">Northern Emirates</b><span data-en="Basic scheme extended from 1 January 2025" data-ar="توسيع منظومة التأمين الأساسي اعتباراً من 1 يناير 2025">Basic scheme extended from 1 January 2025</span></div><i>AE-NE</i></div>
+<div class="coverage-note" data-en="Scope note: the 2025 federal extension covers private-sector employees and domestic workers in Sharjah, Ajman, Fujairah, Ras Al Khaimah and Umm Al Quwain, subject to the applicable permit-issuance and renewal rules. Existing Abu Dhabi and Dubai arrangements remain distinct." data-ar="ملاحظة النطاق: يشمل التوسع الاتحادي لعام 2025 موظفي القطاع الخاص والعمالة المساعدة في الشارقة وعجمان والفجيرة ورأس الخيمة وأم القيوين، وفق ضوابط إصدار وتجديد تصاريح الإقامة المعمول بها. وتظل ترتيبات أبوظبي ودبي القائمة متميزة.">Scope note: the 2025 federal extension covers private-sector employees and domestic workers in Sharjah, Ajman, Fujairah, Ras Al Khaimah and Umm Al Quwain, subject to the applicable permit-issuance and renewal rules. Existing Abu Dhabi and Dubai arrangements remain distinct.</div>
+</div></article>
+</div>
+<div class="section-head"><div><div class="section-kicker">UAE MARKET STRUCTURE</div><h2 data-en="Who makes the system work?" data-ar="من هم أطراف المنظومة؟">Who makes the system work?</h2></div><p data-en="Observation categories · Not entity counts" data-ar="فئات للرصد · ليست أعداداً للجهات">Observation categories · Not entity counts</p></div>
+<div class="uae-actors">
+<div><span>01</span><b data-en="Insurers & Takaful" data-ar="شركات التأمين والتكافل">Insurers & Takaful</b><small data-en="Risk carriers and health products" data-ar="تحمل المخاطر والمنتجات الصحية">Risk carriers and health products</small></div>
+<div><span>02</span><b data-en="TPAs & Claims Managers" data-ar="مديرو المطالبات والجهات الإدارية">TPAs & Claims Managers</b><small data-en="Administration, networks and claims" data-ar="الإدارة والشبكات والمطالبات">Administration, networks and claims</small></div>
+<div><span>03</span><b data-en="Brokers & Intermediaries" data-ar="الوسطاء والجهات الوسيطة">Brokers & Intermediaries</b><small data-en="Distribution and placement" data-ar="التوزيع وترتيب التغطيات">Distribution and placement</small></div>
+<div><span>04</span><b data-en="Providers & Networks" data-ar="مقدمو الرعاية والشبكات">Providers & Networks</b><small data-en="Hospitals, clinics and pharmacies" data-ar="المستشفيات والعيادات والصيدليات">Hospitals, clinics and pharmacies</small></div>
+<div><span>05</span><b data-en="Employers & Members" data-ar="أصحاب العمل والمستفيدون">Employers & Members</b><small data-en="Purchasers, sponsors and insured people" data-ar="المشترون والكفلاء والمؤمّن عليهم">Purchasers, sponsors and insured people</small></div>
+</div>
+<div class="panel source-panel">
+<div class="panel-head"><h3 data-en="OFFICIAL EVIDENCE ANCHORS" data-ar="مرتكزات المصادر الرسمية">OFFICIAL EVIDENCE ANCHORS</h3><small>PRIMARY SOURCES</small></div>
+<div class="source-links">
+<a href="https://centralbank.ae/en/our-operations/supervision/insurance-guidelines/" target="_blank" rel="noopener"><b>CBUAE</b><span data-en="Insurance supervision and guidelines" data-ar="الإشراف على التأمين والإرشادات">Insurance supervision and guidelines</span><i>↗</i></a>
+<a href="https://www.doh.gov.ae/" target="_blank" rel="noopener"><b>DoH Abu Dhabi</b><span data-en="Health-system and insurance framework" data-ar="إطار النظام الصحي والتأمين">Health-system and insurance framework</span><i>↗</i></a>
+<a href="https://dha.gov.ae/en/healthInsurance/healthInsurancePermitServices" target="_blank" rel="noopener"><b>DHA</b><span data-en="Health-insurance permit services" data-ar="خدمات تصاريح التأمين الصحي">Health-insurance permit services</span><i>↗</i></a>
+<a href="https://u.ae/en/information-and-services/health-and-fitness/getting-a-health-insurance" target="_blank" rel="noopener"><b>UAE Government</b><span data-en="Getting health insurance · national guidance" data-ar="الحصول على التأمين الصحي · الإرشادات الحكومية">Getting health insurance · national guidance</span><i>↗</i></a>
+<a href="https://tasheel.mohre.gov.ae/en/media-center/awareness-and-guidance/health-insurance-scheme.aspx" target="_blank" rel="noopener"><b>MoHRE</b><span data-en="Basic health-insurance scheme" data-ar="منظومة التأمين الصحي الأساسي">Basic health-insurance scheme</span><i>↗</i></a>
+</div>
+</div>
+</section>
+
 <section id="signals">
-<div class="section-head"><div><div class="section-kicker">01 / SIGNAL FIELD</div><h2 data-en="Regional observation field" data-ar="خريطة الرصد الإقليمي">Regional observation field</h2></div><span class="demo" data-en="Illustrative interface · Demo signals" data-ar="واجهة توضيحية · إشارات تجريبية">Illustrative interface · Demo signals</span></div>
+<div class="section-head"><div><div class="section-kicker">01 / SIGNAL FIELD</div><h2 data-en="GCC regional observation field" data-ar="خريطة الرصد الخليجي الإقليمي">Regional observation field</h2></div><span class="demo" data-en="Illustrative interface · Demo signals" data-ar="واجهة توضيحية · إشارات تجريبية">Illustrative interface · Demo signals</span></div>
 <div class="overview">
 <div class="panel"><div class="panel-head"><h3 data-en="GCC SIGNAL MAP" data-ar="خريطة إشارات الخليج">GCC SIGNAL MAP</h3><small>SCHEMATIC VIEW · DEMO MARKERS · NOT GEOSPATIAL DATA</small></div>
 <div class="map-wrap"><svg viewBox="0 0 650 355" role="img" aria-label="Schematic map of GCC markets with illustrative signal markers">
@@ -96,7 +176,7 @@
 <tr data-kind="healthcare"><td class="id">DEMO-004</td><td class="entity">Provider capacity observation</td><td>Oman</td><td class="type">Healthcare</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-004">View</button></td></tr>
 </tbody></table></div>
 </section>
-<section id="markets"><div class="section-head"><div><div class="section-kicker">03 / MARKET OBSERVATORY</div><h2 data-en="Six markets. One connected region." data-ar="ستة أسواق. إقليم واحد مترابط.">Six markets. One connected region.</h2></div><p data-en="Core GCC observation scope" data-ar="النطاق الأساسي للرصد الخليجي">Core GCC observation scope</p></div>
+<section id="markets"><div class="section-head"><div><div class="section-kicker">03 / MARKET OBSERVATORY</div><h2 data-en="Regional context. Six connected markets." data-ar="سياق إقليمي. ستة أسواق مترابطة.">Six markets. One connected region.</h2></div><p data-en="Regional comparison layer" data-ar="طبقة المقارنة الإقليمية">Core GCC observation scope</p></div>
 <div class="country-grid">
 <div class="country"><span class="code">AE / 01</span><strong>United Arab Emirates</strong><small>UAE</small><div class="line"><span style="--w:92%"></span></div></div>
 <div class="country"><span class="code">SA / 02</span><strong>Saudi Arabia</strong><small>KSA</small><div class="line"><span style="--w:82%"></span></div></div>
@@ -119,7 +199,7 @@
 <div class="panel"><div style="padding:13px 20px 0;color:#8ba0b5;font-size:11px">Record structure preview only · no historical events or dates are populated in this interface.</div><div class="timeline"><div class="time-item"><time>EVENT DATE</time><p>When the observed event occurred.</p></div><div class="time-item"><time>OBSERVATION DATE</time><p>When the signal entered the observatory.</p></div><div class="time-item"><time>EVIDENCE TRAIL</time><p>Original source, publication and verification.</p></div><div class="time-item"><time>FOLLOW-UP</time><p>Subsequent developments and related signals.</p></div></div></div></section>
 <div class="principle"><div><small>THE OBSERVATORY'S OPERATING PRINCIPLE</small><blockquote>Observe. Detect. Document. Connect. <span>Track.</span></blockquote></div><div class="principle-mark">◎</div></div>
 </main>
-<footer class="footer"><span>GCC HEALTH INSURANCE OBSERVATORY · CONCEPT INTERFACE v0.1</span><span>NO FORECASTS · NO ASSUMED CAUSALITY · EVIDENCE FIRST</span></footer>
+<footer class="footer"><span>UAE HEALTH INSURANCE OBSERVATORY · UAE CORE v0.2</span><span>NO FORECASTS · NO ASSUMED CAUSALITY · EVIDENCE FIRST</span></footer>
 </div>
 <div class="modal" id="modal"><div class="modal-card"><div class="modal-top"><span class="modal-meta">SIGNAL DETAIL / DEMO RECORD</span><button id="closeModal" aria-label="Close">×</button></div><h3 id="modalTitle">Signal detail</h3><p id="modalInfo"></p><div class="note">This is a demonstration record created to illustrate the interface. It is not a verified market event and contains no real-world evidence.</div></div></div>
 <script>
