@@ -113,25 +113,6 @@
 </div></div>
 </div>
 </section>
-<section id="registry">
-<div class="section-head"><div><div class="section-kicker">02 / SIGNAL REGISTRY</div><h2 data-en="Structured observation log" data-ar="سجل الإشارات المنظّم">Structured observation log</h2></div><div class="toolbar"><button class="filter active" data-filter="all">ALL</button><button class="filter" data-filter="regulatory">REGULATORY</button><button class="filter" data-filter="corporate">CORPORATE</button><button class="filter" data-filter="operational">OPERATIONAL</button><button class="filter" data-filter="healthcare">HEALTHCARE</button></div></div>
-<div class="panel registry"><table><thead><tr><th>Signal ID</th><th>Observation</th><th>Market</th><th>Type</th><th>Event date</th><th>Observation date</th><th>Evidence status</th><th>Record</th></tr></thead><tbody id="registryRows">
-<tr data-kind="regulatory"><td class="id">DEMO-001</td><td class="entity">Regulatory development</td><td>UAE</td><td class="type">Regulatory</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-001">View</button></td></tr>
-<tr data-kind="corporate"><td class="id">DEMO-002</td><td class="entity">Market participant activity</td><td>KSA</td><td class="type">Corporate</td><td>Not populated</td><td>Not populated</td><td><span class="state reported">Demo only</span></td><td><button class="filter" data-open="DEMO-002">View</button></td></tr>
-<tr data-kind="operational"><td class="id">DEMO-003</td><td class="entity">Claims administration change</td><td>Qatar</td><td class="type">Operational</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-003">View</button></td></tr>
-<tr data-kind="healthcare"><td class="id">DEMO-004</td><td class="entity">Provider capacity observation</td><td>Oman</td><td class="type">Healthcare</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-004">View</button></td></tr>
-</tbody></table></div>
-</section>
-<section id="markets"><div class="section-head"><div><div class="section-kicker">03 / MARKET OBSERVATORY</div><h2 data-en="Six markets. One connected region." data-ar="ستة أسواق. إقليم واحد مترابط.">Six markets. One connected region.</h2></div><p data-en="Core GCC observation scope" data-ar="النطاق الأساسي للرصد الخليجي">Core GCC observation scope</p></div>
-<div class="country-grid">
-<div class="country country-link" id="uaeMarketCard" role="button" tabindex="0" aria-controls="uaeDetails" aria-expanded="false"><span class="code">AE / 01</span><strong>United Arab Emirates</strong><small>UAE · Open observatory ↗</small><div class="line"><span style="--w:92%"></span></div></div>
-<div class="country"><span class="code">SA / 02</span><strong>Saudi Arabia</strong><small>KSA</small><div class="line"><span style="--w:82%"></span></div></div>
-<div class="country"><span class="code">KW / 03</span><strong>Kuwait</strong><small>KWT</small><div class="line"><span style="--w:58%"></span></div></div>
-<div class="country"><span class="code">QA / 04</span><strong>Qatar</strong><small>QAT</small><div class="line"><span style="--w:54%"></span></div></div>
-<div class="country"><span class="code">BH / 05</span><strong>Bahrain</strong><small>BHR</small><div class="line"><span style="--w:43%"></span></div></div>
-<div class="country"><span class="code">OM / 06</span><strong>Oman</strong><small>OMN</small><div class="line"><span style="--w:48%"></span></div></div>
-</div></section>
-
 <section id="uaeDetails" class="market-detail" hidden>
 <div class="section-head"><div><div class="section-kicker">UAE / 01 · MARKET DETAIL</div><h2 data-en="United Arab Emirates Health Insurance Observatory" data-ar="مرصد التأمين الصحي في دولة الإمارات">United Arab Emirates Health Insurance Observatory</h2></div><button class="filter" id="backToMarkets" type="button" data-en="← Back to GCC markets" data-ar="العودة إلى أسواق الخليج ←">← Back to GCC markets</button></div>
 <div class="uae-detail-grid">
@@ -151,9 +132,30 @@
 </div>
 <div class="section-head"><div><div class="section-kicker">UAE ECOSYSTEM</div><h2 data-en="Market participants" data-ar="أطراف السوق">Market participants</h2></div><p data-en="Observation categories · not entity counts" data-ar="فئات للرصد · ليست أعداداً للجهات">Observation categories · not entity counts</p></div>
 <div class="uae-participants"><div><b>Insurers & Takaful</b><small>Risk carriers and health products</small></div><div><b>TPAs & Claims Managers</b><small>Administration, networks and claims</small></div><div><b>Brokers</b><small>Distribution and placement</small></div><div><b>Healthcare Providers</b><small>Hospitals, clinics and pharmacies</small></div><div><b>Employers & Members</b><small>Purchasers, sponsors and insured people</small></div></div>
-<div class="panel detail-foot"><div class="panel-head"><h3>OBSERVATORY MODULES</h3><small>UAE CORE</small></div><div class="module-links"><a href="#signals" data-return-signals>Market Signals ↗</a><a href="#registry" data-return-signals>Evidence Registry ↗</a><a href="#ai">AI Observatory ↗</a><a href="#timeline">Timeline ↗</a></div></div>
+<div class="panel detail-foot"><div class="panel-head"><h3>OBSERVATORY MODULES</h3><small>UAE CORE</small></div><div class="module-links"><a href="#signals" data-return-signals>Return to GCC Signal Map ↗</a></div></div>
 </section>
-<section id="ai"><div class="section-head"><div><div class="section-kicker">04 / INDEPENDENT MODULE</div><h2>AI Observatory</h2></div><p data-en="A dedicated lens on AI signals across the ecosystem" data-ar="رصد مستقل لإشارات الذكاء الاصطناعي عبر المنظومة">A dedicated lens on AI signals across the ecosystem</p></div>
+
+<section id="registry" hidden>
+<div class="section-head"><div><div class="section-kicker">02 / SIGNAL REGISTRY</div><h2 data-en="Structured observation log" data-ar="سجل الإشارات المنظّم">Structured observation log</h2></div><div class="toolbar"><button class="filter active" data-filter="all">ALL</button><button class="filter" data-filter="regulatory">REGULATORY</button><button class="filter" data-filter="corporate">CORPORATE</button><button class="filter" data-filter="operational">OPERATIONAL</button><button class="filter" data-filter="healthcare">HEALTHCARE</button></div></div>
+<div class="panel registry"><table><thead><tr><th>Signal ID</th><th>Observation</th><th>Market</th><th>Type</th><th>Event date</th><th>Observation date</th><th>Evidence status</th><th>Record</th></tr></thead><tbody id="registryRows">
+<tr data-kind="regulatory"><td class="id">DEMO-001</td><td class="entity">Regulatory development</td><td>UAE</td><td class="type">Regulatory</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-001">View</button></td></tr>
+<tr data-kind="corporate"><td class="id">DEMO-002</td><td class="entity">Market participant activity</td><td>KSA</td><td class="type">Corporate</td><td>Not populated</td><td>Not populated</td><td><span class="state reported">Demo only</span></td><td><button class="filter" data-open="DEMO-002">View</button></td></tr>
+<tr data-kind="operational"><td class="id">DEMO-003</td><td class="entity">Claims administration change</td><td>Qatar</td><td class="type">Operational</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-003">View</button></td></tr>
+<tr data-kind="healthcare"><td class="id">DEMO-004</td><td class="entity">Provider capacity observation</td><td>Oman</td><td class="type">Healthcare</td><td>Not populated</td><td>Not populated</td><td><span class="state">Demo only</span></td><td><button class="filter" data-open="DEMO-004">View</button></td></tr>
+</tbody></table></div>
+</section>
+<section id="markets" hidden><div class="section-head"><div><div class="section-kicker">03 / MARKET OBSERVATORY</div><h2 data-en="Six markets. One connected region." data-ar="ستة أسواق. إقليم واحد مترابط.">Six markets. One connected region.</h2></div><p data-en="Core GCC observation scope" data-ar="النطاق الأساسي للرصد الخليجي">Core GCC observation scope</p></div>
+<div class="country-grid">
+<div class="country country-link" id="uaeMarketCard" role="button" tabindex="0" aria-controls="uaeDetails" aria-expanded="false"><span class="code">AE / 01</span><strong>United Arab Emirates</strong><small>UAE · Open observatory ↗</small><div class="line"><span style="--w:92%"></span></div></div>
+<div class="country"><span class="code">SA / 02</span><strong>Saudi Arabia</strong><small>KSA</small><div class="line"><span style="--w:82%"></span></div></div>
+<div class="country"><span class="code">KW / 03</span><strong>Kuwait</strong><small>KWT</small><div class="line"><span style="--w:58%"></span></div></div>
+<div class="country"><span class="code">QA / 04</span><strong>Qatar</strong><small>QAT</small><div class="line"><span style="--w:54%"></span></div></div>
+<div class="country"><span class="code">BH / 05</span><strong>Bahrain</strong><small>BHR</small><div class="line"><span style="--w:43%"></span></div></div>
+<div class="country"><span class="code">OM / 06</span><strong>Oman</strong><small>OMN</small><div class="line"><span style="--w:48%"></span></div></div>
+</div></section>
+
+
+<section id="ai" hidden><div class="section-head"><div><div class="section-kicker">04 / INDEPENDENT MODULE</div><h2>AI Observatory</h2></div><p data-en="A dedicated lens on AI signals across the ecosystem" data-ar="رصد مستقل لإشارات الذكاء الاصطناعي عبر المنظومة">A dedicated lens on AI signals across the ecosystem</p></div>
 <div class="panel" style="padding:17px 20px;margin-bottom:13px;border-color:#31546b"><div class="section-kicker" style="margin-bottom:7px">SCOPE & METHOD</div><p style="margin:0;color:#a9bac8;font-size:12px;line-height:1.8" data-en="The AI Observatory documents publicly evidenced developments across health insurance and healthcare — from adoption and operational applications to governance and oversight. These six lenses define what we observe; they are not a count of detected signals." data-ar="يوثّق مرصد الذكاء الاصطناعي التطورات المدعومة بأدلة منشورة في التأمين الصحي والرعاية الصحية، من التبني والتطبيقات التشغيلية إلى الحوكمة والرقابة. تمثل هذه المحاور مجالات الرصد، وليست عدداً للإشارات المكتشفة.">The AI Observatory documents publicly evidenced developments across health insurance and healthcare — from adoption and operational applications to governance and oversight. These six lenses define what we observe; they are not a count of detected signals.</p></div>
 <div class="ai-grid">
 <div class="ai-card"><div class="ai-icon">01</div><h3>AI Adoption</h3><p>Publicly disclosed AI initiatives, adoption announcements and experimentation.</p><small>ADOPTION SIGNALS</small></div>
@@ -163,9 +165,9 @@
 <div class="ai-card"><div class="ai-icon">05</div><h3>Healthcare AI</h3><p>Clinical, provider and preventive healthcare AI developments.</p><small>HEALTHCARE SIGNALS</small></div>
 <div class="ai-card"><div class="ai-icon">06</div><h3>AI Governance</h3><p>Governance frameworks, controls, accountability and responsible-use policies.</p><small>GOVERNANCE SIGNALS</small></div>
 </div></section>
-<section id="timeline"><div class="section-head"><div><div class="section-kicker">05 / HISTORICAL OBSERVATION</div><h2 data-en="Signals across time" data-ar="الإشارات عبر الزمن">Signals across time</h2></div><span class="demo">CONCEPT PREVIEW</span></div>
+<section id="timeline" hidden><div class="section-head"><div><div class="section-kicker">05 / HISTORICAL OBSERVATION</div><h2 data-en="Signals across time" data-ar="الإشارات عبر الزمن">Signals across time</h2></div><span class="demo">CONCEPT PREVIEW</span></div>
 <div class="panel"><div style="padding:13px 20px 0;color:#8ba0b5;font-size:11px">Record structure preview only · no historical events or dates are populated in this interface.</div><div class="timeline"><div class="time-item"><time>EVENT DATE</time><p>When the observed event occurred.</p></div><div class="time-item"><time>OBSERVATION DATE</time><p>When the signal entered the observatory.</p></div><div class="time-item"><time>EVIDENCE TRAIL</time><p>Original source, publication and verification.</p></div><div class="time-item"><time>FOLLOW-UP</time><p>Subsequent developments and related signals.</p></div></div></div></section>
-<div class="principle"><div><small>THE OBSERVATORY'S OPERATING PRINCIPLE</small><blockquote>Observe. Detect. Document. Connect. <span>Track.</span></blockquote></div><div class="principle-mark">◎</div></div>
+<div class="principle" hidden><div><small>THE OBSERVATORY'S OPERATING PRINCIPLE</small><blockquote>Observe. Detect. Document. Connect. <span>Track.</span></blockquote></div><div class="principle-mark">◎</div></div>
 </main>
 <footer class="footer"><span>GCC HEALTH INSURANCE OBSERVATORY · CONCEPT INTERFACE v0.1</span><span>NO FORECASTS · NO ASSUMED CAUSALITY · EVIDENCE FIRST</span></footer>
 </div>
@@ -181,7 +183,7 @@ modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('o
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#registryRows tr').forEach(r=>r.style.display=b.dataset.filter==='all'||r.dataset.kind===b.dataset.filter?'':'none')}));
 const uaeCard=document.getElementById('uaeMarketCard'),uaeDetails=document.getElementById('uaeDetails'),marketSection=document.getElementById('markets');
 function openUAE(){uaeDetails.hidden=false;uaeCard.setAttribute('aria-expanded','true');marketSection.hidden=true;uaeDetails.scrollIntoView({behavior:'smooth',block:'start'})}
-function closeUAE(){uaeDetails.hidden=true;uaeCard.setAttribute('aria-expanded','false');marketSection.hidden=false;marketSection.scrollIntoView({behavior:'smooth',block:'start'})}
+function closeUAE(){uaeDetails.hidden=true;uaeCard.setAttribute('aria-expanded','false');document.getElementById('signals').scrollIntoView({behavior:'smooth',block:'start'})}
 uaeCard.addEventListener('click',openUAE);uaeCard.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openUAE()}});
 const uaeMapTarget=document.getElementById('uaeMapTarget');
 uaeMapTarget.addEventListener('click',openUAE);uaeMapTarget.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openUAE()}});
