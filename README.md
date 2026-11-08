@@ -31,11 +31,18 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 ## Evidence and limitations
 
-The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:50m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
+The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:10m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC country shapes, markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
 
 No live monitoring, automated ingestion, database, API or evidence-verification workflow is implemented in this interface-only release. Country-specific signals, entities and sources must be added only after research and evidence review.
 
-## Geographic data attribution\n\n- Boundary source: [Natural Earth — 1:10m Cultural Vectors](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)\n- Browser distribution: [world-atlas](https://github.com/topojson/world-atlas), a TopoJSON redistribution of Natural Earth 4.1.0.\n- Boundary type: Admin 0 country polygons; 1:10m large-scale geography.\n- Natural Earth data is public domain. The map is intended for regional market orientation, not legal or cadastral use.\n\n## Research principles
+## Geographic data attribution
+
+- Boundary source: [Natural Earth — 1:10m Cultural Vectors](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)
+- Browser distribution: [world-atlas](https://github.com/topojson/world-atlas), a TopoJSON redistribution of Natural Earth 4.1.0.
+- Boundary type: Admin 0 country polygons; 1:10m large-scale geography.
+- Natural Earth data is public domain. The map is intended for regional market orientation, not legal or cadastral use.
+
+## Research principles
 
 - Discover signals openly; do not let predefined categories limit discovery.
 - Preserve original sources and distinguish event date from observation date.
