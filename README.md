@@ -35,6 +35,7 @@ All six country observatories use the same shared workflow. Selecting a country 
 - [Signal 001 — Dubai claims and health-data exchange](./signal-001-dubai-claims-and-data-exchange.md) — the first documented UAE observation.
 - [Signal 002 — Federal mandatory health-insurance expansion](./signal-002-federal-mandatory-health-insurance-expansion.md) — policy implementation effective 1 January 2025; initial 2025 market indicators and 2026 compliance integration documented, with scheme-specific outcomes still unquantified.
 - [Signal 003 — Human oversight in AI-enabled healthcare and health insurance](./signal-003-human-oversight-ai-health-insurance.md) — CBUAE human-oversight guidance for LFIs including insurers, connected to DoH Abu Dhabi healthcare AI requirements; market implementation remains unverified.
+- [Signal 004 — AI Document Intelligence in UAE Health Insurance Operations](./signal-004-ai-document-intelligence-uae-health-insurance.md) — Daman / PureHealth deployment disclosed for Q3 2025; document-processing functions evidenced, while use-case-level operational ownership and decision authority remain unverified.
 
 ## Evidence and limitations
 
