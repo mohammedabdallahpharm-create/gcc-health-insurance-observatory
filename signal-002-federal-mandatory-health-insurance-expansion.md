@@ -35,7 +35,27 @@ This is a dated policy implementation signal, not merely a general statement of 
 | Dubai health insurance system, 2025 | DHA data reported by WAM: more than **4.9m beneficiaries**, versus about 4.6m in 2024; approximately **49.6m claims**, versus 43.69m; 3,936 providers, 43 insurers and 16 claims-management entities | A separate emirate-level example of growth in coverage and operational activity in 2025 | Dubai already had a mandatory scheme; these figures are not outcomes of the federal extension to the five Northern Emirates |
 | Northern Emirates e-Claims Post Office (baseline published October 2024) | MoHAP reports 20.4m insurance claims, 11.3k+ connected clinicians, 1.3k+ connected providers and 26 integrated insurers/TPAs | Establishes that an insurance-specific electronic exchange infrastructure and substantial connected ecosystem existed before the federal scheme took effect | It is a pre-implementation baseline, not proof of post-2025 growth or a result caused by the policy |
 
-### C. Basic package details and source discrepancy
+| Northern Emirates e-Claims Post Office — platform scope (MoHAP page; last updated October 2024) | The platform description specifies a unified provider-payer exchange using standard code sets and transaction schemas. Published workflows include eligibility checks, prior authorisations, claim submissions, e-prescriptions and payer responses | Establishes the functional architecture that was publicly documented before the federal scheme: a claims-specific exchange, not merely a clinical-record network | The page's October 2024 update date means it cannot establish whether the platform's specifications, integrations or operating model changed after January 2025 |
+| Federal Basic Health Insurance Scheme — distribution and provider network (MOHRE) | The scheme is purchased through the DubaiCare Network or other approved suppliers; the published basic network is identified as DUBAICARE-N5 NE Restricted Network on the Workers Health Insurance portal | Establishes the post-2025 scheme's published purchase/distribution route and a named restricted provider-network product | It does not establish that DubaiCare-N5 claims are routed through MoHAP's e-Claims Post Office, nor does it document a technical interface, payer onboarding or claims-processing workflow between the two systems |
+| Clinical health-information exchange (MoHAP / Malaffi) | Riayati's national medical-record integration and the 2023 Riayati–Malaffi–NABIDH integration concern clinical information exchange; Malaffi's October 2023 update describes access to Northern Emirates patient records | Establishes a parallel clinical interoperability layer that was already progressing before 2025 | Clinical-record interoperability is not evidence of insurance eligibility, prior authorisation, claim submission or remittance integration |
+
+### C. Northern Emirates electronic claims infrastructure — pre/post-2025 comparison
+
+**Comparison question:** did the federal insurance extension produce a documented change in the claims-exchange infrastructure serving the Northern Emirates?
+
+| Dimension | Pre-2025 evidence | Post-2025 evidence located | Assessment |
+|---|---|---|---|
+| Platform existence | MoHAP's e-Claims Post Office was launched in October 2020; in October 2022 MoHAP described a platform for provider-payer eligibility, authorisation, claim submission, claim tracking/denials and payment information | The current MoHAP service page continues to describe the same e-Claims Post Office and the same core provider-payer functions, but its stated last-update date remains October 2024 | **Continuity is documented; a post-2025 platform launch or replacement is not.** The current page is not a dated post-2025 change notice |
+| Scale and connected ecosystem | October 2024 baseline: 20.4m insurance claims, 11.3k+ connected clinicians, 1.3k+ providers and 26 integrated insurers/TPAs | No comparable 2025 or 2026 MoHAP e-Claims Post Office totals were located in the official public material reviewed | **No valid growth comparison can yet be calculated.** Do not compare the October 2024 cumulative totals with national insurance-policy growth or Dubai claims totals |
+| Technical standards and transaction model | MoHAP describes standardised code sets and transaction schemas and a unified portal for payer-provider transactions | No dated 2025–2026 public release note, revised technical specification, version history or formal change notice for the Northern Emirates e-Claims Post Office was located | **A change in technical architecture or standards is not established** |
+| Federal basic scheme onboarding | The federal extension was not yet in force; the e-Claims Post Office already existed as the Northern Emirates insurance exchange | MOHRE says employers purchase the basic package through DubaiCare Network or approved suppliers; WHI portal identifies a DUBAICARE-N5 NE Restricted Network | **A separate distribution/network route is documented, but its claims-system integration with the MoHAP e-Claims Post Office is unverified** |
+| Clinical data interoperability | Riayati clinical-record infrastructure and cross-platform integration were already in place by 2023 | Current MoHAP materials describe Riayati as a national medical-record platform connecting facilities and integrated with other clinical HIEs | **Clinical interoperability continued, but it must not be counted as a change to insurance claims exchange** |
+
+**Finding:** The strongest evidence supports a pre-existing Northern Emirates claims-exchange infrastructure that predates the 1 January 2025 insurance extension. Publicly available evidence reviewed so far does **not** demonstrate that the extension caused a new claims platform, a new technical standard, a documented expansion in e-Claims Post Office connectivity, or a measurable change in claims throughput after 2025.
+
+This is a finding about the **public evidence located**, not proof that no operational changes occurred. The post-2025 comparison remains incomplete because comparable 2025–2026 platform metrics and technical change records are not publicly evidenced in the sources reviewed.
+
+### D. Basic package details and source discrepancy
 
 MOHRE's current Basic Health Insurance Scheme page states an annual premium of **AED 320** and describes a network of 7 hospitals, 47 clinics/medical centres and 44 pharmacies. WAM's 16 December 2024 launch report gave 7 hospitals, 46 clinics/medical centres and 45 pharmacies.
 
@@ -51,6 +71,11 @@ These network counts differ between the launch-time report and the current minis
 6. [WAM — MOHRE guide on existing worker health-insurance procedures, 23 July 2026](https://www.wam.ae/en/article/c1d74f5-mohre-issues-guide-existing-worker-health)
 7. [WAM — Dubai health insurance system 2025 indicators, 2 February 2026](https://www.wam.ae/en/article/171xsrc-dubai-health-insurance-system-achieves-record)
 8. [MoHAP — Riayati e-Claims Post Office](https://mohap.gov.ae/en/riayati/e-claims-post-office)
+9. [MoHAP — e-Claims Post Office launch and functionality, 2020](https://mohap.gov.ae/en/w/mohap-launches-post-office-initiative-to-improve-health-insurance-claims-process)
+10. [MoHAP — e-Claims Post Office developments, 11 October 2022](https://mohap.gov.ae/en/w/mohap-showcases-latest-developments-introduced-to-e-claims-post-office)
+11. [MOHRE — Basic Health Insurance Scheme and purchase channels](https://tasheel.mohre.gov.ae/en/media-center/awareness-and-guidance/health-insurance-scheme.aspx)
+12. [Workers Health Insurance — plan details and DUBAICARE-N5 NE restricted network](https://whi.ae/index.html)
+13. [Malaffi — Riayati integration phase, October 2023](https://www.malaffi.ae/dohs-malaffi-and-mohap-announce-the-completion-of-the-latest-phase-of-riayati-integration/)
 
 ### Scope and limitations
 
@@ -69,7 +94,7 @@ The policy creates testable connections across several parts of the UAE ecosyste
 2. **Insurers and distribution:** the basic package and approved-supplier arrangements create a defined route for insurers and intermediaries to serve the newly covered population. Actual market shares and participation require separate evidence.
 3. **Providers and networks:** expansion of insured lives may affect demand for primary care, outpatient services and provider-network capacity. Package network listings establish a stated network, not geographic adequacy or service availability.
 4. **TPAs and claims operations:** additional covered members may affect enrollment administration, eligibility checks, claims processing and provider coordination. No scheme-specific change in TPA workload, processing time or hiring has yet been established.
-5. **Digital health and insurance data exchange:** MoHAP's e-Claims Post Office describes an insurance-specific exchange between providers and payers in the Northern Emirates, including eligibility, authorization and claim submissions. This is more directly relevant to insurance operations than clinical-record exchange alone. However, the published 20.4m-claim and connectivity figures are dated October 2024 and therefore serve as a pre-implementation baseline, not a measured post-policy effect.
+5. **Digital health and insurance data exchange:** MoHAP's e-Claims Post Office describes an insurance-specific exchange between providers and payers in the Northern Emirates, including eligibility, authorization and claim submissions. This is more directly relevant to insurance operations than clinical-record exchange alone. However, the published 20.4m-claim and connectivity figures are dated October 2024 and therefore serve as a pre-implementation baseline, not a measured post-policy effect. The federal basic package's published purchase route and DUBAICARE-N5 NE network do not, by themselves, prove a technical connection to that exchange.
 6. **Clinical data exchange remains distinct:** national clinical-record platforms and insurance transaction systems should not be treated as one integrated system without evidence of a specific technical or operational connection.
 
 ### Analytical interpretation — not a verified causal outcome
@@ -84,6 +109,8 @@ The policy broadens the population for whom employers must arrange health cover 
 - **Market-level movement:** health insurance policy counts in the UAE increased by 26.1% in 2025, according to CBUAE figures reported by WAM.
 - **Administrative integration:** MOHRE's July 2026 guide documents electronic verification of valid health insurance within work-permit issuance and renewal processes.
 - **Pre-existing insurance infrastructure:** MoHAP documented an operational e-Claims Post Office for provider-payer transactions in the Northern Emirates before the policy start date.
+- **Pre/post infrastructure comparison:** the 2020 launch, 2022 functionality description and October 2024 baseline establish that a claims-specific exchange existed before the federal extension. No comparable post-2025 scale metrics or dated technical change record was located in the reviewed public sources.
+- **Scheme distribution route:** MOHRE and WHI materials identify DubaiCare/approved suppliers and the DUBAICARE-N5 NE restricted network for the basic scheme; a link from this route into the MoHAP e-Claims Post Office remains unverified.
 - **Package design:** MOHRE publishes the basic package price, benefits and network details; launch-time and current network counts differ slightly and must remain separately attributed.
 
 ### What remains unverified
@@ -120,6 +147,9 @@ These remain hypotheses. No job-creation or commercial-opportunity claim is esta
 2. Seek emirate-level counts of insured workers and domestic workers in the five target emirates, with a comparable pre-2025 baseline.
 3. Identify participating insurers and approved suppliers, distinguishing basic-package issuance from other employer group policies.
 4. Seek post-2025 MoHAP e-Claims Post Office metrics using the same definitions as the October 2024 baseline.
+5. Obtain the current e-Claims Post Office technical specifications, version history, onboarding notices and payer/provider integration lists; compare them with the pre-2025 documentation.
+6. Verify directly with MoHAP, the scheme administrator and participating payers whether policies issued under the federal basic scheme are submitted and adjudicated through the e-Claims Post Office, DubaiCare infrastructure, another gateway, or more than one route. Do not infer this from the network name.
+7. Compare the number of connected providers and payers, transaction volumes, rejection/denial rates, turnaround times and remittance workflows at matched dates and with unchanged definitions.
 5. Track official updates to package terms, provider networks and employer compliance guidance.
 6. Sample dated insurer, TPA and provider job postings only as a secondary indicator; do not infer job creation from vacancy counts alone.
 7. Update confidence only when evidence directly measures the target population or operational outcomes.
