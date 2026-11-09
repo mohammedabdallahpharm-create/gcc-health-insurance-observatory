@@ -7,10 +7,11 @@
 **Connected sector:** Healthcare  
 **Primary regulatory lens:** CBUAE — licensed financial institutions, including insurance providers  
 **Related regulatory lens:** Department of Health — Abu Dhabi  
-**Status:** Regulatory direction verified; one Daman AI document-processing deployment publicly disclosed; use-case-level operational ownership, decision authority and human-oversight implementation remain unverified  
-**Confidence:** High that formal human-oversight expectations are documented in the cited regulatory instruments; low / not assessed for market-wide implementation  
+**Status:** Regulatory direction verified; market-wide implementation and use-case-level human-oversight practice remain unverified
+**Confidence:** High for the existence and stated scope of the cited regulatory instruments; low / not assessed for market-wide implementation
 **Event date:** 11 February 2026 (CBUAE Guidance Note publication)  
-**Observation date:** 9 November 2026
+**Observation date:** 9 November 2026  
+**Related signal:** [Signal 004 — AI Document Intelligence in UAE Health Insurance Operations](./signal-004-ai-document-intelligence-uae-health-insurance.md) — separate institutional deployment record; no causal relationship is implied
 
 ## 1. External Signal Detection
 
@@ -61,31 +62,11 @@ In October 2026, DoH published an AI Clinician Framework / guide examining the c
 This is a connected healthcare development, not evidence that AI systems have been authorised to independently adjudicate health-insurance claims. Its relevance is the wider regulatory examination of task-specific AI capability and the boundaries of human clinical authority.
 
 
-### D. Institutional deployment case — Daman AI Document Intelligence
+### D. Institutional deployment evidence — separate record
 
-**Case:** AI-powered document processing within Daman's health-insurance operations.
+Institutional AI deployment is documented separately. See [Signal 004 — AI Document Intelligence in UAE Health Insurance Operations](./signal-004-ai-document-intelligence-uae-health-insurance.md) for the Daman / PureHealth case, disclosed functions, evidence boundaries and unresolved questions about operational ownership and decision authority.
 
-| Evidence | What it supports | Scope / grade |
-|---|---|---|
-| PureHealth, *9M 2025 Management Discussion and Analysis*, Q3 2025 operational highlights | States that Daman deployed an AI-powered Document Intelligence Platform in Q3 2025; describes classification, validation and data extraction across more than 60 million documents annually | Company investor disclosure / primary corporate source |
-| PureHealth, *AI-powered solution for Daman members*, company announcement | Identifies PureCS, a PureHealth subsidiary, as developer; describes LLMs, intelligent classification and structured data extraction integrated into Daman workflows; describes policyholder requests including enrolments, endorsements and complex claims | Company announcement / primary corporate source |
-
-**What is established**
-
-- Daman publicly disclosed deployment of an AI-powered document-intelligence platform in Q3 2025.
-- The disclosed functions include document classification, validation and data extraction.
-- PureHealth's later announcement identifies PureCS as the developer and describes the solution as integrated into Daman's core workflows.
-- PureHealth reports a scale of more than 60 million documents annually. Its announcement also states an expectation that more than 80% of documents will be converted into structured digital data and that manual rework will decrease by more than 50%. These are company-reported figures and expected outcomes, not independently audited performance findings in this record.
-
-**Boundary of the evidence**
-
-The public materials establish document-processing automation; they do **not** establish autonomous claim adjudication or final insurance decision-making by AI. The PureHealth announcement refers to future AI-driven enhancements for claims and prior-authorisation processing. That wording must not be treated as proof that those future capabilities are already deployed.
-
-The announcement names PureCS as the technology developer and Daman as the insurance operation using the solution. It does not identify a named operational owner for this specific use case, a formally accountable role, or a documented authority to approve, reject, override, suspend or stop its outputs.
-
-The CEO statements in the announcement are executive commentary about the solution's strategic and service benefits. They do not constitute a delegation-of-authority instrument and must not be used to infer that either CEO is the operational owner or decision authority for the platform.
-
-**Finding:** Daman is a verified example of AI deployment in UAE health-insurance operations. The use-case-level ownership and decision-authority chain remains publicly unverified.
+No causal relationship between the CBUAE guidance and that deployment is asserted. The deployment was reported for Q3 2025, before the CBUAE Guidance Note published on 11 February 2026.
 
 ### Source links
 
@@ -94,8 +75,6 @@ The CEO statements in the announcement are executive commentary about the soluti
 3. [DoH Abu Dhabi — Policy on Use of Artificial Intelligence in the Healthcare Sector (2018)](https://www.doh.gov.ae/-/media/E9C1470A575146B18015DEBE57E47F8D.ashx)
 4. [DoH Abu Dhabi — Responsible AI Standard (October 2025)](https://www.doh.gov.ae/-/media/B84FF5DD027846699C51F36C439A580F.ashx)
 5. [WAM — DoH publishes AI Clinician Framework guide (October 2026)](https://www.wam.ae/en/article/17hh7ki-doh-publishes-clinician-framework-guide)
-6. [PureHealth — 9M 2025 Management Discussion and Analysis](https://purehealth.ae/wp-content/uploads/2025/11/PureHealth-9M-2025-MDA_EN.pdf) — see Daman, Q3 2025 Operational Highlights.
-7. [PureHealth — AI-powered solution for Daman members](https://purehealth.ae/purehealth-launches-ai-powered-solution-to-enhance-access-to-healthcare-services-for-daman-members/)
 
 ## 3. Cross-sector Connections
 
@@ -104,7 +83,6 @@ The documented regulatory signal connects several parts of the UAE healthcare an
 | Connection | Why it matters | Current evidence status |
 |---|---|---|
 | CBUAE ↔ health insurers | Federal financial-sector guidance explicitly covers insurance providers and identifies insurance claims as a high-impact decision example | Regulatory connection verified |
-| PureHealth / PureCS ↔ Daman | PureHealth identifies PureCS as the developer of Daman's deployed AI document-processing solution; Daman is the insurance operation in which the solution is integrated | Technology-provider and operating-entity relationship disclosed; specific operational owner and decision authority not identified |
 | Insurers ↔ TPAs | Claims workflows may involve delegated administration, external platforms or AI vendors; the regulated institution's governance and third-party controls remain relevant | Operational arrangements require institution-level verification |
 | TPAs ↔ claims adjudication | AI may support document processing, coding, eligibility checks, fraud indicators or claim triage; the decision authority and escalation path need to be identified for each workflow | Use cases are investigation questions, not verified adoption claims |
 | DoH ↔ healthcare providers | Abu Dhabi's Responsible AI Standard applies to licensed healthcare entities within its scope and addresses human oversight in AI-enabled healthcare | Regulatory connection verified within Abu Dhabi scope |
@@ -131,16 +109,12 @@ The research must therefore distinguish:
 - The CBUAE has published a federal financial-sector guidance framework on responsible AI/ML use by LFIs, including insurance providers.
 - The CBUAE identifies an insurance claim as an example of a high-impact decision.
 - The CBUAE describes different human-oversight approaches and links oversight intensity to risk and potential consumer harm.
-- Daman publicly disclosed deployment of an AI-powered Document Intelligence Platform in Q3 2025, with classification, validation and data-extraction functions in its insurance operations.
-- PureHealth identifies PureCS as the developer of the solution and describes its integration into Daman's core workflows.
 - DoH Abu Dhabi's 2018 AI policy expressly includes healthcare insurers and billing/insurance processing.
 - DoH Abu Dhabi's 2025 Responsible AI Standard requires HITL or HOTL and human oversight for AI systems within its stated healthcare-entity scope.
 - Institutional governance and accountability remain central even where AI systems or third-party providers are involved.
 
 ### What is not established
 
-- That Daman's disclosed document-intelligence platform autonomously approves, rejects or adjudicates health-insurance claims.
-- That the future claims and prior-authorisation enhancements mentioned by PureHealth are already deployed.
 - That TPAs have deployed AI agents in live claims operations.
 - That any insurer or TPA in the UAE operates claims workflows under HOTL or HOOTL.
 - That AI systems currently make final coverage, medical-necessity or payment decisions without human review.
@@ -161,7 +135,7 @@ These are hypotheses only. They must not be presented as current hiring demand o
 
 1. **Insurer adoption:** collect dated, attributable disclosures from UAE insurers about AI in claims, underwriting, customer service or fraud operations; distinguish document processing from adjudication and decision automation.
 2. **TPA implementation:** identify named AI tools and live workflows, distinguishing pilots, vendor announcements and production deployment.
-3. **Decision authority:** for Daman's Document Intelligence Platform, identify the formally designated operational owner and establish who may approve, reject, override, suspend or stop its outputs; seek the relevant policy, RACI, model inventory or delegation record.
+3. **Decision authority:** identify, for each verified live AI use case, the formally designated operational owner and the documented authority to approve, reject, override, suspend or stop outputs; see Signal 004 for the Daman-specific investigation.
 4. **Human review in practice:** examine customer-facing review, explanation, complaint and appeal routes, without assuming that policy text proves operational effectiveness.
 5. **Third-party governance:** track AI procurement, outsourcing arrangements, model inventories, audit provisions and vendor-control disclosures.
 6. **Workforce implications:** sample dated vacancies and role descriptions for AI governance, claims oversight, exception handling, compliance and operational risk; distinguish explicit requirements from inferred demand.
@@ -174,6 +148,6 @@ These are hypotheses only. They must not be presented as current hiring demand o
 
 The observatory will track evidence of both separately. An announcement of automation is not proof of autonomous decision-making; a human-oversight policy is not proof of how a live workflow operates.
 
-**Public-facing summary:** UAE regulatory instruments are making human oversight a more explicit part of AI governance across financial services and healthcare. Daman provides a publicly documented example of AI deployment in health-insurance operations: its AI-powered Document Intelligence Platform was reported as deployed in Q3 2025, with document classification, validation and data extraction functions. PureHealth identifies PureCS as the developer. The available public evidence reviewed does not identify the operational owner of this specific use case or document who has authority to override or stop its outputs. The deployment must not be described as autonomous claims adjudication.
+**Public-facing summary:** UAE regulatory instruments articulate risk-based human-oversight expectations for AI use across financial services and, within Abu Dhabi's stated jurisdiction, healthcare. The instruments establish regulatory direction; they do not by themselves demonstrate how individual live workflows implement human review, escalation or intervention. Institutional deployments are documented in separate signal records.
 
 **Method note:** AI may assist discovery, comparison and evidence organisation. Source verification, interpretation, accountability and final judgement remain human responsibilities.
