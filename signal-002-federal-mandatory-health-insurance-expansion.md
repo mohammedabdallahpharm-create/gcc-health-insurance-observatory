@@ -39,6 +39,54 @@ This is a dated policy implementation signal, not merely a general statement of 
 | Federal Basic Health Insurance Scheme — distribution and provider network (MOHRE) | The scheme is purchased through the DubaiCare Network or other approved suppliers; the published basic network is identified as DUBAICARE-N5 NE Restricted Network on the Workers Health Insurance portal | Establishes the post-2025 scheme's published purchase/distribution route and a named restricted provider-network product | It does not establish that DubaiCare-N5 claims are routed through MoHAP's e-Claims Post Office, nor does it document a technical interface, payer onboarding or claims-processing workflow between the two systems |
 | Clinical health-information exchange (MoHAP / Malaffi) | Riayati's national medical-record integration and the 2023 Riayati–Malaffi–NABIDH integration concern clinical information exchange; Malaffi's October 2023 update describes access to Northern Emirates patient records | Establishes a parallel clinical interoperability layer that was already progressing before 2025 | Clinical-record interoperability is not evidence of insurance eligibility, prior authorisation, claim submission or remittance integration |
 
+### Technical documentation and scheme claims-path investigation — 9 November 2026
+
+#### Documents and operational material located
+
+| Item | Public evidence located | Relevance | Limitation |
+|---|---|---|---|
+| e-Claims Post Office documentation gateway | MoHAP says the portal is the gateway to applications, documentation, user manuals, standards, code lists and technical specifications | Confirms that a technical documentation set exists for registered ecosystem participants | The public page does not expose the actual e-Claims technical files or a public version-history/download index. Access appears to be through portal/community resources |
+| Riayati Integration, Terminology and Coding Standards v2.1 | MoHAP PDF RYT-PGM-TECH001 v2.1, dated 29 June 2022; its stated purpose is interoperability standards for the Riayati Healthcare Information Exchange (HIE) | Provides a dated technical baseline for clinical HIE interoperability, including HL7 v2, FHIR and IHE profiles | **This is an HIE/clinical interoperability specification, not the e-Claims Post Office claims transaction specification.** It must not be used as proof of claims schema or claims gateway changes |
+| DubaiCare mobile app user guide | WHI-hosted DubaiCare guide dated January 2024 describes member-side reimbursement claim submission/status and access to network claims and authorizations | Confirms member-facing claims and authorization functions existed before the federal scheme's 2025 start | It does not document provider-to-payer network claim submission, adjudication, TPA routing or remittance integration |
+| Workers Health Insurance portal and buyer manual | WHI lists the basic and premium products on DubaiCare N5 NE; the Arabic page identifies the Northern Emirates coverage scope, clinic-only outpatient network restriction, inpatient pre-approval, and telehealth providers. The buyer manual describes employer enrollment, employee data submission, payment, certificates and transaction history | Documents the purchase/enrollment layer and public-facing product/network design | It does not identify the complete claims administrator chain or show the underlying provider claims gateway |
+| Network directory | WHI links a downloadable “NE RESTRICTED Network List” spreadsheet | Potential source for the actual participating provider roster | The spreadsheet could not be retrieved/read in this research session; no provider count or facility names are asserted from it |
+
+#### Current claims-path evidence map
+
+The public evidence supports these distinct steps, but not yet a single end-to-end technical route:
+
+1. **Employer / purchaser:** employer selects and buys the basic package through WHI or the stated approved supplier route.
+2. **Member services:** DubaiCare exposes member access to policy information, authorizations, network claims and reimbursement claim submission/status.
+3. **Provider network:** the basic package is associated with DubaiCare N5 NE; the public WHI description specifies outpatient care through clinics and inpatient services subject to insurer pre-approval.
+4. **Provider-to-payer transaction gateway:** MoHAP separately documents e-Claims Post Office as the Northern Emirates platform for eligibility, authorization and claim submission between providers and payers.
+5. **Unresolved interface:** no public technical evidence located connects the basic scheme's N5 NE network or DubaiCare member application to the MoHAP e-Claims Post Office, identifies the payer/TPA endpoint for each claim type, or confirms where adjudication and remittance occur.
+
+**Important distinction:** a member's ability to submit a reimbursement request in an app is not the same workflow as a network provider submitting an electronic claim for adjudication. Both must be traced separately.
+
+#### Targeted evidence requests required to close the gap
+
+**Request A — MoHAP / Riayati e-Claims Post Office**
+- Current e-Claims Post Office provider and payer technical specifications, including document IDs, versions and effective dates.
+- Transaction schemas and code-list release history from October 2024 through 2026.
+- Current onboarding/integration guide and list of participating payers, TPAs and providers (or a public/approved extract).
+- Whether the federal Basic Health Insurance Scheme / DubaiCare N5 NE transactions are routed through this gateway; if yes, which transaction types and since what date.
+- Matched operational metrics for 2024, 2025 and 2026: active connected providers/payers, claim submissions, authorizations, eligibility checks, denials/rejections, processing times and payment/remittance messages.
+
+**Request B — Dubai Insurance / DubaiCare / WHI scheme administrator**
+- Legal identity of the risk-carrying insurer(s), scheme administrator and any TPA/claims manager for the Basic and Premium WHI products.
+- Provider-side claims submission channel and technical format for N5 NE network claims.
+- Whether network claims and reimbursement claims use the same system or different systems.
+- Name of the adjudicating payer/TPA, and the system that returns remittance/payment status to providers.
+- Whether any N5 NE provider claims are submitted to MoHAP e-Claims Post Office; evidence of interface, certification or onboarding if yes.
+
+**Request C — selected N5 NE providers**
+- Which portal/API/clearinghouse they use for eligibility, prior authorization, claim submission, resubmission and remittance.
+- Payer/TPA destination shown for the WHI Basic/Premium policies.
+- A redacted workflow or integration guide (no patient-identifiable data).
+- Whether the workflow changed between 2024 and 2025/2026.
+
+No private system access, credentialed portal access or direct confirmation from these entities was available in this public-source research. These requests are not yet answered.
+
 ### C. Northern Emirates electronic claims infrastructure — pre/post-2025 comparison
 
 **Comparison question:** did the federal insurance extension produce a documented change in the claims-exchange infrastructure serving the Northern Emirates?
@@ -76,6 +124,10 @@ These network counts differ between the launch-time report and the current minis
 11. [MOHRE — Basic Health Insurance Scheme and purchase channels](https://tasheel.mohre.gov.ae/en/media-center/awareness-and-guidance/health-insurance-scheme.aspx)
 12. [Workers Health Insurance — plan details and DUBAICARE-N5 NE restricted network](https://whi.ae/index.html)
 13. [Malaffi — Riayati integration phase, October 2023](https://www.malaffi.ae/dohs-malaffi-and-mohap-announce-the-completion-of-the-latest-phase-of-riayati-integration/)
+14. [MoHAP — Riayati Integration, Terminology and Coding Standards v2.1 (29 June 2022)](https://mohap.gov.ae/documents/20117/674129/Riayati_Integration_Terminology_and_Coding_Standards_v2.1.pdf/14228d81-1e58-8ffc-91d1-a675bf240e6f)
+15. [Workers Health Insurance — Buyer User Manual (Arabic PDF)](https://www.whi.ae/pdf/WHI%20User%20Manual%20-%20AR.pdf)
+16. [DubaiCare — Mobile App User Guide, January 2024](https://www.whi.ae/pdf/Dubai_Care_Mobile_App_User_Guide_V02.pdf)
+17. [Workers Health Insurance — NE Restricted Network List (XLSX)](https://www.whi.ae/exl/NE%20RESTRICTED%20Network%20List%20%28updated%20March%29.xlsx)
 
 ### Scope and limitations
 
@@ -146,13 +198,14 @@ These remain hypotheses. No job-creation or commercial-opportunity claim is esta
 1. Obtain CBUAE and FCSC source tables and identify the exact definition and denominator behind the 26.1% health-policy increase.
 2. Seek emirate-level counts of insured workers and domestic workers in the five target emirates, with a comparable pre-2025 baseline.
 3. Identify participating insurers and approved suppliers, distinguishing basic-package issuance from other employer group policies.
-4. Seek post-2025 MoHAP e-Claims Post Office metrics using the same definitions as the October 2024 baseline.
-5. Obtain the current e-Claims Post Office technical specifications, version history, onboarding notices and payer/provider integration lists; compare them with the pre-2025 documentation.
-6. Verify directly with MoHAP, the scheme administrator and participating payers whether policies issued under the federal basic scheme are submitted and adjudicated through the e-Claims Post Office, DubaiCare infrastructure, another gateway, or more than one route. Do not infer this from the network name.
-7. Compare the number of connected providers and payers, transaction volumes, rejection/denial rates, turnaround times and remittance workflows at matched dates and with unchanged definitions.
-5. Track official updates to package terms, provider networks and employer compliance guidance.
-6. Sample dated insurer, TPA and provider job postings only as a secondary indicator; do not infer job creation from vacancy counts alone.
-7. Update confidence only when evidence directly measures the target population or operational outcomes.
+4. Request the e-Claims Post Office technical specifications, document versions, schema/code-list release history, onboarding notices and payer/provider integration lists from MoHAP/Riayati.
+5. Request confirmation from Dubai Insurance/DubaiCare/WHI of the legal risk carrier, administrator/TPA, provider-side claim channel and adjudication/remittance route for N5 NE policies.
+6. Obtain redacted workflow confirmation from a sample of N5 NE providers, covering eligibility, authorization, network claim submission, denial/resubmission and remittance.
+7. Verify whether WHI Basic/Premium N5 NE network claims enter MoHAP e-Claims Post Office, another gateway, or a separate DubaiCare/provider-payer route. Require a technical/interface reference or written confirmation; do not infer from app functionality.
+8. Compare 2024, 2025 and 2026 connected entities, transactions, claims, denials and turnaround times using the same definitions.
+9. Track official updates to package terms, provider networks and employer compliance guidance.
+10. Sample dated insurer, TPA and provider job postings only as a secondary indicator; do not infer job creation from vacancy counts alone.
+11. Update confidence only when evidence directly measures the target population or operational outcomes.
 
 **Public-facing summary:** The federal mandatory health-insurance extension took effect on 1 January 2025 for private-sector employees and domestic workers in five Northern Emirates. Early follow-up evidence shows growth in UAE health-insurance policy counts during 2025 and further integration of insurance checks into work-permit processes by 2026. However, the published national figures do not isolate the five-emirate scheme, so its specific enrollment, claims, access and workforce effects remain to be measured.
 
