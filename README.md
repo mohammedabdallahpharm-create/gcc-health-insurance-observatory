@@ -29,6 +29,11 @@ All six country observatories use the same shared workflow. Selecting a country 
 - Supports English and Arabic, including right-to-left layout and accessible map-control labels.
 - Keeps the AI Observatory and timeline concepts out of the primary navigation until those views are ready for release.
 
+## UAE research records
+
+- [UAE Healthcare Strategic Context](./uae-healthcare-strategic-context.md) — baseline context for institutional platforms, regulation, healthcare financing, digital health-data infrastructure and strategic research backlogs. This is context, not a live signal feed.
+- [Signal 001 — Dubai claims and health-data exchange](./signal-001-dubai-claims-and-data-exchange.md) — the first documented UAE observation.
+
 ## Evidence and limitations
 
 The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:10m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC country shapes, markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
