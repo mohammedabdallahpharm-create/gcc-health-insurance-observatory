@@ -166,6 +166,9 @@ These network counts differ between the current ministry page and launch/early-2
 15. [Workers Health Insurance — Buyer User Manual (Arabic PDF)](https://www.whi.ae/pdf/WHI%20User%20Manual%20-%20AR.pdf)
 16. [DubaiCare — Mobile App User Guide, January 2024](https://www.whi.ae/pdf/Dubai_Care_Mobile_App_User_Guide_V02.pdf)
 17. [Workers Health Insurance — NE Restricted Network List (XLSX)](https://www.whi.ae/exl/NE%20RESTRICTED%20Network%20List%20%28updated%20March%29.xlsx)
+18. [WHI — Basic Plan Terms and Benefits (official policy document; Insurance Pool wording and direct-billing terms)](https://www.whi.ae/pdf/Basic-Plan-TOB.pdf)
+19. [The National — UAE's new health insurance scheme: network and package details, 10 January 2025](https://www.thenationalnews.com/news/uae/2025/01/10/health-insurance-scheme/)
+20. [DHA / ISAH D — Dubai Health Insurance Claims Management Policy PD-05-2025](https://www.isahd.ae/content/docs/PD-05-2025%20Dubai%20Health%20Insurance%20Claims%20Management.pdf)
 
 ### Scope and limitations
 
