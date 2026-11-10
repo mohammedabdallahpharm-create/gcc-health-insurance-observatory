@@ -37,6 +37,7 @@ All six country observatories use the same shared workflow. Selecting a country 
 - [Signal 003 — Human oversight in AI-enabled healthcare and health insurance](./signal-003-human-oversight-ai-health-insurance.md) — CBUAE human-oversight guidance for LFIs including insurers, connected to DoH Abu Dhabi healthcare AI requirements; market implementation remains unverified.
 - [Signal 004 — AI Document Intelligence in UAE Health Insurance Operations](./signal-004-ai-document-intelligence-uae-health-insurance.md) — Daman / PureHealth deployment disclosed for Q3 2025; document-processing functions evidenced, while use-case-level operational ownership and decision authority remain unverified.
 - [Signal 005 — AI-Mediated Decision Interfaces in UAE Health Insurance Distribution](./signal-005-ai-mediated-decision-interfaces-uae-health-insurance.md) — UAE-facing conversational AI insurance-advisory and comparison interfaces; provider-described capabilities are documented separately from independently verified performance, market adoption and regulated decision authority.
+- [Signal 006 — AI Readiness and Human Operational Roles in UAE TPA Operations](./signal-006-ai-readiness-human-operational-roles-uae-tpa-operations.md) — Nextcare and MedNet job descriptions document human roles around claims-engine automation and AI-related transformation; a UAE-facing vendor describes provider-side AI agents. No named TPA Agent deployment or production Human–Agent workflow is established.
 
 ## Evidence and limitations
 
