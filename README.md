@@ -29,6 +29,10 @@ All six country observatories use the same shared workflow. Selecting a country 
 - Supports English and Arabic, including right-to-left layout and accessible map-control labels.
 - Keeps the AI Observatory and timeline concepts out of the primary navigation until those views are ready for release.
 
+## 2026 GCC strategic actions register
+
+- [2026 Strategic Actions Register — GCC Health Insurance Market](./2026-strategic-actions-register.md) — working chronology of dated 2026 regulatory, financing, digital, claims, provider-partnership and AI-related actions across GCC markets, with evidence status, 2027 hypotheses and country-level research gaps. Version 0.1; not yet an exhaustive census.
+
 ## UAE research records
 
 - [UAE Healthcare Strategic Context](./uae-healthcare-strategic-context.md) — baseline context for institutional platforms, regulation, healthcare financing, digital health-data infrastructure and strategic research backlogs. This is context, not a live signal feed.
