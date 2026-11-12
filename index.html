@@ -476,6 +476,13 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
 const marketDetails=document.getElementById('marketDetails'),marketSection=document.getElementById('markets');
 const marketDirectory={UAE:{code:'AE / 01',name:'United Arab Emirates',ar:'الإمارات العربية المتحدة',descriptionEn:'Monitoring regulatory, operational and commercial signals across the UAE health insurance ecosystem.',descriptionAr:'رصد الإشارات والتغيرات التنظيمية والتشغيلية والتجارية في منظومة التأمين الصحي الإماراتية.',hasDocumentedSignals:true},KSA:{code:'SA / 02',name:'Saudi Arabia',ar:'المملكة العربية السعودية'},KWT:{code:'KW / 03',name:'Kuwait',ar:'الكويت'},QAT:{code:'QA / 04',name:'Qatar',ar:'قطر'},BHR:{code:'BH / 05',name:'Bahrain',ar:'البحرين'},OMN:{code:'OM / 06',name:'Oman',ar:'عُمان'}};
 let currentMarketCode=null;
+document.getElementById('langBtn').addEventListener('click',()=>{
+ if(!currentMarketCode)return;
+ const market=marketDirectory[currentMarketCode],hasEvidence=market?.hasDocumentedSignals===true;
+ if(!market)return;
+ document.getElementById('marketDescription').textContent=hasEvidence?(arabic?market.descriptionAr:market.descriptionEn):(arabic?'سيُستكمل رصد هذه الدولة مع توثيق الأدلة والإشارات الخاصة بها.':'Country-level monitoring will be populated as evidence is documented.');
+ document.querySelectorAll('.radar-links').forEach(el=>{el.textContent=hasEvidence?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet');});
+});
 function openMarket(code){
  const market=marketDirectory[code];if(!market)return;
  currentMarketCode=code;
