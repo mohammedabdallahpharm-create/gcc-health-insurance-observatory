@@ -113,6 +113,17 @@
 @media(max-width:900px){.radar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intelligence-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.radar-grid{grid-template-columns:1fr}.radar-card{min-height:0;padding:16px}.radar-desc{min-height:0}.radar-detail-body{grid-template-columns:1fr;gap:13px}.radar-metrics{grid-template-columns:repeat(3,1fr)}.radar-metrics .metric{padding:12px 9px}.radar-metrics .metric strong{font-size:18px}.radar-metrics .metric small{font-size:8px;letter-spacing:.04em}.theme-card,.latest-card{padding:17px}}
 
+
+/* Cross-radar intelligence: user-controlled disclosure */
+.cross-radar-toggle{display:flex;align-items:center;gap:18px;padding:0;border:0;background:transparent;text-align:left;color:inherit;cursor:pointer}
+.cross-radar-toggle>span:first-child{display:flex;flex-direction:column;gap:6px}
+.cross-radar-title{font:600 22px var(--display);letter-spacing:-.03em}
+.cross-radar-chevron{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid #31566a;border-radius:50%;color:var(--cyan);font:20px var(--mono);transition:transform .2s,background .2s}
+.cross-radar-toggle:hover .cross-radar-chevron,.cross-radar-toggle:focus-visible .cross-radar-chevron{background:#123044}
+.cross-radar-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:5px;border-radius:4px}
+#crossRadarContent[hidden]{display:none!important}
+@media(max-width:600px){.cross-radar-toggle{gap:11px}.cross-radar-title{font-size:20px}}
+
 </style>
 </head>
 <body>
@@ -145,6 +156,7 @@
 <h1 data-en="Reading the market.<br><em data-en="One signal at a time." data-ar="إشارة واحدة في كل مرة.">One signal at a time.</em>" data-ar="نراقب السوق.<br><em>إشارةً بعد إشارة.</em>">Reading the market.<br><em data-en="One signal at a time." data-ar="إشارة واحدة في كل مرة.">One signal at a time.</em></h1>
 <p data-en="An evidence-led observatory documenting signals, structural changes and emerging patterns across the GCC health insurance ecosystem." data-ar="مرصد قائم على الأدلة يوثّق الإشارات والتغيرات الهيكلية والأنماط الناشئة عبر منظومة التأمين الصحي في دول مجلس التعاون الخليجي.">An evidence-led observatory documenting signals, structural changes and emerging patterns across the GCC health insurance ecosystem.</p></div>
 <div class="hero-note"><strong data-en="OBSERVATORY PRINCIPLE" data-ar="مبدأ المرصد">OBSERVATORY PRINCIPLE <span> / 01</span></strong><span data-en="We do not predict the future." data-ar="لا نتنبأ بالمستقبل.">We do not predict the future.</span><br><span data-en="We document the signals from which it may emerge." data-ar="نوثّق الإشارات التي قد يتشكّل منها.">We document the signals from which it may emerge.</span></div>
+</div>
 </section>
 <section id="markets"><div class="section-head"><div><div class="section-kicker" data-en="02 / SELECT A COUNTRY" data-ar="02 / اختر الدولة">02 / SELECT A COUNTRY</div><h2 data-en="Choose a market to enter its observatory." data-ar="اختر السوق للدخول إلى مرصده.">Choose a market to enter its observatory.</h2><p data-en="Each country has its own monitoring radars. Evidence and signals appear only when documented." data-ar="لكل دولة راداراتها الخاصة. لا تظهر الأدلة والإشارات إلا بعد توثيقها.">Each country has its own monitoring radars. Evidence and signals appear only when documented.</p></div></div><div class="country-grid">
 <div class="country country-link" role="button" tabindex="0" data-market="UAE" aria-controls="marketDetails"><span class="code">AE / 01</span><strong data-en="United Arab Emirates" data-ar="الإمارات العربية المتحدة">United Arab Emirates</strong><small data-en="Open country observatory ↗" data-ar="افتح مرصد الدولة ↗">Open country observatory ↗</small></div>
@@ -172,7 +184,8 @@
 <div class="radar-detail panel" id="radarPreview" hidden aria-live="polite"><div class="panel-head"><div><small id="radarPreviewCode">RADAR DETAIL</small><h3 id="radarPreviewTitle">Select a radar</h3></div><button type="button" class="filter" id="closeRadarPreview" data-en="Close" data-ar="إغلاق">Close</button></div><div class="radar-detail-body"><p id="radarPreviewText"></p><div><small data-en="LINKED SIGNAL RECORDS" data-ar="سجلات الإشارات المرتبطة">LINKED SIGNAL RECORDS</small><strong id="radarPreviewLinks">—</strong><div id="radarSignalList" class="radar-signal-list" aria-live="polite"></div></div><div><small data-en="MONITORING PRIORITY" data-ar="أولوية المراقبة">MONITORING PRIORITY</small><strong id="radarPreviewStatus">—</strong></div></div></div>
 </section>
 <section id="intelligence" class="intelligence-section">
-<div class="section-head"><div><div class="section-kicker" data-en="02 / CROSS-RADAR INTELLIGENCE" data-ar="02 / التحليل المشترك بين الرادارات">02 / CROSS-RADAR INTELLIGENCE</div><h2 data-en="What emerges between the radars?" data-ar="ما الذي يظهر عند تقاطع الرادارات؟">What emerges between the radars?</h2></div><span class="demo" data-en="Analytical theme · Developing" data-ar="موضوع تحليلي · قيد التطور">Analytical theme · Developing</span></div>
+<div class="section-head"><button type="button" class="cross-radar-toggle" id="crossRadarToggle" aria-expanded="false" aria-controls="crossRadarContent"><span><span class="section-kicker" data-en="02 / CROSS-RADAR INTELLIGENCE" data-ar="02 / التحليل المشترك بين الرادارات">02 / CROSS-RADAR INTELLIGENCE</span><span class="cross-radar-title" data-en="What emerges between the radars?" data-ar="ما الذي يظهر عند تقاطع الرادارات؟">What emerges between the radars?</span></span><span class="cross-radar-chevron" aria-hidden="true">＋</span></button><span class="demo" data-en="Analytical theme · Developing" data-ar="موضوع تحليلي · قيد التطور">Analytical theme · Developing</span></div>
+<div id="crossRadarContent" hidden>
 <div class="intelligence-grid">
 <article class="theme-card"><div class="theme-label" data-en="EMERGING THEME / UAE" data-ar="موضوع ناشئ / الإمارات">EMERGING THEME / UAE</div><h3 data-en="ADOC: from outpatient classification to market readiness" data-ar="ADOC: من تصنيف خدمات العيادات الخارجية إلى جاهزية السوق">ADOC: from outpatient classification to market readiness</h3><p data-en="The documented regulatory transition raises connected questions for reimbursement design, provider readiness and payer/TPA claims operations. These are impact pathways to investigate, not proof that every organisation has implemented the change." data-ar="يثير التحول التنظيمي الموثق أسئلة مترابطة حول تصميم السداد وجاهزية مقدمي الخدمة وعمليات المطالبات لدى شركات التأمين ومديري المطالبات. هذه مسارات أثر تستحق البحث، وليست دليلاً على أن جميع المؤسسات نفذت التغيير.">The documented regulatory transition raises connected questions for reimbursement design, provider readiness and payer/TPA claims operations. These are impact pathways to investigate, not proof that every organisation has implemented the change.</p><div class="theme-radars"><span>REGULATORY</span><i>↔</i><span>REIMBURSEMENT</span><i>↔</i><span>PROVIDER</span><i>↔</i><span>PAYER & TPA</span></div><small data-en="CANONICAL RECORD · UAE-HI-008" data-ar="السجل المركزي · UAE-HI-008">CANONICAL RECORD · UAE-HI-008</small></article>
 <article class="latest-card"><div class="theme-label" data-en="LATEST DOCUMENTED SIGNALS" data-ar="أحدث الإشارات الموثقة">LATEST DOCUMENTED SIGNALS</div><button type="button" class="latest-signal" data-open-market="UAE"><span class="latest-id">UAE-HI-008</span><strong data-en="ADOC and market readiness" data-ar="ADOC وجاهزية السوق">ADOC and market readiness</strong><small data-en="Preliminary · Reimbursement / Regulatory" data-ar="أولي · السداد / التنظيم">Preliminary · Reimbursement / Regulatory</small></button><button type="button" class="latest-signal" data-open-market="UAE"><span class="latest-id">UAE-HI-007</span><strong data-en="Governance and ownership gap" data-ar="فجوة الحوكمة وملكية النتائج">Governance and ownership gap</strong><small data-en="Preliminary · Payer & TPA / AI / Workforce" data-ar="أولي · شركات التأمين / الذكاء الاصطناعي / القوى العاملة">Preliminary · Payer & TPA / AI / Workforce</small></button><button type="button" class="latest-signal" data-open-market="UAE"><span class="latest-id">UAE-HI-006</span><strong data-en="AI readiness and human roles" data-ar="الجاهزية للذكاء الاصطناعي والأدوار البشرية">AI readiness and human roles</strong><small data-en="Documented roles · TPA operations" data-ar="أدوار موثقة · عمليات مديري المطالبات">Documented roles · TPA operations</small></button><p class="latest-note" data-en="Opening a signal takes you to the existing UAE research records. Radar associations shown here are an initial mapping and remain subject to review." data-ar="فتح الإشارة ينقلك إلى سجلات أبحاث الإمارات الحالية. ارتباطات الرادارات المعروضة هنا ربط أولي وتظل خاضعة للمراجعة.">Opening a signal takes you to the existing UAE research records. Radar associations shown here are an initial mapping and remain subject to review.</p></article>
@@ -511,6 +524,16 @@ document.querySelectorAll("[data-radar]").forEach(card=>card.addEventListener("c
 }));
 document.getElementById("closeRadarPreview").addEventListener("click",()=>{radarPreview.hidden=true;hideAllSignalRecords();document.querySelectorAll("[data-radar]").forEach(x=>x.classList.remove("selected"));});
 document.querySelectorAll("[data-open-market]").forEach(button=>button.addEventListener("click",()=>openMarket(button.dataset.openMarket)));
+
+
+const crossRadarToggle=document.getElementById("crossRadarToggle");
+const crossRadarContent=document.getElementById("crossRadarContent");
+crossRadarToggle.addEventListener("click",()=>{
+ const expanded=crossRadarToggle.getAttribute("aria-expanded")==="true";
+ crossRadarToggle.setAttribute("aria-expanded",String(!expanded));
+ crossRadarContent.hidden=expanded;
+ crossRadarToggle.querySelector(".cross-radar-chevron").textContent=expanded?"＋":"−";
+});
 
 </script>
 </body></html>
