@@ -89,6 +89,7 @@
 .radar-gap{color:var(--gold)}
 .radar-detail{margin-top:14px}
 .radar-detail-body{padding:18px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:18px;align-items:center}
+.radar-signal-list{display:grid;gap:8px;margin-top:10px}.radar-signal-item{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:start;padding:11px 12px;border:1px solid var(--line);border-radius:5px;background:rgba(12,28,43,.72);color:var(--text);cursor:pointer}.radar-signal-item:hover,.radar-signal-item:focus-visible{border-color:var(--cyan);outline:none}.radar-signal-item strong{font-size:11px;line-height:1.5}.radar-signal-item span{font:9px var(--mono);color:var(--cyan);white-space:nowrap}.radar-signal-empty{font-size:11px;color:var(--muted);line-height:1.65;padding:10px 0}
 .radar-detail-body p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
 .radar-detail-body small{display:block;font:9px var(--mono);color:var(--dim);letter-spacing:.1em;margin-bottom:6px}
 .radar-detail-body strong{font:11px var(--mono);color:var(--cyan)}
@@ -168,7 +169,7 @@
 <button class="radar-card" type="button" data-radar="capital"><span class="radar-card-top"><span class="radar-symbol">◇</span><span class="radar-index">RADAR 06</span></span><strong data-en="Market & Capital" data-ar="السوق ورأس المال">Market & Capital</strong><span class="radar-desc" data-en="Investment, M&A, tenders, strategic partnerships and capital movement." data-ar="الاستثمار والاندماج والاستحواذ والمناقصات والشراكات الاستراتيجية وحركة رأس المال.">Investment, M&A, tenders, strategic partnerships and capital movement.</span><span class="radar-gap" data-en="Research gap · Mapping required" data-ar="فجوة بحثية · يتطلب بناء الخريطة">Research gap · Mapping required</span></button>
 <button class="radar-card" type="button" data-radar="workforce"><span class="radar-card-top"><span class="radar-symbol">✳</span><span class="radar-index">RADAR 07</span></span><strong data-en="Workforce & Opportunity" data-ar="القوى العاملة والفرص">Workforce & Opportunity</strong><span class="radar-desc" data-en="Hiring, leadership changes, skills, new capabilities and outsourcing demand." data-ar="التوظيف والتغييرات القيادية والمهارات والقدرات الجديدة والطلب على الاستعانة بمصادر خارجية.">Hiring, leadership changes, skills, new capabilities and outsourcing demand.</span><span class="radar-links">UAE-HI-006 · UAE-HI-007</span></button>
 </div>
-<div class="radar-detail panel" id="radarPreview" hidden aria-live="polite"><div class="panel-head"><div><small id="radarPreviewCode">RADAR DETAIL</small><h3 id="radarPreviewTitle">Select a radar</h3></div><button type="button" class="filter" id="closeRadarPreview" data-en="Close" data-ar="إغلاق">Close</button></div><div class="radar-detail-body"><p id="radarPreviewText"></p><div><small data-en="LINKED SIGNAL RECORDS" data-ar="سجلات الإشارات المرتبطة">LINKED SIGNAL RECORDS</small><strong id="radarPreviewLinks">—</strong></div><div><small data-en="MONITORING PRIORITY" data-ar="أولوية المراقبة">MONITORING PRIORITY</small><strong id="radarPreviewStatus">—</strong></div></div></div>
+<div class="radar-detail panel" id="radarPreview" hidden aria-live="polite"><div class="panel-head"><div><small id="radarPreviewCode">RADAR DETAIL</small><h3 id="radarPreviewTitle">Select a radar</h3></div><button type="button" class="filter" id="closeRadarPreview" data-en="Close" data-ar="إغلاق">Close</button></div><div class="radar-detail-body"><p id="radarPreviewText"></p><div><small data-en="LINKED SIGNAL RECORDS" data-ar="سجلات الإشارات المرتبطة">LINKED SIGNAL RECORDS</small><strong id="radarPreviewLinks">—</strong><div id="radarSignalList" class="radar-signal-list" aria-live="polite"></div></div><div><small data-en="MONITORING PRIORITY" data-ar="أولوية المراقبة">MONITORING PRIORITY</small><strong id="radarPreviewStatus">—</strong></div></div></div>
 </section>
 <section id="intelligence" class="intelligence-section">
 <div class="section-head"><div><div class="section-kicker" data-en="02 / CROSS-RADAR INTELLIGENCE" data-ar="02 / التحليل المشترك بين الرادارات">02 / CROSS-RADAR INTELLIGENCE</div><h2 data-en="What emerges between the radars?" data-ar="ما الذي يظهر عند تقاطع الرادارات؟">What emerges between the radars?</h2></div><span class="demo" data-en="Analytical theme · Developing" data-ar="موضوع تحليلي · قيد التطور">Analytical theme · Developing</span></div>
@@ -414,7 +415,7 @@ modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('o
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#registryRows tr').forEach(r=>r.style.display=b.dataset.filter==='all'||r.dataset.kind===b.dataset.filter?'':'none')}));
 const marketDetails=document.getElementById('marketDetails'),marketSection=document.getElementById('markets');
 const marketDirectory={UAE:{code:'AE / 01',name:'United Arab Emirates',ar:'الإمارات العربية المتحدة'},KSA:{code:'SA / 02',name:'Saudi Arabia',ar:'المملكة العربية السعودية'},KWT:{code:'KW / 03',name:'Kuwait',ar:'الكويت'},QAT:{code:'QA / 04',name:'Qatar',ar:'قطر'},BHR:{code:'BH / 05',name:'Bahrain',ar:'البحرين'},OMN:{code:'OM / 06',name:'Oman',ar:'عُمان'}};
-function openMarket(code){const market=marketDirectory[code];if(!market)return;document.getElementById('marketCodeLabel').textContent=market.code;document.getElementById('marketTitle').dataset.marketEn=market.name+' Health Insurance Observatory';document.getElementById('marketTitle').dataset.marketAr='مرصد التأمين الصحي · '+market.ar;document.getElementById('marketTitle').textContent=arabic?document.getElementById('marketTitle').dataset.marketAr:document.getElementById('marketTitle').dataset.marketEn;document.getElementById('uaeSignal001').hidden=code!=='UAE';document.getElementById('uaeSignal002').hidden=code!=='UAE';document.getElementById('uaeSignal003').hidden=code!=='UAE';document.getElementById('uaeSignal004').hidden=code!=='UAE';document.getElementById('uaeSignal005').hidden=code!=='UAE';document.getElementById('uaeSignal006').hidden=code!=='UAE';document.getElementById('uaeSignal007').hidden=code!=='UAE';document.getElementById('uaeSignal008').hidden=code!=='UAE';document.getElementById('emptyEvidenceStatus').hidden=code==='UAE';document.getElementById('intelligence').hidden=code!=='UAE';document.querySelectorAll('.radar-links').forEach(el=>{if(!el.dataset.uaeLinks)el.dataset.uaeLinks=el.textContent;el.textContent=code==='UAE'?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet')});marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;marketDetails.scrollIntoView({behavior:'smooth',block:'start'})}function closeMarket(){marketDetails.hidden=true;document.getElementById('intelligence').hidden=false;document.querySelectorAll('.radar-links').forEach(el=>{if(el.dataset.uaeLinks)el.textContent=el.dataset.uaeLinks});marketSection.hidden=false;document.getElementById('signals').hidden=false;document.getElementById('signals').scrollIntoView({behavior:'smooth',block:'start'})}document.getElementById('backToMarkets').addEventListener('click',closeMarket);document.querySelectorAll('.country-link[data-market]').forEach(n=>{n.addEventListener('click',()=>openMarket(n.dataset.market));n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMarket(n.dataset.market)}})});
+function openMarket(code){const market=marketDirectory[code];if(!market)return;document.getElementById('marketCodeLabel').textContent=market.code;document.getElementById('marketTitle').dataset.marketEn=market.name+' Health Insurance Observatory';document.getElementById('marketTitle').dataset.marketAr='مرصد التأمين الصحي · '+market.ar;document.getElementById('marketTitle').textContent=arabic?document.getElementById('marketTitle').dataset.marketAr:document.getElementById('marketTitle').dataset.marketEn;document.querySelectorAll('[id^="uaeSignal"]').forEach(el=>el.hidden=true);document.getElementById('emptyEvidenceStatus').hidden=code==='UAE';document.getElementById('intelligence').hidden=code!=='UAE';document.querySelectorAll('.radar-links').forEach(el=>{if(!el.dataset.uaeLinks)el.dataset.uaeLinks=el.textContent;el.textContent=code==='UAE'?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet')});marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;marketDetails.scrollIntoView({behavior:'smooth',block:'start'})}function closeMarket(){marketDetails.hidden=true;document.getElementById('intelligence').hidden=false;document.querySelectorAll('.radar-links').forEach(el=>{if(el.dataset.uaeLinks)el.textContent=el.dataset.uaeLinks});marketSection.hidden=false;document.getElementById('signals').hidden=false;document.getElementById('signals').scrollIntoView({behavior:'smooth',block:'start'})}document.getElementById('backToMarkets').addEventListener('click',closeMarket);document.querySelectorAll('.country-link[data-market]').forEach(n=>{n.addEventListener('click',()=>openMarket(n.dataset.market));n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMarket(n.dataset.market)}})});
 
 function renderAccurateMap(){
   const svg=document.getElementById('gccMap');
@@ -455,6 +456,42 @@ const radarCatalog={
  capital:{code:"RADAR 06 / MARKET & CAPITAL",title:"Market & Capital",arTitle:"السوق ورأس المال",description:"Monitor investment, M&A, tenders, strategic partnerships, ownership changes and capital movement.",arDescription:"رصد الاستثمار والاندماج والاستحواذ والمناقصات والشراكات الاستراتيجية وتغير الملكية وحركة رأس المال.",links:"No dedicated signal mapped yet",status:"Research gap · transaction and tender census required",arStatus:"فجوة بحثية · يتطلب حصر الصفقات والمناقصات"},
  workforce:{code:"RADAR 07 / WORKFORCE & OPPORTUNITY",title:"Workforce & Opportunity",arTitle:"القوى العاملة والفرص",description:"Track hiring, leadership changes, emerging skills, new operational capabilities and outsourcing demand.",arDescription:"متابعة التوظيف والتغييرات القيادية والمهارات الناشئة والقدرات التشغيلية الجديدة والطلب على الاستعانة بمصادر خارجية.",links:"UAE-HI-006 · UAE-HI-007",status:"Initial mapping · job-market evidence needs expansion",arStatus:"ربط أولي · يحتاج إلى توسيع أدلة سوق العمل"}
 };
+const radarSignalMap={
+ regulatory:["002","008"],
+ reimbursement:["001","008"],
+ payer:["004","006","007"],
+ provider:[],
+ digital:["001","003","004","005","007"],
+ capital:[],
+ workforce:["006","007"]
+};
+const signalTitles={
+ "001":{en:"Claims & health-data exchange in Dubai",ar:"تبادل المطالبات والبيانات الصحية في دبي"},
+ "002":{en:"Federal health-insurance expansion",ar:"توسع التأمين الصحي الاتحادي"},
+ "003":{en:"Human oversight in AI-enabled operations",ar:"الإشراف البشري على عمليات الذكاء الاصطناعي"},
+ "004":{en:"AI Document Intelligence in insurance operations",ar:"ذكاء المستندات الاصطناعي في عمليات التأمين"},
+ "005":{en:"AI-mediated decision interfaces",ar:"واجهات اتخاذ القرار المدعومة بالذكاء الاصطناعي"},
+ "006":{en:"AI readiness and human roles in TPA operations",ar:"جاهزية الذكاء الاصطناعي والأدوار البشرية لدى مديري المطالبات"},
+ "007":{en:"Ownership of AI agents after deployment",ar:"مسؤولية ملكية وكلاء الذكاء الاصطناعي بعد التشغيل"},
+ "008":{en:"ADOC and the 2027 reimbursement shift",ar:"ADOC والتحول في سداد خدمات العيادات الخارجية لعام 2027"}
+};
+function hideAllSignalRecords(){document.querySelectorAll('[id^="uaeSignal"]').forEach(el=>el.hidden=true);}
+function openSignalRecord(id){
+ const target=document.getElementById("uaeSignal"+id);if(!target)return;
+ hideAllSignalRecords();target.hidden=false;radarPreview.hidden=true;
+ target.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function returnToRadarSignals(){
+ hideAllSignalRecords();radarPreview.hidden=false;
+ radarPreview.scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.querySelectorAll('[id^="uaeSignal"]').forEach(panel=>{
+ if(panel.querySelector(".back-to-radar"))return;
+ const back=document.createElement("button");back.type="button";back.className="filter back-to-radar";
+ back.textContent=arabic?"العودة إلى إشارات الرادار ←":"← Back to radar signals";
+ back.addEventListener("click",returnToRadarSignals);
+ const head=panel.querySelector(".panel-head");if(head)head.insertAdjacentElement("afterend",back);
+});
 const radarPreview=document.getElementById("radarPreview");
 document.querySelectorAll("[data-radar]").forEach(card=>card.addEventListener("click",()=>{
  const item=radarCatalog[card.dataset.radar];if(!item)return;
@@ -464,9 +501,15 @@ document.querySelectorAll("[data-radar]").forEach(card=>card.addEventListener("c
  document.getElementById("radarPreviewText").textContent=arabic?item.arDescription:item.description;
  document.getElementById("radarPreviewLinks").textContent=item.links;
  document.getElementById("radarPreviewStatus").textContent=arabic?item.arStatus:item.status;
+ const ids=radarSignalMap[card.dataset.radar]||[];
+ const list=document.getElementById("radarSignalList");list.innerHTML="";
+ document.getElementById("radarPreviewLinks").textContent=ids.length?(arabic?ids.length+" إشارات موثقة مرتبطة":" "+ids.length+" linked signal record"+(ids.length===1?"":"s")):(arabic?"لا توجد إشارات موثقة مرتبطة حالياً":"No documented signal records mapped yet");
+ if(ids.length){ids.forEach(id=>{const button=document.createElement("button");button.type="button";button.className="radar-signal-item";button.innerHTML="<strong></strong><span></span>";button.querySelector("strong").textContent=(arabic?"الإشارة ":"SIGNAL ")+id+" · "+signalTitles[id][arabic?"ar":"en"];button.querySelector("span").textContent=arabic?"فتح السجل ←":"OPEN RECORD ↗";button.addEventListener("click",()=>openSignalRecord(id));list.appendChild(button);});}
+ else{const note=document.createElement("p");note.className="radar-signal-empty";note.textContent=arabic?"لم تُربط إشارات موثقة بهذا الرادار بعد. هذه فجوة بحثية وليست دليلاً على غياب النشاط في السوق.":"No verified signals are mapped to this radar yet. This is a research gap, not evidence that no market activity exists.";list.appendChild(note);}
+ hideAllSignalRecords();
  radarPreview.hidden=false;radarPreview.scrollIntoView({behavior:"smooth",block:"nearest"});
 }));
-document.getElementById("closeRadarPreview").addEventListener("click",()=>{radarPreview.hidden=true;document.querySelectorAll("[data-radar]").forEach(x=>x.classList.remove("selected"));});
+document.getElementById("closeRadarPreview").addEventListener("click",()=>{radarPreview.hidden=true;hideAllSignalRecords();document.querySelectorAll("[data-radar]").forEach(x=>x.classList.remove("selected"));});
 document.querySelectorAll("[data-open-market]").forEach(button=>button.addEventListener("click",()=>openMarket(button.dataset.openMarket)));
 
 </script>
