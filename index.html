@@ -548,7 +548,7 @@ function returnToRadarSignals(){
  hideAllSignalRecords();
  if(signalReturnContext==="cross-radar"){
   radarPreview.hidden=true;
-  if(crossRadarContent.hidden){crossRadarContent.hidden=false;crossRadarToggle.setAttribute("aria-expanded","true");crossRadarToggle.querySelector(".cross-radar-chevron").textContent="−";}
+  if(crossRadarContent.hidden){crossRadarContent.hidden=false;crossRadarContent.style.display="block";crossRadarToggle.setAttribute("aria-expanded","true");crossRadarToggle.querySelector(".cross-radar-chevron").textContent="−";}
   document.getElementById("intelligence").scrollIntoView({behavior:"smooth",block:"start"});
  }else{
   radarPreview.hidden=false;
@@ -586,10 +586,16 @@ document.querySelectorAll("[data-signal-open]").forEach(button=>button.addEventL
 
 const crossRadarToggle=document.getElementById("crossRadarToggle");
 const crossRadarContent=document.getElementById("crossRadarContent");
+// Always start collapsed on a fresh page load.
+crossRadarContent.hidden=true;
+crossRadarContent.style.display="none";
+crossRadarToggle.setAttribute("aria-expanded","false");
+crossRadarToggle.querySelector(".cross-radar-chevron").textContent="＋";
 crossRadarToggle.addEventListener("click",()=>{
  const expanded=crossRadarToggle.getAttribute("aria-expanded")==="true";
  crossRadarToggle.setAttribute("aria-expanded",String(!expanded));
  crossRadarContent.hidden=expanded;
+ crossRadarContent.style.display=expanded?"none":"block";
  crossRadarToggle.querySelector(".cross-radar-chevron").textContent=expanded?"＋":"−";
 });
 
