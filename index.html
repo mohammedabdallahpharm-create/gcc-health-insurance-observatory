@@ -372,6 +372,7 @@
 <div class="detail-note" data-en="Research boundary: this is evidence of AI document-processing deployment, not proof of autonomous claims adjudication. The operational owner and decision-authority chain remain publicly unverified in the sources reviewed." data-ar="حدود البحث: هذا دليل على تطبيق معالجة المستندات بالذكاء الاصطناعي، وليس دليلاً على البت المستقل في المطالبات. ولا تزال هوية المالك التشغيلي وسلسلة صلاحيات اتخاذ القرار غير موثقة علناً في المصادر التي تمت مراجعتها.">Research boundary: this is evidence of AI document-processing deployment, not proof of autonomous claims adjudication. The operational owner and decision-authority chain remain publicly unverified in the sources reviewed.</div>
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-004-ai-document-intelligence-uae-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 004 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 004 ↗">Open full Signal 004 research record ↗</a>
 </div>
+</section>
 <section id="uaeSignal005" class="panel" data-signal-record data-signal-id="UAE-HI-005" data-primary-radar="digital" data-radars="digital" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 005" data-ar="رصد الإمارات · 005">UAE OBSERVATION · 005</h3><small data-en="AI DISTRIBUTION · DECISION INTERFACES" data-ar="التوزيع الرقمي · واجهات اتخاذ القرار">AI DISTRIBUTION · DECISION INTERFACES</small></div>
 <div style="padding:18px">
@@ -499,10 +500,7 @@ function openMarket(code){
  document.querySelectorAll('[data-radar]').forEach(card=>card.classList.remove('selected'));
  document.getElementById('emptyEvidenceStatus').hidden=hasEvidence;
  document.getElementById('intelligence').hidden=!hasEvidence;
- document.querySelectorAll('.radar-links').forEach(el=>{
-  if(!el.dataset.uaeLinks)el.dataset.uaeLinks=el.textContent;
-  el.textContent=hasEvidence?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet');
- });
+ refreshObservatoryCounts();
  marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;
  marketDetails.scrollIntoView({behavior:'smooth',block:'start'});
 }
@@ -510,7 +508,13 @@ function closeMarket(){
  currentMarketCode=null;hideAllSignalRecords();
  marketDetails.hidden=true;document.getElementById('gccHomeIntro').hidden=false;
  document.getElementById('intelligence').hidden=false;
- document.querySelectorAll('.radar-links').forEach(el=>{if(el.dataset.uaeLinks)el.textContent=el.dataset.uaeLinks});
+ document.querySelectorAll('[data-radar]').forEach(card=>{
+  const label=card.querySelector('.radar-links,.radar-gap');
+  if(label&&label.dataset.defaultRadarLabel!==undefined){
+   label.textContent=label.dataset.defaultRadarLabel;
+   label.className=label.dataset.defaultRadarClass||'radar-links';
+  }
+ });
  const preview=document.getElementById('radarPreview');if(preview)preview.hidden=true;
  document.querySelectorAll('[data-radar]').forEach(card=>card.classList.remove('selected'));
  marketSection.hidden=false;document.getElementById('signals').hidden=false;
@@ -631,10 +635,16 @@ function refreshObservatoryCounts(){
  setCount("documentedSignalCount",signals.length);
  setCount("emergingThemeCount",themes.length);
  setCount("radarLensCount",radars.length);
+ // Keep the authored baseline labels until a country is selected.
+ if(!currentMarketCode)return;
  radars.forEach(card=>{
-  const linked=getSignalRecordsForRadar(card.dataset.radar);
   let label=card.querySelector(".radar-links,.radar-gap");
   if(!label){label=document.createElement("span");card.appendChild(label);}
+  if(label.dataset.defaultRadarLabel===undefined){
+   label.dataset.defaultRadarLabel=label.textContent;
+   label.dataset.defaultRadarClass=label.className;
+  }
+  const linked=getSignalRecordsForRadar(card.dataset.radar);
   label.className=linked.length?"radar-links":"radar-gap";
   label.textContent=linked.length
    ?(arabic?linked.length+" سجلات إشارات مرتبطة":linked.length+" linked signal record"+(linked.length===1?"":"s"))
