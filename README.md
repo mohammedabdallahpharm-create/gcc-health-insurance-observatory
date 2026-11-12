@@ -48,6 +48,12 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 **Radar 06 status:** Initial signal discovery completed; six UAE records mapped. Evidence validation, transaction-status monitoring and broader coverage remain in progress. No market-wide investment or outsourcing trend is inferred from this first batch.
 
+
+## UAE TPA ownership map — 2026
+
+- [UAE TPA Ownership Map — 2026](./uae-tpa-ownership-map-2026.md) — partial ownership baseline for the 17 TPAs in the CBUAE September 2026 register; documents Daman, MedNet, Nextcare and Aspire ownership relationships, the historical NAS / Neuron private-equity exit, and unresolved shareholder-evidence gaps.
+- The map is a structural research baseline, not a new 2026 transaction signal. No completed 2026 TPA ownership change was verified in this research batch; absence of public evidence is not proof that no transaction occurred.
+
 ## UAE research records
 
 - [UAE Healthcare Strategic Context](./uae-healthcare-strategic-context.md) — baseline context for institutional platforms, regulation, healthcare financing, digital health-data infrastructure and strategic research backlogs. This is context, not a live signal feed.
