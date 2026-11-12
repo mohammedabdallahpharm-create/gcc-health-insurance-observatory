@@ -474,8 +474,41 @@ document.getElementById('closeModal').addEventListener('click',()=>modal.classLi
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#registryRows tr').forEach(r=>r.style.display=b.dataset.filter==='all'||r.dataset.kind===b.dataset.filter?'':'none')}));
 const marketDetails=document.getElementById('marketDetails'),marketSection=document.getElementById('markets');
-const marketDirectory={UAE:{code:'AE / 01',name:'United Arab Emirates',ar:'الإمارات العربية المتحدة'},KSA:{code:'SA / 02',name:'Saudi Arabia',ar:'المملكة العربية السعودية'},KWT:{code:'KW / 03',name:'Kuwait',ar:'الكويت'},QAT:{code:'QA / 04',name:'Qatar',ar:'قطر'},BHR:{code:'BH / 05',name:'Bahrain',ar:'البحرين'},OMN:{code:'OM / 06',name:'Oman',ar:'عُمان'}};
-function openMarket(code){const market=marketDirectory[code];if(!market)return;document.getElementById('gccHomeIntro').hidden=true;document.getElementById('marketCodeLabel').textContent=market.code;document.getElementById('marketTitle').dataset.marketEn=market.name+' Health Insurance Observatory';document.getElementById('marketTitle').dataset.marketAr='مرصد التأمين الصحي · '+market.ar;document.getElementById('marketTitle').textContent=arabic?document.getElementById('marketTitle').dataset.marketAr:document.getElementById('marketTitle').dataset.marketEn;const marketDescription=document.getElementById('marketDescription');marketDescription.textContent=arabic?'رصد الإشارات والتغيرات التنظيمية والتشغيلية والتجارية في منظومة التأمين الصحي الإماراتية.':'Monitoring regulatory, operational and commercial signals across the UAE health insurance ecosystem.';document.querySelectorAll("[data-signal-record]").forEach(el=>el.hidden=true);document.getElementById('emptyEvidenceStatus').hidden=code==='UAE';document.getElementById('intelligence').hidden=code!=='UAE';document.querySelectorAll('.radar-links').forEach(el=>{if(!el.dataset.uaeLinks)el.dataset.uaeLinks=el.textContent;el.textContent=code==='UAE'?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet')});marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;marketDetails.scrollIntoView({behavior:'smooth',block:'start'})}function closeMarket(){marketDetails.hidden=true;document.getElementById('gccHomeIntro').hidden=false;document.getElementById('intelligence').hidden=false;document.querySelectorAll('.radar-links').forEach(el=>{if(el.dataset.uaeLinks)el.textContent=el.dataset.uaeLinks});marketSection.hidden=false;document.getElementById('signals').hidden=false;document.getElementById('signals').scrollIntoView({behavior:'smooth',block:'start'})}document.getElementById('backToMarkets').addEventListener('click',closeMarket);document.querySelectorAll('.country-link[data-market]').forEach(n=>{n.addEventListener('click',()=>openMarket(n.dataset.market));n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMarket(n.dataset.market)}})});
+const marketDirectory={UAE:{code:'AE / 01',name:'United Arab Emirates',ar:'الإمارات العربية المتحدة',descriptionEn:'Monitoring regulatory, operational and commercial signals across the UAE health insurance ecosystem.',descriptionAr:'رصد الإشارات والتغيرات التنظيمية والتشغيلية والتجارية في منظومة التأمين الصحي الإماراتية.',hasDocumentedSignals:true},KSA:{code:'SA / 02',name:'Saudi Arabia',ar:'المملكة العربية السعودية'},KWT:{code:'KW / 03',name:'Kuwait',ar:'الكويت'},QAT:{code:'QA / 04',name:'Qatar',ar:'قطر'},BHR:{code:'BH / 05',name:'Bahrain',ar:'البحرين'},OMN:{code:'OM / 06',name:'Oman',ar:'عُمان'}};
+let currentMarketCode=null;
+function openMarket(code){
+ const market=marketDirectory[code];if(!market)return;
+ currentMarketCode=code;
+ document.getElementById('gccHomeIntro').hidden=true;
+ document.getElementById('marketCodeLabel').textContent=market.code;
+ const marketTitle=document.getElementById('marketTitle');
+ marketTitle.dataset.marketEn=market.name+' Health Insurance Observatory';
+ marketTitle.dataset.marketAr='مرصد التأمين الصحي · '+market.ar;
+ marketTitle.textContent=arabic?marketTitle.dataset.marketAr:marketTitle.dataset.marketEn;
+ const hasEvidence=market.hasDocumentedSignals===true;
+ document.getElementById('marketDescription').textContent=hasEvidence?(arabic?market.descriptionAr:market.descriptionEn):(arabic?'سيُستكمل رصد هذه الدولة مع توثيق الأدلة والإشارات الخاصة بها.':'Country-level monitoring will be populated as evidence is documented.');
+ hideAllSignalRecords();
+ const preview=document.getElementById('radarPreview');if(preview)preview.hidden=true;
+ document.querySelectorAll('[data-radar]').forEach(card=>card.classList.remove('selected'));
+ document.getElementById('emptyEvidenceStatus').hidden=hasEvidence;
+ document.getElementById('intelligence').hidden=!hasEvidence;
+ document.querySelectorAll('.radar-links').forEach(el=>{
+  if(!el.dataset.uaeLinks)el.dataset.uaeLinks=el.textContent;
+  el.textContent=hasEvidence?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet');
+ });
+ marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;
+ marketDetails.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeMarket(){
+ currentMarketCode=null;hideAllSignalRecords();
+ marketDetails.hidden=true;document.getElementById('gccHomeIntro').hidden=false;
+ document.getElementById('intelligence').hidden=false;
+ document.querySelectorAll('.radar-links').forEach(el=>{if(el.dataset.uaeLinks)el.textContent=el.dataset.uaeLinks});
+ const preview=document.getElementById('radarPreview');if(preview)preview.hidden=true;
+ document.querySelectorAll('[data-radar]').forEach(card=>card.classList.remove('selected'));
+ marketSection.hidden=false;document.getElementById('signals').hidden=false;
+ document.getElementById('signals').scrollIntoView({behavior:'smooth',block:'start'});
+}document.getElementById('backToMarkets').addEventListener('click',closeMarket);document.querySelectorAll('.country-link[data-market]').forEach(n=>{n.addEventListener('click',()=>openMarket(n.dataset.market));n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openMarket(n.dataset.market)}})});
 
 function renderAccurateMap(){
   const svg=document.getElementById('gccMap');
@@ -517,7 +550,9 @@ const radarCatalog={
  workforce:{code:"RADAR 07 / WORKFORCE & OPPORTUNITY",title:"Workforce & Opportunity",arTitle:"القوى العاملة والفرص",description:"Track hiring, leadership changes, emerging skills, new operational capabilities and outsourcing demand.",arDescription:"متابعة التوظيف والتغييرات القيادية والمهارات الناشئة والقدرات التشغيلية الجديدة والطلب على الاستعانة بمصادر خارجية.",status:"Initial mapping · job-market evidence needs expansion",arStatus:"ربط أولي · يحتاج إلى توسيع أدلة سوق العمل"}
 };
 function getSignalRecordsForRadar(radarId){
+ if(currentMarketCode!=="UAE")return [];
  return [...document.querySelectorAll("[data-signal-record]")].filter(record=>
+  record.dataset.signalId?.startsWith("UAE-HI-") &&
   (record.dataset.radars||"").split(",").map(value=>value.trim()).includes(radarId)
  );
 }
