@@ -37,6 +37,17 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 - [ADOC Strategic Transition Dossier — Abu Dhabi, UAE](./uae-adoc-strategic-transition-dossier.md) — ADOC framework and implementation chronology, public-sector requirements, private-sector and ecosystem moves, 2027 impact hypotheses, evidence gaps and source register. Working record v0.1; not a claim that all private-sector actions were caused by ADOC.
 
+## UAE Market & Capital research records
+
+- [Signal 010 — Arada / Reem Hospital acquisition](./signal-010-arada-reem-hospital-acquisition.md) — controlling stake acquisition and announced AED 2bn expansion commitment; deployment remains to be monitored.
+- [Signal 011 — Dubai Investments / CMC Dubai ownership](./signal-011-dubai-investments-cmc-dubai-ownership.md) — completed acquisition of the remaining 80%, increasing ownership to 100%.
+- [Signal 012 — PureHealth / Aspen Clinics](./signal-012-purehealth-aspen-clinics-acquisition.md) — acquisition of six facilities across Abu Dhabi and Al Ain; integration milestones remain to be monitored.
+- [Signal 013 — Burjeel USD 500m Sukuk](./signal-013-burjeel-inaugural-usd500m-sukuk.md) — completed debt-capital issuance; proceeds include refinancing and should not be treated wholly as new expansion capital.
+- [Signal 014 — Dubai Health PPP outsourcing pipeline](./signal-014-dubai-health-ppp-outsourcing-pipeline.md) — laundry and CSSD projects listed in Procurement with AED 280m combined indicative value; no award is established.
+- [Signal 015 — Aster / MENASCO Medcare Royal Hills](./signal-015-aster-medcare-royal-hills-development-partnership.md) — announced AED 350m development partnership for a planned 144-bed hospital.
+
+**Radar 06 status:** Initial signal discovery completed; six UAE records mapped. Evidence validation, transaction-status monitoring and broader coverage remain in progress. No market-wide investment or outsourcing trend is inferred from this first batch.
+
 ## UAE research records
 
 - [UAE Healthcare Strategic Context](./uae-healthcare-strategic-context.md) — baseline context for institutional platforms, regulation, healthcare financing, digital health-data infrastructure and strategic research backlogs. This is context, not a live signal feed.
