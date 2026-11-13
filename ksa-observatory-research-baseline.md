@@ -127,6 +127,16 @@ These are documented events suitable for individual signal records after source 
 - **Open questions:** Final participants and winners; health-insurance-specific solutions; insurer sponsorship; prototype validation; sandbox entry; commercial deployment.
 - **Source:** https://www.ia.gov.sa/en/media-center/news/135
 
+### KSA-HI-004 — Hajj provider accreditation and network readiness (record created)
+- **Announcement date:** 21 May 2026.
+- **Primary radar:** Provider.
+- **Connected radars to test:** Regulatory; Payer & TPA; Reimbursement; Workforce & Opportunity.
+- **Verified fact:** CHI announced accreditation of 260 healthcare providers within its Hajj operational plan, as part of a wider medical network stated to comprise 2,160 providers inside and outside the holy sites.
+- **Scope limit:** The announcement does not establish that the 2,160 providers form a commercial insurer/TPA network, identify the providers, or disclose contracting, payment arrangements or service outcomes.
+- **Open questions:** Provider identities and types; whether 260 are newly accredited; geographic distribution; payer/TPA participation; reimbursement arrangements; capacity and post-Hajj outcomes.
+- **Source:** https://www.chi.gov.sa/MediaCenter/NEWS/Pages/21-05-2026.aspx
+- **Full record:** [KSA-HI-004](./ksa-signal-004-hajj-provider-accreditation-network-readiness.md)
+
 ## 6. Shared seven-radar map — Saudi research questions
 
 1. **Regulatory:** IA/CHI mandate boundaries; Cooperative Health Insurance Law and implementing regulations; mandatory coverage enforcement; product and consumer-protection directives; licensing and supervisory actions.
