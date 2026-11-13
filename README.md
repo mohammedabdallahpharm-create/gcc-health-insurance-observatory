@@ -53,6 +53,10 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 - [Saudi Arabia Health Insurance Observatory — Research Baseline](./ksa-observatory-research-baseline.md) — initial country-specific institutional map, market baseline, NPHIES infrastructure context, dated signal candidates and research gaps. Research cut-off: 13 November 2026. This is a research dossier, not yet a published live Saudi signal registry.
 
+## Saudi Arabia research records
+
+- [KSA-HI-001 — Outpatient Health Insurance Product Without Pre-Approval](./ksa-signal-001-outpatient-product-without-pre-approval.md) — verified IA directive announced 20 August 2026, available from 1 November 2026; implementation and market effects remain under investigation.
+
 ## Evidence and limitations
 
 The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:10m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC country shapes, markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
