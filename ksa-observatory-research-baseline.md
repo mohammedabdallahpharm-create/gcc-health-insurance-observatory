@@ -90,7 +90,7 @@ These are documented events suitable for individual signal records after source 
 - **Source:** https://www.ia.gov.sa/en/Pages/news-details.aspx/123
 - **Full record:** [KSA-HI-001](./ksa-signal-001-outpatient-product-without-pre-approval.md)
 
-### KSA candidate 002 — IA–HUMAIN cooperation on insurance-sector AI
+### KSA-HI-002 — IA–HUMAIN cooperation on insurance-sector AI (record created)
 - **Event/publication date:** 31 August 2026.
 - **Primary radar:** Digital Health & AI.
 - **Connected radars to test:** Regulatory; Market & Capital; Payer & TPA; Workforce & Opportunity.
@@ -98,6 +98,7 @@ These are documented events suitable for individual signal records after source 
 - **Scope limit:** The announcement documents a cooperation agreement and exploratory intent. It does not establish a production deployment, named insurer implementation, live use case, measured benefit or transfer of regulated decision authority to AI.
 - **Open questions:** Governance and data access model; named use cases; participating insurers; procurement/funding; sandbox or production status; human oversight and accountability.
 - **Source:** https://www.ia.gov.sa/en/media-center/news/126
+- **Full record:** [KSA-HI-002](./ksa-signal-002-ia-humain-ai-cooperation.md)
 
 ### KSA candidate 003 — Insurance-sector workforce development programs
 - **Event/publication date:** 28 September 2026.
