@@ -49,6 +49,10 @@ All six country observatories use the same shared workflow. Selecting a country 
 - [Signal 007 — The Governance–Ownership Gap: Who Owns AI Agents After Deployment?](./signal-007-governance-ownership-gap-uae-healthcare-health-insurance.md) — An anonymised UAE healthcare TPA's recruitment descriptions separate AI solution delivery from business-process outcome ownership; Al Wathba has disclosed production Agentic AI in case management; EHS lists an AI physician-assistant initiative. A named post-deployment operational owner is not established in the examined cases.
 - [Signal 008 — ADOC and the Shift from Regulatory Reform to Market Readiness](./signal-008-adoc-market-readiness-uae-health-insurance.md) — DoH's mandatory shadow-billing transition is directly evidenced; adjacent private-sector capabilities are documented separately from unverified ADOC-specific implementation and organisation-level readiness.
 
+## Saudi Arabia research baseline
+
+- [Saudi Arabia Health Insurance Observatory — Research Baseline](./ksa-observatory-research-baseline.md) — initial country-specific institutional map, market baseline, NPHIES infrastructure context, dated signal candidates and research gaps. Research cut-off: 13 November 2026. This is a research dossier, not yet a published live Saudi signal registry.
+
 ## Evidence and limitations
 
 The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:10m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC country shapes, markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
