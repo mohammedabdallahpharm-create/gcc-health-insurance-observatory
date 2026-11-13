@@ -1,6 +1,6 @@
 # Saudi Arabia Health Insurance Observatory — Research Baseline
 
-**Status:** Initial research baseline — not yet published as a live country signal registry  
+**Status:** Initial research baseline; first Saudi signal record documented, country interface not yet populated  
 **Research cut-off:** 13 November 2026  
 **Scope:** Saudi health-insurance ecosystem, with adjacent healthcare financing, providers, digital infrastructure, capital and workforce signals where they materially affect health insurance.
 
@@ -79,7 +79,7 @@ Source: NPHIES Healthcare Financial Services IG, generated 3 December 2025; oper
 
 These are documented events suitable for individual signal records after source and scope checks. They are not yet cross-radar analytical themes.
 
-### KSA candidate 001 — Outpatient product without pre-approval
+### KSA-HI-001 — Outpatient product without pre-approval (record created)
 - **Event/publication date:** 20 August 2026.
 - **Implementation date:** 1 November 2026.
 - **Primary radar:** Regulatory.
@@ -88,6 +88,7 @@ These are documented events suitable for individual signal records after source 
 - **Scope limit:** This is an additional product option, not evidence that all existing policies or all outpatient services have become exempt from prior approval.
 - **Open questions:** Product terms and exclusions; insurer and TPA implementation; provider workflow changes; utilization and claims effects; complaints and beneficiary outcomes; whether adoption differs by employer segment.
 - **Source:** https://www.ia.gov.sa/en/Pages/news-details.aspx/123
+- **Full record:** [KSA-HI-001](./ksa-signal-001-outpatient-product-without-pre-approval.md)
 
 ### KSA candidate 002 — IA–HUMAIN cooperation on insurance-sector AI
 - **Event/publication date:** 31 August 2026.
