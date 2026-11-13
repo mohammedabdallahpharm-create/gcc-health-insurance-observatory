@@ -1,7 +1,7 @@
 # Saudi Arabia Health Insurance Observatory — Research Baseline
 
-**Status:** Initial research baseline; first Saudi signal record documented, country interface not yet populated  
-**Research cut-off:** 13 November 2026  
+**Status:** Saudi evidence base expanded; six individual signal records documented; cross-radar themes remain under test  
+**Research cut-off:** 13 November 2026 (updated evidence review)  
 **Scope:** Saudi health-insurance ecosystem, with adjacent healthcare financing, providers, digital infrastructure, capital and workforce signals where they materially affect health insurance.
 
 ## 1. Research boundary
@@ -137,7 +137,39 @@ These are documented events suitable for individual signal records after source 
 - **Source:** https://www.chi.gov.sa/MediaCenter/NEWS/Pages/21-05-2026.aspx
 - **Full record:** [KSA-HI-004](./ksa-signal-004-hajj-provider-accreditation-network-readiness.md)
 
-## 6. Shared seven-radar map — Saudi research questions
+## 6. Additional evidence review — workforce and innovation (13 November 2026)
+
+### KSA-HI-005 — Insurance workforce development and medical-claims training
+- **Announcement date:** 28 September 2026.
+- **Primary radar:** Workforce & Opportunity.
+- **Connected radars evidenced at curriculum level:** Reimbursement; Payer & TPA; Digital Health & AI.
+- **Verified:** IA, Financial Academy, MHRSD Sector Skills Councils and HRDF announced five graduate programs for more than 125 recent graduates across the financial/insurance sectors. The overall 125+ figure is not the medical-claims cohort size.
+- **Additional primary evidence:** The Financial Academy separately publishes a Medical Insurance Claims Technician Graduate Development Program: 210 days, 348 training hours, planned start 13 December 2026 in Riyadh, with curriculum covering medical-insurance lifecycle, underwriting/pricing, claims assessment, TPA coordination, medical coding, fraud controls, AI for productivity and Power BI. The published page describes the program as fully supported by HRDF and the Academy.
+- **What this adds:** A concrete curriculum-level bridge from Workforce & Opportunity into claims/reimbursement operations, TPA coordination and digital/analytical skills. This is stronger than a generic workforce target.
+- **Not established:** actual cohort size, enrolment/completion, employer placements, retention, job demand or measurable operational impact.
+- **Sources:** IA announcement https://www.ia.gov.sa/en/Pages/news-details.aspx/132 ; Financial Academy announcement https://fa.gov.sa/MediaRoom/News/01a0e7f2-da5f-7d0d-bb07-5b764841daec ; detailed program https://fa.gov.sa/Services/ProgramDetails/27d51daa-eae9-445f-8378-b4c701055ecf
+- **Full record:** [KSA-HI-005](./ksa-signal-005-insurance-workforce-medical-claims-training.md)
+
+### KSA-HI-006 — Insurance Innovation Ecosystem: Voice of the Sector and Hackathon
+- **Key dates:** Voice of the Sector, 29 September 2026; Hackathon announcement, 18 October 2026; hackathon scheduled 12–14 November 2026.
+- **Primary radar:** Market & Capital (sector-wide innovation infrastructure).
+- **Connected radars to test:** Digital Health & AI; Regulatory; Workforce & Opportunity; Payer & TPA; Reimbursement.
+- **Verified:** IA describes an ecosystem comprising Voice of the Sector, hackathon, business incubator, accelerator, Regulatory Sandbox and Perks Platform; the Voice of the Sector routes submissions according to their nature, while the hackathon includes AI/Data, Customer Experience/Digital Services, Embedded/On-Demand Insurance and Mega Events/Mass Gatherings tracks. The 2026 hackathon carries SAR 560,000 in announced prizes and possible follow-on incubation/acceleration.
+- **Additional context:** IA reported a previous insurance hackathon in 2024. This supports the existence of an earlier hackathon precedent, not continuity or successful commercialization of 2026 projects.
+- **Observation-date limit:** On 13 November 2026 the 2026 hackathon is still in progress (12–14 November); winners are scheduled to be recognized during the 16–18 November Global Insurance Conference and Exhibition. Do not record results or downstream deployment before publication.
+- **What this adds:** An institutional idea-intake and potential routing pathway linking innovation, technology and regulatory testing. Health-insurance relevance remains unproven until project-level evidence identifies claims, payer, provider or medical-insurance use cases.
+- **Not established:** team/project identities, health-insurance prototypes, sandbox admission, pilots, procurement, investment or production deployment.
+- **Sources:** IA Voice of the Sector https://www.ia.gov.sa/en/media-center/news/133 ; IA Hackathon https://www.ia.gov.sa/en/media-center/news/135 ; IA Innovation Ecosystem https://il.ia.gov.sa/programs ; IA 2024 Hackathon https://www.ia.gov.sa/en/media-center/news/26
+- **Full record:** [KSA-HI-006](./ksa-signal-006-insurance-innovation-ecosystem-hackathon.md)
+
+### Evidence distinction: workforce program versus innovation ecosystem
+KSA-HI-005 and KSA-HI-006 are distinct mechanisms:
+- KSA-HI-005 develops professional capability and a potential supply of entry-level insurance/medical-claims talent.
+- KSA-HI-006 creates channels for collecting sector challenges, developing solution concepts and potentially testing or supporting selected innovations.
+
+Both align with enabling pillars in the IA's National Insurance Sector Strategy, but no shared governance, participant cohort, employer placement, project team, or direct operational linkage between the two has been established. Treat them as parallel strategic initiatives, not a single integrated pipeline.
+
+## 7. Shared seven-radar map — Saudi research questions
 
 1. **Regulatory:** IA/CHI mandate boundaries; Cooperative Health Insurance Law and implementing regulations; mandatory coverage enforcement; product and consumer-protection directives; licensing and supervisory actions.
 2. **Reimbursement:** NPHIES transaction rules; Saudi Billing System; coding and clinical standards; prior authorization; claims submission, rejection, resubmission and payment; DRG/value-based payment.
@@ -147,7 +179,7 @@ These are documented events suitable for individual signal records after source 
 6. **Market & Capital:** market growth and concentration; solvency and profitability; M&A; investment; new entrants; health-financing reform; private-sector participation and major tenders.
 7. **Workforce & Opportunity:** insurance-sector employment targets; health-claims and TPA roles; actuarial and data skills; AI governance and product roles; localization and training outcomes; outsourcing demand.
 
-## 7. First analytical questions — not conclusions
+## 8. First analytical questions — not conclusions
 
 - Does the outpatient no-pre-approval option shift work from pre-service authorization toward post-service claims controls, clinical audit, utilization review or provider contracting? This requires operational evidence.
 - Does NPHIES' high transaction coverage coexist with fragmented decision ownership across insurers, TPAs and providers? Map responsibilities before making a claim.
@@ -155,7 +187,7 @@ These are documented events suitable for individual signal records after source 
 - Does the IA–HUMAIN agreement produce named, governed insurance use cases, or remain an enabling partnership?
 - Does high health-insurance market concentration create dependencies in claims administration, provider networks, data infrastructure or service continuity? Identify specific evidence before interpreting.
 
-## 8. Priority source register
+## 9. Priority source register
 
 ### Primary / official
 - Insurance Authority — National Insurance Sector Strategy: https://www.ia.gov.sa/en/national-insurance-sector-strategy

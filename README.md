@@ -59,6 +59,8 @@ All six country observatories use the same shared workflow. Selecting a country 
 - [KSA-HI-002 — Insurance Authority–HUMAIN AI Cooperation](./ksa-signal-002-ia-humain-ai-cooperation.md) — sector-wide AI/data cooperation announced 31 August 2026; health-specific deployment and implementation remain unverified.
 - [KSA-HI-003 — NPHIES Clinical Coding Validation Edits](./ksa-signal-003-nphies-clinical-coding-validation-edits.md) — IA announcement of five clinical coding edits on 27 February 2026; participant-level adoption and operational outcomes remain unverified.
 - [KSA-HI-004 — Hajj 2026 Provider Accreditation and Network Readiness](./ksa-signal-004-hajj-provider-accreditation-network-readiness.md) — CHI announced accreditation of 260 providers within a 2,160-provider seasonal medical network; payer contracting and commercial insurer-network participation remain unverified.
+- [KSA-HI-005 — Insurance Workforce Development and Medical-Claims Training Pipeline](./ksa-signal-005-insurance-workforce-medical-claims-training.md) — multi-partner graduate initiative and a detailed medical-claims technician curriculum; enrolment and employment outcomes remain unverified.
+- [KSA-HI-006 — Insurance Innovation Ecosystem: Voice of the Sector and Hackathon](./ksa-signal-006-insurance-innovation-ecosystem-hackathon.md) — IA innovation channels and a hackathon-to-incubation/sandbox pathway; 2026 event outcomes and health-insurance-specific projects remain unverified.
 
 ## Evidence and limitations
 
