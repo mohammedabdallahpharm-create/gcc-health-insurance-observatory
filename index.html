@@ -475,14 +475,16 @@ document.getElementById('closeModal').addEventListener('click',()=>modal.classLi
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('#registryRows tr').forEach(r=>r.style.display=b.dataset.filter==='all'||r.dataset.kind===b.dataset.filter?'':'none')}));
 const marketDetails=document.getElementById('marketDetails'),marketSection=document.getElementById('markets');
-const marketDirectory={UAE:{code:'AE / 01',name:'United Arab Emirates',ar:'الإمارات العربية المتحدة',descriptionEn:'Monitoring regulatory, operational and commercial signals across the UAE health insurance ecosystem.',descriptionAr:'رصد الإشارات والتغيرات التنظيمية والتشغيلية والتجارية في منظومة التأمين الصحي الإماراتية.',hasDocumentedSignals:true},KSA:{code:'SA / 02',name:'Saudi Arabia',ar:'المملكة العربية السعودية'},KWT:{code:'KW / 03',name:'Kuwait',ar:'الكويت'},QAT:{code:'QA / 04',name:'Qatar',ar:'قطر'},BHR:{code:'BH / 05',name:'Bahrain',ar:'البحرين'},OMN:{code:'OM / 06',name:'Oman',ar:'عُمان'}};
+const marketDirectory={UAE:{code:'AE / 01',name:'United Arab Emirates',ar:'الإمارات العربية المتحدة',descriptionEn:'Monitoring regulatory, operational and commercial signals across the UAE health insurance ecosystem.',descriptionAr:'رصد الإشارات والتغيرات التنظيمية والتشغيلية والتجارية في منظومة التأمين الصحي الإماراتية.',hasDocumentedSignals:true,hasRadarRecords:true,hasCrossRadarAnalysis:true},KSA:{code:'SA / 02',name:'Saudi Arabia',ar:'المملكة العربية السعودية',descriptionEn:'Saudi health-insurance research has documented four initial signals. Country-specific radar records and analysis are being integrated separately; UAE findings are not applied to this market.',descriptionAr:'تم توثيق أربع إشارات بحثية أولية للتأمين الصحي السعودي. يجري دمج سجلات الرادارات والتحليل الخاص بالسعودية بصورة مستقلة، ولا تُسقط نتائج الإمارات على هذا السوق.',hasDocumentedSignals:true,hasRadarRecords:false,hasCrossRadarAnalysis:false},KWT:{code:'KW / 03',name:'Kuwait',ar:'الكويت'},QAT:{code:'QA / 04',name:'Qatar',ar:'قطر'},BHR:{code:'BH / 05',name:'Bahrain',ar:'البحرين'},OMN:{code:'OM / 06',name:'Oman',ar:'عُمان'}};
 let currentMarketCode=null;
 document.getElementById('langBtn').addEventListener('click',()=>{
  if(!currentMarketCode)return;
  const market=marketDirectory[currentMarketCode],hasEvidence=market?.hasDocumentedSignals===true;
  if(!market)return;
  document.getElementById('marketDescription').textContent=hasEvidence?(arabic?market.descriptionAr:market.descriptionEn):(arabic?'سيُستكمل رصد هذه الدولة مع توثيق الأدلة والإشارات الخاصة بها.':'Country-level monitoring will be populated as evidence is documented.');
- document.querySelectorAll('.radar-links').forEach(el=>{el.textContent=hasEvidence?el.dataset.uaeLinks:(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet');});
+ document.querySelectorAll('.radar-links').forEach(el=>{el.textContent=hasEvidence?(currentMarketCode==='UAE'?el.dataset.uaeLinks:(arabic?'لا توجد سجلات إشارات مدمجة في الرادارات بعد':'No signal records integrated into the radars yet')):(arabic?'لا توجد إشارات موثقة خاصة بالدولة بعد':'No country-specific signals documented yet');});
+ const status=document.getElementById('emptyEvidenceStatus');
+ if(status&&currentMarketCode==='KSA'){status.querySelector('.panel-head small').textContent=arabic?'البحث موثق · دمج الواجهة قيد التنفيذ':'RESEARCH DOCUMENTED · INTERFACE INTEGRATION IN PROGRESS';status.querySelector(':scope > p').textContent=arabic?'توجد أربعة سجلات بحثية سعودية موثقة في مستودع المشروع. لم تُدمج بعد كسجلات تفاعلية داخل الرادارات. لذلك لا تظهر حالياً روابط إشارات سعودية في بطاقات الرادار.':'Four Saudi research records are documented in the project repository. They have not yet been integrated as interactive radar records, so Saudi signal links are not displayed in the radar cards yet.';}
 });
 function openMarket(code){
  const market=marketDirectory[code];if(!market)return;
@@ -498,8 +500,14 @@ function openMarket(code){
  hideAllSignalRecords();
  const preview=document.getElementById('radarPreview');if(preview)preview.hidden=true;
  document.querySelectorAll('[data-radar]').forEach(card=>card.classList.remove('selected'));
- document.getElementById('emptyEvidenceStatus').hidden=hasEvidence;
- document.getElementById('intelligence').hidden=!hasEvidence;
+ const hasRadarRecords=market.hasRadarRecords===true;
+ document.getElementById('emptyEvidenceStatus').hidden=hasRadarRecords;
+ document.getElementById('intelligence').hidden=market.hasCrossRadarAnalysis!==true;
+ if(code==='KSA'){
+  const status=document.getElementById('emptyEvidenceStatus');
+  status.querySelector('.panel-head small').textContent=arabic?'البحث موثق · دمج الواجهة قيد التنفيذ':'RESEARCH DOCUMENTED · INTERFACE INTEGRATION IN PROGRESS';
+  status.querySelector(':scope > p').textContent=arabic?'توجد أربعة سجلات بحثية سعودية موثقة في مستودع المشروع. لم تُدمج بعد كسجلات تفاعلية داخل الرادارات. لذلك لا تظهر حالياً روابط إشارات سعودية في بطاقات الرادار.':'Four Saudi research records are documented in the project repository. They have not yet been integrated as interactive radar records, so Saudi signal links are not displayed in the radar cards yet.';
+ }
  refreshObservatoryCounts();
  marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;
  marketDetails.scrollIntoView({behavior:'smooth',block:'start'});
