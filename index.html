@@ -159,6 +159,25 @@
 @media(max-width:900px){.cross-radar-grid{grid-template-columns:1fr}.cross-radar-intro{grid-template-columns:1fr}.cross-radar-stats{max-width:460px}}
 @media(max-width:600px){.cross-theme-card{padding:15px}.cross-theme-card h3{font-size:17px}.cross-theme-columns{grid-template-columns:1fr;gap:10px}.cross-theme-watch{flex-direction:column;gap:5px}.cross-radar-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.cross-radar-stats div{padding:4px 7px}.cross-radar-stats strong{font-size:22px}.cross-theme-top{gap:5px}}
 
+
+/* Evidence status overview — record-level, source-qualified summary */
+.evidence-status{margin:0 0 26px}.evidence-status .panel-head{align-items:flex-start;gap:18px}.evidence-status .panel-head>div{min-width:0}
+.evidence-status .panel-head h3{font:600 17px var(--display);margin:5px 0 4px}.evidence-status .panel-head p{font:11px var(--sans);line-height:1.6;color:var(--muted);margin:0;max-width:760px}
+.evidence-status-body{padding:16px 18px 18px}.evidence-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.evidence-metric{min-width:0;text-align:left;background:#0a1a2a;border:1px solid var(--line);border-radius:6px;padding:14px 15px;display:flex;flex-direction:column;gap:5px;transition:border-color .18s,background .18s}
+.evidence-metric:hover,.evidence-metric:focus-visible{border-color:var(--cyan);background:#102638;outline:none}.evidence-metric strong{font:600 25px var(--display);letter-spacing:-.04em;color:var(--text)}
+.evidence-metric span{font:600 11px var(--sans);color:#dce8f1}.evidence-metric small{font:9px var(--mono);color:var(--dim);line-height:1.45}
+.evidence-metric[data-evidence-filter="verified"] strong{color:var(--cyan)}.evidence-metric[data-evidence-filter="partial"] strong{color:var(--gold)}.evidence-metric[data-evidence-filter="open"] strong{color:var(--blue)}
+.evidence-method{margin:13px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:10px;line-height:1.7;color:var(--muted)}
+.evidence-results{margin-top:14px;border-top:1px solid var(--line);padding-top:13px}.evidence-results-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.evidence-results-head strong{font:11px var(--mono);letter-spacing:.06em;color:var(--cyan)}.evidence-result-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.evidence-result-item{min-width:0;text-align:left;padding:10px 12px;background:#0a1928;border:1px solid #1a3044;border-radius:5px;display:flex;flex-direction:column;gap:5px}
+.evidence-result-item:hover,.evidence-result-item:focus-visible{border-color:#4b9d9a;outline:none}.evidence-result-title{font-size:11px;font-weight:600;line-height:1.5;color:var(--text)}
+.evidence-result-meta{font:9px var(--mono);color:var(--muted);display:flex;gap:7px;flex-wrap:wrap}.evidence-result-status.verified{color:var(--cyan)}.evidence-result-status.partial{color:var(--gold)}
+.evidence-empty{font-size:11px;color:var(--muted);padding:8px 0}
+@media(max-width:760px){.evidence-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.evidence-status .panel-head{flex-direction:column}.evidence-status-body{padding:12px}.evidence-metric{padding:12px}.evidence-metric strong{font-size:22px}.evidence-result-list{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -205,6 +224,24 @@
 
 <section id="marketDetails" class="market-detail" hidden>
 <div class="section-head"><div><div class="section-kicker"><span id="marketCodeLabel">GCC / MARKET</span> · <span data-en="COUNTRY OBSERVATORY" data-ar="مرصد الدولة">COUNTRY OBSERVATORY</span></div><h2 id="marketTitle">Country Health Insurance Observatory</h2><p id="marketDescription" class="market-intro" data-en="Country-level monitoring of documented signals, structural changes and emerging market patterns." data-ar="رصد على مستوى الدولة للإشارات الموثقة والتغيرات الهيكلية والأنماط الناشئة في السوق.">Country-level monitoring of documented signals, structural changes and emerging market patterns.</p></div><button class="filter" id="backToMarkets" type="button" data-en="← Back to GCC Signal Map" data-ar="العودة إلى خريطة إشارات الخليج ←">← Back to GCC Signal Map</button></div>
+
+<section id="evidenceStatus" class="panel evidence-status" hidden aria-labelledby="evidenceStatusTitle">
+ <div class="panel-head"><div>
+  <small data-en="UAE / EVIDENCE REGISTER" data-ar="الإمارات / سجل الأدلة">UAE / EVIDENCE REGISTER</small>
+  <h3 id="evidenceStatusTitle" data-en="Evidence status" data-ar="حالة الأدلة">Evidence status</h3>
+  <p data-en="A record-level view of what the evidence directly supports, what remains scope-limited, and which records still contain open questions." data-ar="عرض على مستوى السجلات لما تدعمه الأدلة مباشرة، وما يظل محدود النطاق، والسجلات التي ما زالت تحتوي على أسئلة مفتوحة.">A record-level view of what the evidence directly supports, what remains scope-limited, and which records still contain open questions.</p>
+ </div><span class="demo" id="evidenceAssessmentLabel" data-en="15 UAE records assessed" data-ar="تم تقييم 15 سجلاً إماراتياً">15 UAE records assessed</span></div>
+ <div class="evidence-status-body"><div class="evidence-metrics">
+  <button class="evidence-metric" type="button" data-evidence-filter="all"><strong id="evidenceTotal">00</strong><span data-en="Registered signals" data-ar="إشارات مسجلة">Registered signals</span><small data-en="All UAE signal records" data-ar="جميع سجلات إشارات الإمارات">All UAE signal records</small></button>
+  <button class="evidence-metric" type="button" data-evidence-filter="verified"><strong id="evidenceVerified">00</strong><span data-en="Core claims documented" data-ar="الادعاءات الأساسية موثقة">Core claims documented</span><small data-en="Event or policy supported by direct evidence" data-ar="الحدث أو السياسة مدعومان بأدلة مباشرة">Event or policy supported by direct evidence</small></button>
+  <button class="evidence-metric" type="button" data-evidence-filter="partial"><strong id="evidencePartial">00</strong><span data-en="Scope-limited evidence" data-ar="أدلة محدودة النطاق">Scope-limited evidence</span><small data-en="Disclosure, indirect support or execution still open" data-ar="إفصاح أو دعم غير مباشر أو تنفيذ لم يُحسم">Disclosure, indirect support or execution still open</small></button>
+  <button class="evidence-metric" type="button" data-evidence-filter="open"><strong id="evidenceOpen">00</strong><span data-en="Open questions" data-ar="أسئلة مفتوحة">Open questions</span><small data-en="Records with an explicit unresolved test" data-ar="سجلات تتضمن اختباراً لم يُحسم بعد">Records with an explicit unresolved test</small></button>
+ </div>
+ <p class="evidence-method" data-en="Method: “Core claims documented” means primary or authoritative evidence supports the stated event or policy; it does not validate downstream impact or implementation outcomes. “Scope-limited” means important operational details, independent validation or execution remain unresolved. Open questions are counted by signal record, not by the number of individual questions. Evidence freshness is not scored yet because a consistent last-verified date is not recorded across all 15 records." data-ar="المنهجية: «الادعاءات الأساسية موثقة» تعني أن أدلة أولية أو رسمية تدعم الحدث أو السياسة المذكورين؛ ولا تعني إثبات الأثر اللاحق أو نتائج التنفيذ. «أدلة محدودة النطاق» تعني أن تفاصيل تشغيلية مهمة أو تحققاً مستقلاً أو التنفيذ ما زالت غير محسومة. تُحسب الأسئلة المفتوحة على مستوى سجل الإشارة، وليس بعدد الأسئلة الفردية. لم نقِس حداثة الأدلة بعد، لعدم تسجيل تاريخ آخر تحقق بصورة موحدة في السجلات الـ15.">Method: “Core claims documented” means primary or authoritative evidence supports the stated event or policy; it does not validate downstream impact or implementation outcomes. “Scope-limited” means important operational details, independent validation or execution remain unresolved. Open questions are counted by signal record, not by the number of individual questions. Evidence freshness is not scored yet because a consistent last-verified date is not recorded across all 15 records.</p>
+ <div class="evidence-results" id="evidenceResults" hidden><div class="evidence-results-head"><strong id="evidenceResultsTitle">ALL UAE SIGNAL RECORDS</strong><button class="filter" type="button" id="closeEvidenceResults" data-en="Close" data-ar="إغلاق">Close</button></div><div class="evidence-result-list" id="evidenceResultList"></div></div>
+ </div>
+</section>
+
 <section id="radars" class="radar-section">
 <div class="section-head"><div><div class="section-kicker" data-en="01 / RADAR NETWORK" data-ar="01 / شبكة الرادارات">01 / RADAR NETWORK</div><h2 data-en="Seven lenses. One connected market." data-ar="سبع زوايا للرصد. سوق مترابط واحد.">Seven lenses. One connected market.</h2><p data-en="Select a radar to inspect its monitoring scope and the current signal links." data-ar="اختر راداراً لاستعراض نطاق المراقبة والإشارات المرتبطة به حالياً.">Select a radar to inspect its monitoring scope and the current signal links.</p></div><span class="demo" data-en="Initial mapping · Review in progress" data-ar="ربط أولي · قيد المراجعة">Initial mapping · Review in progress</span></div>
 <div class="radar-grid">
@@ -255,7 +292,7 @@
 </div>
 <div class="flow-continuity"><span class="continuity-mark">↻</span><div><b data-en="Continuous learning · Emerging Themes" data-ar="تعلم مستمر · الموضوعات الناشئة">Continuous learning · Emerging Themes</b><p data-en="Documented signals accumulate over time to reveal recurring patterns, emerging themes and changing market direction. New evidence can update any earlier stage." data-ar="تتراكم الإشارات الموثقة بمرور الوقت لكشف الأنماط المتكررة والموضوعات الناشئة واتجاهات السوق المتغيرة. ويمكن للأدلة الجديدة تحديث أي مرحلة سابقة.">Documented signals accumulate over time to reveal recurring patterns, emerging themes and changing market direction. New evidence can update any earlier stage.</p></div></div>
 <div class="framework-foot" data-en="The same workflow applies to all six GCC markets. Observation categories are assigned to each signal after discovery; they do not limit what the observatory can detect. AI may assist discovery and analysis, while evidence verification and final judgment remain human responsibilities." data-ar="يُطبّق التدفق نفسه على أسواق الخليج الستة. تُصنّف كل إشارة ضمن محاور الرصد بعد اكتشافها؛ ولا تُستخدم المحاور لتقييد ما يمكن للمرصد اكتشافه. يمكن للذكاء الاصطناعي المساعدة في الاكتشاف والتحليل، بينما يظل التحقق من الأدلة والحكم النهائي مسؤولية الإنسان.">The same workflow applies to all six GCC markets. Observation categories are assigned to each signal after discovery; they do not limit what the observatory can detect. AI may assist discovery and analysis, while evidence verification and final judgment remain human responsibilities.</div>
-</div><section id="uaeSignal001" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-001" data-primary-radar="reimbursement" data-radars="reimbursement,digital" hidden style="margin:18px 0 22px">
+</div><section id="uaeSignal001" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-001" data-evidence-status="verified" data-evidence-type="regulatory-data-exchange" data-source-quality="primary" data-open-question="true" data-primary-radar="reimbursement" data-radars="reimbursement,digital" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 001" data-ar="رصد الإمارات · 001">UAE OBSERVATION · 001</h3><small data-en="DUBAI · PRELIMINARY OBSERVATION" data-ar="دبي · ملاحظة أولية">DUBAI · PRELIMINARY OBSERVATION</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="CLAIMS & HEALTH-DATA EXCHANGE" data-ar="تبادل المطالبات والبيانات الصحية">CLAIMS & HEALTH-DATA EXCHANGE</div>
@@ -278,7 +315,7 @@
 <a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/main/signal-001-dubai-claims-and-data-exchange.md" target="_blank" rel="noopener" data-en="Open full signal record ↗" data-ar="فتح سجل الإشارة الكامل ↗">Open full signal record ↗</a>
 </div></section>
 
-<section id="uaeSignal002" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-002" data-primary-radar="regulatory" data-radars="regulatory" hidden style="margin:18px 0 22px">
+<section id="uaeSignal002" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-002" data-evidence-status="verified" data-evidence-type="policy-operating-infrastructure" data-source-quality="primary" data-open-question="true" data-primary-radar="regulatory" data-radars="regulatory" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 002" data-ar="رصد الإمارات · 002">UAE OBSERVATION · 002</h3><small data-en="FIVE NORTHERN EMIRATES · POLICY IMPLEMENTATION" data-ar="الإمارات الشمالية الخمس · تنفيذ السياسة">FIVE NORTHERN EMIRATES · POLICY IMPLEMENTATION</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="MANDATORY HEALTH INSURANCE · CLAIMS INFRASTRUCTURE" data-ar="التأمين الصحي الإلزامي · بنية المطالبات">MANDATORY HEALTH INSURANCE · CLAIMS INFRASTRUCTURE</div>
@@ -327,7 +364,7 @@
 </div></section>
 
 
-<section id="uaeSignal003" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-003" data-primary-radar="digital" data-radars="digital" hidden style="margin:18px 0 22px">
+<section id="uaeSignal003" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-003" data-evidence-status="verified" data-evidence-type="regulatory-ai-governance" data-source-quality="primary" data-open-question="true" data-primary-radar="digital" data-radars="digital" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 003" data-ar="رصد الإمارات · 003">UAE OBSERVATION · 003</h3><small data-en="AI GOVERNANCE · HUMAN OVERSIGHT" data-ar="حوكمة الذكاء الاصطناعي · الرقابة البشرية">AI GOVERNANCE · HUMAN OVERSIGHT</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="AI IN HEALTHCARE & HEALTH INSURANCE" data-ar="الذكاء الاصطناعي في الرعاية الصحية والتأمين الصحي">AI IN HEALTHCARE & HEALTH INSURANCE</div>
@@ -351,7 +388,7 @@
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-003-human-oversight-ai-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 003 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 003 ↗">Open full Signal 003 research record ↗</a>
 </div></section>
 
-<section id="uaeSignal004" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-004" data-primary-radar="payer" data-radars="payer,digital" hidden style="margin:18px 0 22px">
+<section id="uaeSignal004" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-004" data-evidence-status="verified" data-evidence-type="operational-ai-disclosure" data-source-quality="primary" data-open-question="true" data-primary-radar="payer" data-radars="payer,digital" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 004" data-ar="رصد الإمارات · 004">UAE OBSERVATION · 004</h3><small data-en="AI ADOPTION · DOCUMENT INTELLIGENCE" data-ar="تبنّي الذكاء الاصطناعي · ذكاء المستندات">AI ADOPTION · DOCUMENT INTELLIGENCE</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="AI IN HEALTH INSURANCE OPERATIONS" data-ar="الذكاء الاصطناعي في عمليات التأمين الصحي">AI IN HEALTH INSURANCE OPERATIONS</div>
@@ -373,7 +410,7 @@
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-004-ai-document-intelligence-uae-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 004 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 004 ↗">Open full Signal 004 research record ↗</a>
 </div>
 </section>
-<section id="uaeSignal005" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-005" data-primary-radar="digital" data-radars="digital" hidden style="margin:18px 0 22px">
+<section id="uaeSignal005" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-005" data-evidence-status="partial" data-evidence-type="product-disclosure" data-source-quality="mixed" data-open-question="true" data-primary-radar="digital" data-radars="digital" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 005" data-ar="رصد الإمارات · 005">UAE OBSERVATION · 005</h3><small data-en="AI DISTRIBUTION · DECISION INTERFACES" data-ar="التوزيع الرقمي · واجهات اتخاذ القرار">AI DISTRIBUTION · DECISION INTERFACES</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="AI AT THE CUSTOMER DECISION INTERFACE" data-ar="الذكاء الاصطناعي عند واجهة قرار العميل">AI AT THE CUSTOMER DECISION INTERFACE</div>
@@ -396,7 +433,7 @@
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-005-ai-mediated-decision-interfaces-uae-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 005 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 005 ↗">Open full Signal 005 research record ↗</a>
 </div></section>
 
-<section id="uaeSignal006" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-006" data-primary-radar="payer" data-radars="payer,workforce" hidden style="margin:18px 0 22px">
+<section id="uaeSignal006" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-006" data-evidence-status="partial" data-evidence-type="workforce-role-signals" data-source-quality="mixed" data-open-question="true" data-primary-radar="payer" data-radars="payer,workforce" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 006" data-ar="رصد الإمارات · 006">UAE OBSERVATION · 006</h3><small data-en="TPA OPERATIONS · AI READINESS" data-ar="عمليات شركات إدارة المطالبات · الجاهزية للذكاء الاصطناعي">TPA OPERATIONS · AI READINESS</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="HUMAN OPERATIONAL ROLES AROUND AUTOMATION" data-ar="الأدوار التشغيلية البشرية حول الأتمتة">HUMAN OPERATIONAL ROLES AROUND AUTOMATION</div>
@@ -411,7 +448,7 @@
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-006-ai-readiness-human-operational-roles-uae-tpa-operations.md" target="_blank" rel="noopener" data-en="Open full Signal 006 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 006 ↗">Open full Signal 006 research record ↗</a>
 </div></section>
 
-<section id="uaeSignal007" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-007" data-primary-radar="payer" data-radars="payer,digital,workforce" hidden style="margin:18px 0 22px">
+<section id="uaeSignal007" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-007" data-evidence-status="partial" data-evidence-type="governance-workforce-signals" data-source-quality="mixed" data-open-question="true" data-primary-radar="payer" data-radars="payer,digital,workforce" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 007" data-ar="رصد الإمارات · 007">UAE OBSERVATION · 007</h3><small data-en="HEALTHCARE · HEALTH INSURANCE · AGENTIC AI" data-ar="الرعاية الصحية · التأمين الصحي · الوكلاء الذكيون">HEALTHCARE · HEALTH INSURANCE · AGENTIC AI</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="THE GOVERNANCE–OWNERSHIP GAP" data-ar="فجوة الحوكمة والملكية التشغيلية">THE GOVERNANCE–OWNERSHIP GAP</div>
@@ -426,7 +463,7 @@
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-007-governance-ownership-gap-uae-healthcare-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 007 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 007 ↗">Open full Signal 007 research record ↗</a>
 </div></section>
 
-<section id="uaeSignal008" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-008" data-primary-radar="reimbursement" data-radars="regulatory,reimbursement" hidden style="margin:18px 0 22px">
+<section id="uaeSignal008" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-008" data-evidence-status="verified" data-evidence-type="reimbursement-regulatory-transition" data-source-quality="primary" data-open-question="true" data-primary-radar="reimbursement" data-radars="regulatory,reimbursement" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 008" data-ar="رصد الإمارات · 008">UAE OBSERVATION · 008</h3><small data-en="REGULATION · OUTPATIENT REIMBURSEMENT · MARKET READINESS" data-ar="التنظيم · سداد خدمات العيادات الخارجية · جاهزية السوق">REGULATION · OUTPATIENT REIMBURSEMENT · MARKET READINESS</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="FROM REGULATORY REFORM TO MARKET READINESS" data-ar="من الإصلاح التنظيمي إلى جاهزية السوق">FROM REGULATORY REFORM TO MARKET READINESS</div>
@@ -441,7 +478,7 @@
 <a href="https://gcc-health-insurance-observatory.vercel.app/signal-008-adoc-market-readiness-uae-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 008 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 008 ↗">Open full Signal 008 research record ↗</a>
 </div></section>
 
-<section id="uaeSignal009" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-009" data-primary-radar="provider" data-radars="provider,payer" hidden style="margin:18px 0 22px">
+<section id="uaeSignal009" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-009" data-evidence-status="partial" data-evidence-type="provider-network-expansion" data-source-quality="secondary-corroborated" data-open-question="true" data-primary-radar="provider" data-radars="provider,payer" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 009" data-ar="رصد الإمارات · 009">UAE OBSERVATION · 009</h3><small data-en="PROVIDER NETWORK · INSURANCE ACCEPTANCE · PATIENT ACCESS" data-ar="شبكة مقدمي الخدمة · قبول التأمين · وصول المرضى">PROVIDER NETWORK · INSURANCE ACCEPTANCE · PATIENT ACCESS</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="EXPANSION OF INSURANCE ACCEPTANCE ACROSS EHS FACILITIES" data-ar="توسيع قبول التأمين عبر منشآت مؤسسة الإمارات للخدمات الصحية">EXPANSION OF INSURANCE ACCEPTANCE ACROSS EHS FACILITIES</div>
@@ -455,7 +492,7 @@
 <div class="detail-note" data-en="Evidence boundary: the accessible report attributes the announcement to an EHS press statement, but the original EHS release has not yet been located. The insurer list and service-by-service coverage remain unverified. Contracting does not establish actual utilisation, claims growth or revenue impact." data-ar="حدود الأدلة: ينسب التقرير المتاح الإعلان إلى بيان صحفي لـEHS، لكن لم نعثر بعد على النسخة الأصلية. قائمة شركات التأمين ونطاق التغطية حسب الخدمة لم يتم التحقق منهما. التعاقد لا يثبت الاستخدام الفعلي أو نمو المطالبات أو أثر الإيرادات.">Evidence boundary: the accessible report attributes the announcement to an EHS press statement, but the original EHS release has not yet been located. The insurer list and service-by-service coverage remain unverified. Contracting does not establish actual utilisation, claims growth or revenue impact.</div>
 <a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/feature/radar-first-homepage/signal-009-ehs-insurance-network-expansion-uae-health-insurance.md" target="_blank" rel="noopener" data-en="Open full Signal 009 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 009 ↗">Open full Signal 009 research record ↗</a>
 </div></section>
-<section id="uaeSignal010" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-010" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
+<section id="uaeSignal010" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-010" data-evidence-status="verified" data-evidence-type="provider-acquisition" data-source-quality="primary" data-open-question="true" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 010" data-ar="رصد الإمارات · 010">UAE OBSERVATION · 010</h3><small data-en="ABU DHABI · HEALTHCARE OWNERSHIP" data-ar="أبوظبي · ملكية الرعاية الصحية">ABU DHABI · HEALTHCARE OWNERSHIP</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="HEALTHCARE ASSET ACQUISITION" data-ar="استحواذ على أصول الرعاية الصحية">HEALTHCARE ASSET ACQUISITION</div>
@@ -469,7 +506,7 @@
 <div class="detail-item"><span data-en="PRIMARY SOURCE" data-ar="المصدر الأساسي">PRIMARY SOURCE</span><p><a href="https://www.arada.com/en/latest-news/arada-makes-strategic-move-into-healthcare-with-acquisition-of-majority-stake-in-abu-dhabis-reem-hospital/" target="_blank" rel="noopener">Arada · 7 May 2026 ↗</a></p></div>
 <div class="detail-item"><span data-en="FULL RESEARCH RECORD" data-ar="سجل البحث الكامل">FULL RESEARCH RECORD</span><p><a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/feature/radar-first-homepage/signal-010-arada-reem-hospital-acquisition.md" target="_blank" rel="noopener" data-en="Open full Signal 010 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 010 ↗">Open full Signal 010 research record ↗</a></p></div>
 </div></section>
-<section id="uaeSignal011" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-011" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
+<section id="uaeSignal011" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-011" data-evidence-status="verified" data-evidence-type="provider-ownership-change" data-source-quality="primary" data-open-question="true" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 011" data-ar="رصد الإمارات · 011">UAE OBSERVATION · 011</h3><small data-en="DUBAI · HOSPITAL OWNERSHIP" data-ar="دبي · ملكية المستشفيات">DUBAI · HOSPITAL OWNERSHIP</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="OWNERSHIP CONSOLIDATION" data-ar="تجميع الملكية">OWNERSHIP CONSOLIDATION</div>
@@ -483,7 +520,7 @@
 <div class="detail-item"><span data-en="PRIMARY SOURCE" data-ar="المصدر الأساسي">PRIMARY SOURCE</span><p><a href="https://feeds.dfm.ae/documents/2026/Jul/28/d0e1eaaf-7c40-4723-b8b2-84b6dcbe6f8e/DIC%20Notification%2028%2007%202026.Pdf.pdf" target="_blank" rel="noopener">Dubai Investments / DFM · 28 Jul 2026 ↗</a></p></div>
 <div class="detail-item"><span data-en="FULL RESEARCH RECORD" data-ar="سجل البحث الكامل">FULL RESEARCH RECORD</span><p><a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/feature/radar-first-homepage/signal-011-dubai-investments-cmc-dubai-ownership.md" target="_blank" rel="noopener" data-en="Open full Signal 011 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 011 ↗">Open full Signal 011 research record ↗</a></p></div>
 </div></section>
-<section id="uaeSignal012" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-012" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
+<section id="uaeSignal012" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-012" data-evidence-status="verified" data-evidence-type="provider-asset-acquisition" data-source-quality="primary" data-open-question="true" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 012" data-ar="رصد الإمارات · 012">UAE OBSERVATION · 012</h3><small data-en="ABU DHABI & AL AIN · CLINIC NETWORK" data-ar="أبوظبي والعين · شبكة العيادات">ABU DHABI & AL AIN · CLINIC NETWORK</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="COMMUNITY PROVIDER ACQUISITION" data-ar="استحواذ على منشآت رعاية مجتمعية">COMMUNITY PROVIDER ACQUISITION</div>
@@ -497,7 +534,7 @@
 <div class="detail-item"><span data-en="PRIMARY SOURCE" data-ar="المصدر الأساسي">PRIMARY SOURCE</span><p><a href="https://www.mediaoffice.abudhabi/en/health/purehealth-acquires-6-facilities-from-aspen-clinics-strengthening-community-healthcare-network-across-abu-dhabi-and-al-ain/" target="_blank" rel="noopener">Abu Dhabi Media Office · 4 Nov 2026 ↗</a></p></div>
 <div class="detail-item"><span data-en="FULL RESEARCH RECORD" data-ar="سجل البحث الكامل">FULL RESEARCH RECORD</span><p><a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/feature/radar-first-homepage/signal-012-purehealth-aspen-clinics-acquisition.md" target="_blank" rel="noopener" data-en="Open full Signal 012 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 012 ↗">Open full Signal 012 research record ↗</a></p></div>
 </div></section>
-<section id="uaeSignal013" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-013" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
+<section id="uaeSignal013" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-013" data-evidence-status="verified" data-evidence-type="healthcare-financing" data-source-quality="primary" data-open-question="true" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 013" data-ar="رصد الإمارات · 013">UAE OBSERVATION · 013</h3><small data-en="UAE / INTERNATIONAL DEBT MARKETS" data-ar="الإمارات · أسواق الدين الدولية">UAE / INTERNATIONAL DEBT MARKETS</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="HEALTHCARE DEBT CAPITAL" data-ar="تمويل الدين للرعاية الصحية">HEALTHCARE DEBT CAPITAL</div>
@@ -511,7 +548,7 @@
 <div class="detail-item"><span data-en="PRIMARY SOURCE" data-ar="المصدر الأساسي">PRIMARY SOURCE</span><p><a href="https://apigateway.adx.ae/adx/cdn/1.0/content/download/5086475" target="_blank" rel="noopener">Burjeel issuer announcement via ADX · 2 Jul 2026 ↗</a></p></div>
 <div class="detail-item"><span data-en="FULL RESEARCH RECORD" data-ar="سجل البحث الكامل">FULL RESEARCH RECORD</span><p><a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/feature/radar-first-homepage/signal-013-burjeel-inaugural-usd500m-sukuk.md" target="_blank" rel="noopener" data-en="Open full Signal 013 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 013 ↗">Open full Signal 013 research record ↗</a></p></div>
 </div></section>
-<section id="uaeSignal014" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-014" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
+<section id="uaeSignal014" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-014" data-evidence-status="verified" data-evidence-type="healthcare-outsourcing-procurement" data-source-quality="primary" data-open-question="true" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 014" data-ar="رصد الإمارات · 014">UAE OBSERVATION · 014</h3><small data-en="DUBAI · HEALTHCARE PPP PROCUREMENT" data-ar="دبي · مشتريات الشراكة الصحية">DUBAI · HEALTHCARE PPP PROCUREMENT</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="HEALTHCARE OUTSOURCING PIPELINE" data-ar="مسار تعهيد الخدمات الصحية">HEALTHCARE OUTSOURCING PIPELINE</div>
@@ -525,7 +562,7 @@
 <div class="detail-item"><span data-en="PRIMARY SOURCE" data-ar="المصدر الأساسي">PRIMARY SOURCE</span><p><a href="https://www.dof.gov.ae/en-us/ppp/Pages/PPP_Projects.aspx" target="_blank" rel="noopener">Dubai Department of Finance · PPP pipeline ↗</a></p></div>
 <div class="detail-item"><span data-en="FULL RESEARCH RECORD" data-ar="سجل البحث الكامل">FULL RESEARCH RECORD</span><p><a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/feature/radar-first-homepage/signal-014-dubai-health-ppp-outsourcing-pipeline.md" target="_blank" rel="noopener" data-en="Open full Signal 014 research record ↗" data-ar="فتح سجل البحث الكامل للإشارة 014 ↗">Open full Signal 014 research record ↗</a></p></div>
 </div></section>
-<section id="uaeSignal015" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-015" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
+<section id="uaeSignal015" class="panel" data-signal-record data-country="UAE" data-signal-id="UAE-HI-015" data-evidence-status="partial" data-evidence-type="provider-development-partnership" data-source-quality="company-disclosure" data-open-question="true" data-primary-radar="capital" data-radars="capital,provider" hidden style="margin:18px 0 22px">
 <div class="panel-head"><h3 data-en="UAE OBSERVATION · 015" data-ar="رصد الإمارات · 015">UAE OBSERVATION · 015</h3><small data-en="DUBAI · NEW HOSPITAL DEVELOPMENT" data-ar="دبي · تطوير مستشفى جديد">DUBAI · NEW HOSPITAL DEVELOPMENT</small></div>
 <div style="padding:18px">
 <div class="section-kicker" data-en="DEVELOPMENT PARTNERSHIP" data-ar="شراكة تطوير">DEVELOPMENT PARTNERSHIP</div>
@@ -602,6 +639,7 @@ function openMarket(code){
  const preview=document.getElementById('radarPreview');if(preview)preview.hidden=true;
  document.querySelectorAll('[data-radar]').forEach(card=>card.classList.remove('selected'));
  document.getElementById('emptyEvidenceStatus').hidden=hasEvidence;
+ const evidenceStatusPanel=document.getElementById('evidenceStatus');if(evidenceStatusPanel)evidenceStatusPanel.hidden=!hasEvidence;
  document.getElementById('intelligence').hidden=!hasEvidence;
  refreshObservatoryCounts();
  marketDetails.hidden=false;marketSection.hidden=true;document.getElementById('signals').hidden=true;
@@ -711,12 +749,16 @@ function openSignalRecord(id,context="radar"){
  signalReturnContext=context;
  hideAllSignalRecords();target.hidden=false;radarPreview.hidden=true;
  const back=target.querySelector(".back-to-radar");
- if(back)back.textContent=arabic?(context==="cross-radar"?"العودة إلى التحليل المشترك ←":"العودة إلى إشارات الرادار ←"):(context==="cross-radar"?"← Back to Cross-Radar Intelligence":"← Back to radar signals");
+ if(back)back.textContent=arabic?(context==="cross-radar"?"العودة إلى التحليل المشترك ←":context==="evidence"?"العودة إلى حالة الأدلة ←":"العودة إلى إشارات الرادار ←"):(context==="cross-radar"?"← Back to Cross-Radar Intelligence":context==="evidence"?"← Back to Evidence Status":"← Back to radar signals");
  target.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function returnToRadarSignals(){
  hideAllSignalRecords();
- if(signalReturnContext==="cross-radar"){
+ if(signalReturnContext==="evidence"){
+  radarPreview.hidden=true;
+  const results=document.getElementById("evidenceResults");if(results)results.hidden=false;
+  document.getElementById("evidenceStatus").scrollIntoView({behavior:"smooth",block:"start"});
+ }else if(signalReturnContext==="cross-radar"){
   radarPreview.hidden=true;
   if(crossRadarContent.hidden){crossRadarContent.hidden=false;crossRadarContent.style.display="block";crossRadarToggle.setAttribute("aria-expanded","true");crossRadarToggle.querySelector(".cross-radar-chevron").textContent="−";}
   document.getElementById("intelligence").scrollIntoView({behavior:"smooth",block:"start"});
@@ -762,6 +804,45 @@ document.querySelectorAll("[data-signal-open]").forEach(button=>button.addEventL
 
 
 
+
+function refreshEvidenceStatus(){
+ const records=[...signalRegistry.values()].filter(signal=>signal.country===currentMarketCode);
+ const count=status=>records.filter(signal=>signal.element.dataset.evidenceStatus===status).length;
+ const open=records.filter(signal=>signal.element.dataset.openQuestion==="true").length;
+ const set=(id,value)=>{const node=document.getElementById(id);if(node)node.textContent=String(value).padStart(2,"0");};
+ set("evidenceTotal",records.length);set("evidenceVerified",count("verified"));set("evidencePartial",count("partial"));set("evidenceOpen",open);
+ const label=document.getElementById("evidenceAssessmentLabel");
+ if(label)label.textContent=arabic?("تم تقييم "+records.length+" سجلاً إماراتياً"):(records.length+" UAE records assessed");
+ const results=document.getElementById("evidenceResults");if(results)results.hidden=true;
+}
+function renderEvidenceResults(filter){
+ const records=[...signalRegistry.values()].filter(signal=>signal.country===currentMarketCode).filter(signal=>{
+  if(filter==="all")return true;if(filter==="open")return signal.element.dataset.openQuestion==="true";
+  return signal.element.dataset.evidenceStatus===filter;
+ });
+ const labels={all:arabic?"جميع سجلات إشارات الإمارات":"ALL UAE SIGNAL RECORDS",verified:arabic?"الادعاءات الأساسية الموثقة":"CORE CLAIMS DOCUMENTED",partial:arabic?"الأدلة محدودة النطاق":"SCOPE-LIMITED EVIDENCE",open:arabic?"السجلات ذات الأسئلة المفتوحة":"RECORDS WITH OPEN QUESTIONS"};
+ document.getElementById("evidenceResultsTitle").textContent=labels[filter]||labels.all;
+ const list=document.getElementById("evidenceResultList");list.innerHTML="";
+ if(!records.length){const empty=document.createElement("p");empty.className="evidence-empty";empty.textContent=arabic?"لا توجد سجلات ضمن هذا التصنيف حالياً.":"No records in this category.";list.appendChild(empty);}
+ else records.forEach(signal=>{
+  const record=signal.element,id=signal.signalId,titleText=record.querySelector("h2")?.textContent?.trim()||id;
+  const status=record.element?.dataset?.evidenceStatus||record.element?.getAttribute("data-evidence-status")||signal.element.dataset.evidenceStatus;
+  const quality=signal.element.dataset.sourceQuality||"";
+  const statusText=arabic?(status==="verified"?"الادعاء الأساسي موثق":"أدلة محدودة النطاق"):(status==="verified"?"CORE CLAIM DOCUMENTED":"SCOPE-LIMITED");
+  const qualityMap={primary:["مصدر أولي / رسمي","PRIMARY / OFFICIAL"],mixed:["مصادر مختلطة","MIXED SOURCES"],"secondary-corroborated":["مصادر ثانوية معززة","CORROBORATED SECONDARY"],"company-disclosure":["إفصاح شركة","COMPANY DISCLOSURE"]};
+  const qualityText=(qualityMap[quality]||["جودة المصدر قيد التقييم","SOURCE QUALITY REVIEW"])[arabic?0:1];
+  const button=document.createElement("button");button.type="button";button.className="evidence-result-item";
+  const title=document.createElement("span");title.className="evidence-result-title";title.textContent=id+" · "+titleText;
+  const meta=document.createElement("span");meta.className="evidence-result-meta";
+  const state=document.createElement("span");state.className="evidence-result-status "+status;state.textContent=statusText;
+  const source=document.createElement("span");source.textContent=qualityText;
+  meta.append(state,source);button.append(title,meta);button.addEventListener("click",()=>openSignalRecord(id,"evidence"));list.appendChild(button);
+ });
+ document.getElementById("evidenceResults").hidden=false;
+}
+document.querySelectorAll("[data-evidence-filter]").forEach(button=>button.addEventListener("click",()=>renderEvidenceResults(button.dataset.evidenceFilter)));
+document.getElementById("closeEvidenceResults").addEventListener("click",()=>{document.getElementById("evidenceResults").hidden=true;});
+
 function refreshObservatoryCounts(){
  const signals=[...document.querySelectorAll("[data-signal-record]")];
  const themes=[...document.querySelectorAll(".cross-theme-card[data-theme-record]")];
@@ -772,6 +853,7 @@ function refreshObservatoryCounts(){
  setCount("radarLensCount",radars.length);
  // Keep the authored baseline labels until a country is selected.
  if(!currentMarketCode)return;
+ refreshEvidenceStatus();
  radars.forEach(card=>{
   let label=card.querySelector(".radar-links,.radar-gap");
   if(!label){label=document.createElement("span");card.appendChild(label);}
