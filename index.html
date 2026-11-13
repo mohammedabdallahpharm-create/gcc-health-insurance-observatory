@@ -747,7 +747,7 @@ let signalReturnContext="radar";
 function openSignalRecord(id,context="radar"){
  const target=document.querySelector(`[data-signal-record][data-signal-id="${id}"]`);if(!target)return;
  signalReturnContext=context;
- hideAllSignalRecords();target.hidden=false;radarPreview.hidden=true;
+ hideAllSignalRecords();target.hidden=false;radarPreview.hidden=true;if(context==="evidence"){const results=document.getElementById("evidenceResults");if(results)results.hidden=true;}
  const back=target.querySelector(".back-to-radar");
  if(back)back.textContent=arabic?(context==="cross-radar"?"العودة إلى التحليل المشترك ←":context==="evidence"?"العودة إلى حالة الأدلة ←":"العودة إلى إشارات الرادار ←"):(context==="cross-radar"?"← Back to Cross-Radar Intelligence":context==="evidence"?"← Back to Evidence Status":"← Back to radar signals");
  target.scrollIntoView({behavior:"smooth",block:"start"});
@@ -826,17 +826,35 @@ function renderEvidenceResults(filter){
  if(!records.length){const empty=document.createElement("p");empty.className="evidence-empty";empty.textContent=arabic?"لا توجد سجلات ضمن هذا التصنيف حالياً.":"No records in this category.";list.appendChild(empty);}
  else records.forEach(signal=>{
   const record=signal.element,id=signal.signalId,titleText=record.querySelector("h2")?.textContent?.trim()||id;
-  const status=record.element?.dataset?.evidenceStatus||record.element?.getAttribute("data-evidence-status")||signal.element.dataset.evidenceStatus;
+  const status=signal.element.dataset.evidenceStatus;
   const quality=signal.element.dataset.sourceQuality||"";
   const statusText=arabic?(status==="verified"?"الادعاء الأساسي موثق":"أدلة محدودة النطاق"):(status==="verified"?"CORE CLAIM DOCUMENTED":"SCOPE-LIMITED");
   const qualityMap={primary:["مصدر أولي / رسمي","PRIMARY / OFFICIAL"],mixed:["مصادر مختلطة","MIXED SOURCES"],"secondary-corroborated":["مصادر ثانوية معززة","CORROBORATED SECONDARY"],"company-disclosure":["إفصاح شركة","COMPANY DISCLOSURE"]};
   const qualityText=(qualityMap[quality]||["جودة المصدر قيد التقييم","SOURCE QUALITY REVIEW"])[arabic?0:1];
+  const typeMap={
+   "regulatory-data-exchange":["تنظيم / تبادل بيانات","REGULATORY / DATA EXCHANGE"],
+   "policy-operating-infrastructure":["سياسة / بنية تشغيلية","POLICY / OPERATING INFRASTRUCTURE"],
+   "regulatory-ai-governance":["تنظيم / حوكمة الذكاء الاصطناعي","REGULATORY / AI GOVERNANCE"],
+   "operational-ai-disclosure":["إفصاح عن تطبيق تشغيلي للذكاء الاصطناعي","OPERATIONAL AI DISCLOSURE"],
+   "product-disclosure":["إفصاح عن منتج","PRODUCT DISCLOSURE"],
+   "workforce-role-signals":["إشارات وظائف وأدوار","WORKFORCE / ROLE SIGNALS"],
+   "governance-workforce-signals":["حوكمة / أدوار تشغيلية","GOVERNANCE / OPERATING ROLES"],
+   "reimbursement-regulatory-transition":["تحول تنظيمي في السداد","REIMBURSEMENT / REGULATORY TRANSITION"],
+   "provider-network-expansion":["توسع شبكة مقدمي الخدمة","PROVIDER NETWORK EXPANSION"],
+   "provider-acquisition":["استحواذ على مقدم خدمة","PROVIDER ACQUISITION"],
+   "provider-ownership-change":["تغير ملكية مقدم خدمة","PROVIDER OWNERSHIP CHANGE"],
+   "provider-asset-acquisition":["استحواذ على أصول صحية","PROVIDER ASSET ACQUISITION"],
+   "healthcare-financing":["تمويل الرعاية الصحية","HEALTHCARE FINANCING"],
+   "healthcare-outsourcing-procurement":["استعانة خارجية / مشتريات","OUTSOURCING / PROCUREMENT"],
+   "provider-development-partnership":["شراكة تطوير منشأة صحية","PROVIDER DEVELOPMENT PARTNERSHIP"]
+  };
+  const typeText=(typeMap[record.dataset.evidenceType]||["نوع الدليل قيد التصنيف","EVIDENCE TYPE REVIEW"])[arabic?0:1];
   const button=document.createElement("button");button.type="button";button.className="evidence-result-item";
   const title=document.createElement("span");title.className="evidence-result-title";title.textContent=id+" · "+titleText;
   const meta=document.createElement("span");meta.className="evidence-result-meta";
   const state=document.createElement("span");state.className="evidence-result-status "+status;state.textContent=statusText;
   const source=document.createElement("span");source.textContent=qualityText;
-  meta.append(state,source);button.append(title,meta);button.addEventListener("click",()=>openSignalRecord(id,"evidence"));list.appendChild(button);
+  const type=document.createElement("span");type.textContent=typeText;meta.append(state,type,source);button.append(title,meta);button.addEventListener("click",()=>openSignalRecord(id,"evidence"));list.appendChild(button);
  });
  document.getElementById("evidenceResults").hidden=false;
 }
