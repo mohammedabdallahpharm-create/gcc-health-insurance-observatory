@@ -58,6 +58,7 @@ All six country observatories use the same shared workflow. Selecting a country 
 - [KSA-HI-001 — Outpatient Health Insurance Product Without Pre-Approval](./ksa-signal-001-outpatient-product-without-pre-approval.md) — verified IA directive announced 20 August 2026, available from 1 November 2026; implementation and market effects remain under investigation.
 - [KSA-HI-002 — Insurance Authority–HUMAIN AI Cooperation](./ksa-signal-002-ia-humain-ai-cooperation.md) — sector-wide AI/data cooperation announced 31 August 2026; health-specific deployment and implementation remain unverified.
 - [KSA-HI-003 — NPHIES Clinical Coding Validation Edits](./ksa-signal-003-nphies-clinical-coding-validation-edits.md) — IA announcement of five clinical coding edits on 27 February 2026; participant-level adoption and operational outcomes remain unverified.
+- [KSA-HI-004 — Hajj 2026 Provider Accreditation and Network Readiness](./ksa-signal-004-hajj-provider-accreditation-network-readiness.md) — CHI announced accreditation of 260 providers within a 2,160-provider seasonal medical network; payer contracting and commercial insurer-network participation remain unverified.
 
 ## Evidence and limitations
 
