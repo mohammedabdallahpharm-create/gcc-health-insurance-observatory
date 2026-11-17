@@ -190,6 +190,11 @@
 .decision-evidence p{font-size:10px;line-height:1.65;color:var(--muted);margin:7px 0 0}
 @media(max-width:700px){.decision-flow-grid{grid-template-columns:1fr}.decision-evidence{grid-template-columns:1fr}.money-flow{flex-direction:column}.money-flow>span{transform:rotate(90deg);align-self:center}.decision-lane{padding:12px}.control-points{grid-template-columns:1fr}}
 
+
+.money-flow-row{display:grid;grid-template-columns:110px minmax(0,1fr) 20px minmax(0,1fr);align-items:center;gap:7px;margin-top:10px}
+.money-flow-row>small{font:8px var(--mono);letter-spacing:.05em;color:var(--cyan);line-height:1.5}
+@media(max-width:700px){.money-flow-row{grid-template-columns:1fr;gap:6px}.money-flow-row>span{transform:rotate(90deg);justify-self:center}.money-flow-row .money-node{width:100%}}
+
 </style>
 </head>
 <body>
@@ -297,12 +302,9 @@
 </section>
 <section class="decision-lane">
 <div class="decision-lane-head"><span>03</span><div><b data-en="FINANCIAL FLOW" data-ar="رحلة الدرهم">FINANCIAL FLOW</b><small>PREMIUM FUNDING → CLAIM → ADJUDICATION → SETTLEMENT</small></div></div>
-<div class="money-flow">
-<div class="money-node"><b data-en="Employer / member" data-ar="صاحب العمل / المؤمن عليه">Employer / member</b><small data-en="Premium purchase & funding" data-ar="شراء الوثيقة وتمويل القسط">Premium purchase & funding</small></div><span>→</span>
-<div class="money-node"><b data-en="Insurer" data-ar="شركة التأمين">Insurer</b><small data-en="Risk-bearing & policy obligations" data-ar="تحمل الخطر والتزامات الوثيقة">Risk-bearing & policy obligations</small></div><span>→</span>
-<div class="money-node"><b data-en="Provider claim" data-ar="مطالبة مقدم الخدمة">Provider claim</b><small data-en="Submitted evidence & coding" data-ar="الأدلة والترميز المقدم">Submitted evidence & coding</small></div><span>→</span>
-<div class="money-node"><b data-en="Adjudication / payment" data-ar="تسوية المطالبة / الدفع">Adjudication / payment</b><small data-en="Contract and scheme dependent" data-ar="بحسب العقد والنظام">Contract and scheme dependent</small></div>
-</div>
+<div class="money-flow money-flow-row"><small data-en="PREMIUM MONEY" data-ar="تدفق القسط">PREMIUM MONEY</small><div class="money-node"><b data-en="Employer / member" data-ar="صاحب العمل / المؤمن عليه">Employer / member</b><small data-en="Premium purchase & funding" data-ar="شراء الوثيقة وتمويل القسط">Premium purchase & funding</small></div><span>→</span><div class="money-node"><b data-en="Insurer" data-ar="شركة التأمين">Insurer</b><small data-en="Premium received under the policy" data-ar="استلام القسط وفق الوثيقة">Premium received under the policy</small></div></div>
+<div class="money-flow money-flow-row"><small data-en="CLAIMS INFORMATION" data-ar="بيانات المطالبة">CLAIMS INFORMATION</small><div class="money-node"><b data-en="Provider" data-ar="مقدم الخدمة">Provider</b><small data-en="Claim, coding & supporting evidence" data-ar="المطالبة والترميز والمستندات الداعمة">Claim, coding & supporting evidence</small></div><span>→</span><div class="money-node"><b data-en="Insurer / delegated TPA" data-ar="شركة التأمين / TPA مفوض">Insurer / delegated TPA</b><small data-en="Validation & adjudication workflow" data-ar="التحقق ومسار تسوية المطالبة">Validation & adjudication workflow</small></div></div>
+<div class="money-flow money-flow-row"><small data-en="CLAIM PAYMENT" data-ar="دفع المطالبة">CLAIM PAYMENT</small><div class="money-node"><b data-en="Insurer / payer" data-ar="شركة التأمين / الدافع">Insurer / payer</b><small data-en="Approved amount under applicable terms" data-ar="المبلغ المعتمد وفق الشروط المطبقة">Approved amount under applicable terms</small></div><span>→</span><div class="money-node"><b data-en="Provider" data-ar="مقدم الخدمة">Provider</b><small data-en="Settlement / remittance" data-ar="التسوية / التحويل المالي">Settlement / remittance</small></div></div>
 <p class="decision-caveat" data-en="The premium and claims pathways are evidenced structurally. The full remittance chain, payment timing, provider-level economics and allocation of savings are not consistently disclosed across the ten records." data-ar="مسارا القسط والمطالبة موثقان على المستوى الهيكلي. لكن سلسلة التحويلات المالية الكاملة وتوقيت الدفع واقتصاديات مقدمي الخدمة وتوزيع الوفورات ليست مكشوفة بصورة متسقة في الإشارات العشر.">The premium and claims pathways are evidenced structurally. The full remittance chain, payment timing, provider-level economics and allocation of savings are not consistently disclosed across the ten records.</p>
 </section>
 <section class="decision-lane">
