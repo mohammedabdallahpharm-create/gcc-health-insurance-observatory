@@ -37,6 +37,10 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 - [ADOC Strategic Transition Dossier — Abu Dhabi, UAE](./uae-adoc-strategic-transition-dossier.md) — ADOC framework and implementation chronology, public-sector requirements, private-sector and ecosystem moves, 2027 impact hypotheses, evidence gaps and source register. Working record v0.1; not a claim that all private-sector actions were caused by ADOC.
 
+## UAE workforce evidence register
+
+- [UAE Health Insurance Workforce Evidence Register](./uae-health-insurance-workforce-evidence-register.md) — initial evidence ledger separating direct recruitment and operating-model signals from regulatory, deployment, reimbursement, corporate-structure and data-governance context; includes hypotheses, boundaries and follow-up tests.
+
 ## UAE research records
 
 - [UAE Healthcare Strategic Context](./uae-healthcare-strategic-context.md) — baseline context for institutional platforms, regulation, healthcare financing, digital health-data infrastructure and strategic research backlogs. This is context, not a live signal feed.
