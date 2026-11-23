@@ -33,6 +33,10 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 - [2026 Strategic Actions Register — GCC Health Insurance Market](./2026-strategic-actions-register.md) — working chronology of dated 2026 regulatory, financing, digital, claims, provider-partnership and AI-related actions across GCC markets, with evidence status, 2027 hypotheses and country-level research gaps. Version 0.1; not yet an exhaustive census.
 
+## Strategic investigations
+
+- [Beyond 2027 — Who Will Control Healthcare Decisions?](./beyond-2027-healthcare-decision-power-investigation.md) — cross-signal investigation of patient, clinical, insurance, agent and regulatory decision power across GCC, with UAE as the primary evidence case. Working synthesis; evidence gaps and competing scenarios remain explicit.
+
 ## UAE ADOC research dossier
 
 - [ADOC Strategic Transition Dossier — Abu Dhabi, UAE](./uae-adoc-strategic-transition-dossier.md) — ADOC framework and implementation chronology, public-sector requirements, private-sector and ecosystem moves, 2027 impact hypotheses, evidence gaps and source register. Working record v0.1; not a claim that all private-sector actions were caused by ADOC.
