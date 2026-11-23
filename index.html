@@ -159,6 +159,21 @@
 @media(max-width:900px){.cross-radar-grid{grid-template-columns:1fr}.cross-radar-intro{grid-template-columns:1fr}.cross-radar-stats{max-width:460px}}
 @media(max-width:600px){.cross-theme-card{padding:15px}.cross-theme-card h3{font-size:17px}.cross-theme-columns{grid-template-columns:1fr;gap:10px}.cross-theme-watch{flex-direction:column;gap:5px}.cross-radar-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.cross-radar-stats div{padding:4px 7px}.cross-radar-stats strong{font-size:22px}.cross-theme-top{gap:5px}}
 
+
+/* Featured strategic investigation */
+.featured-investigation{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;margin:0 0 18px;padding:22px 24px;border:1px solid #31566a;border-radius:8px;background:linear-gradient(115deg,#102b3a 0%,#0b1a2a 68%,#101e31 100%);position:relative;overflow:hidden}
+.featured-investigation:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--cyan)}
+.featured-investigation-copy{min-width:0}
+.featured-investigation-label{font:9px var(--mono);letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}
+.featured-investigation h3{font:600 clamp(18px,2.1vw,24px)/1.3 var(--display);letter-spacing:-.025em;margin:9px 0 7px;color:var(--text)}
+.featured-investigation p{font-size:12px;line-height:1.75;color:var(--muted);margin:0;max-width:850px}
+.featured-investigation-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.featured-investigation-meta span{font:8px var(--mono);letter-spacing:.06em;color:#a9cbd4;border:1px solid #29485c;border-radius:3px;padding:5px 7px}
+.featured-investigation a{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;padding:11px 14px;border:1px solid #4b9d9a;border-radius:5px;background:#10313a;color:var(--cyan);font:10px var(--mono);letter-spacing:.04em;transition:background .2s,border-color .2s}
+.featured-investigation a:hover,.featured-investigation a:focus-visible{background:#17434a;border-color:var(--cyan);outline:none}
+[dir=rtl] .featured-investigation:before{inset:0 0 0 auto}
+@media(max-width:600px){.featured-investigation{grid-template-columns:1fr;gap:15px;padding:18px}.featured-investigation a{width:100%}}
+
 </style>
 </head>
 <body>
@@ -220,6 +235,15 @@
 </section>
 <section id="intelligence" class="intelligence-section">
 <div class="section-head"><button type="button" class="cross-radar-toggle" id="crossRadarToggle" aria-expanded="false" aria-controls="crossRadarContent"><span><span class="section-kicker" data-en="02 / CROSS-RADAR INTELLIGENCE" data-ar="02 / التحليل المشترك بين الرادارات">02 / CROSS-RADAR INTELLIGENCE</span><span class="cross-radar-title" data-en="What emerges between the radars?" data-ar="ما الذي يظهر عند تقاطع الرادارات؟">What emerges between the radars?</span></span><span class="cross-radar-chevron" aria-hidden="true">＋</span></button><span class="demo" data-en="Cross-radar analytical themes · UAE" data-ar="موضوعات تحليلية بين الرادارات · الإمارات">Cross-radar analytical themes · UAE</span></div>
+<article class="featured-investigation" id="featuredDecisionInvestigation">
+ <div class="featured-investigation-copy">
+  <span class="featured-investigation-label" data-en="FEATURED INVESTIGATION / GCC HEALTHCARE" data-ar="تحقيق استراتيجي مميز / الرعاية الصحية الخليجية">FEATURED INVESTIGATION / GCC HEALTHCARE</span>
+  <h3 data-en="Who Will Control Healthcare Decisions Beyond 2027?" data-ar="من سيمتلك سلطة القرار في منظومة الرعاية الصحية والتأمين الصحي بعد 2027؟">Who Will Control Healthcare Decisions Beyond 2027?</h3>
+  <p data-en="A cross-signal investigation into how decision power may be redistributed among patients, clinicians, insurers, TPAs, AI agents and regulators. Working analysis: evidence gaps and competing scenarios remain open." data-ar="تحقيق يربط الإشارات لدراسة كيفية إعادة توزيع سلطة القرار بين المرضى والأطباء وشركات التأمين ومديري المطالبات ووكلاء الذكاء الاصطناعي والجهات التنظيمية. تحليل قيد العمل، مع إبقاء فجوات الأدلة والسيناريوهات المتنافسة مفتوحة.">A cross-signal investigation into how decision power may be redistributed among patients, clinicians, insurers, TPAs, AI agents and regulators. Working analysis: evidence gaps and competing scenarios remain open.</p>
+  <div class="featured-investigation-meta"><span data-en="BEYOND 2027" data-ar="ما بعد 2027">BEYOND 2027</span><span data-en="UAE + GCC COMPARISON" data-ar="الإمارات + مقارنة خليجية">UAE + GCC COMPARISON</span><span data-en="WORKING INVESTIGATION" data-ar="تحقيق قيد العمل">WORKING INVESTIGATION</span></div>
+ </div>
+ <a href="https://github.com/mohammedabdallahpharm-create/gcc-health-insurance-observatory/blob/main/beyond-2027-healthcare-decision-power-investigation.md" target="_blank" rel="noopener noreferrer" data-en="Read investigation ↗" data-ar="اقرأ التحقيق ↗">Read investigation ↗</a>
+</article>
 <div id="crossRadarContent" hidden>
 <div class="cross-radar-intro">
  <div><span class="theme-label" data-en="CROSS-RADAR SYNTHESIS / UAE" data-ar="تركيب مشترك بين الرادارات / الإمارات">CROSS-RADAR SYNTHESIS / UAE</span><p data-en="These analytical themes emerge only from connections among documented UAE signals represented in the radars. They are cross-radar interpretations, not additional signals, standalone evidence summaries or claims that every organisation has adopted the same changes." data-ar="تنشأ هذه الموضوعات التحليلية حصراً من الروابط بين الإشارات الإماراتية الموثقة والمعروضة في الرادارات. وهي قراءات تربط بين الرادارات، وليست إشارات إضافية أو ملخصات أدلة مستقلة أو ادعاءات بأن جميع المؤسسات تبنت التغييرات نفسها.">These themes emerge by connecting documented UAE signals with the 2026 strategic-actions register. They are analytical patterns, not new signals and not claims that every organisation has adopted the same changes.</p></div>
