@@ -4,7 +4,7 @@ A regional, evidence-led observatory interface for detecting, documenting and mo
 
 ## Navigation model
 
-The GCC landing page is the regional entry point. The geographic GCC map is an interactive country selector: select a country polygon, label or marker to open that country's observatory. The country directory cards provide a second accessible entry point.
+The GCC landing page is the regional entry point. Its schematic GCC map is an interactive country selector: select a country shape, label or marker to open that country's observatory. The map is an interface/navigation aid, not a geographically authoritative boundary map or a visualization of market activity. The country directory cards provide a second entry point.
 
 All six country observatories use the same shared workflow. Selecting a country changes the market identity while preserving the common methodology. Country-specific evidence is added only after research and review.
 
@@ -22,11 +22,11 @@ All six country observatories use the same shared workflow. Selecting a country 
 **Interactive GCC country entry + shared workflow**
 
 - Preserves the GCC landing page and regional signal map.
-- Renders country polygons and international boundaries from Natural Earth Admin 0 geography, redistributed as TopoJSON by `world-atlas` at 1:10m scale.
-- Makes all six GCC country shapes, labels and markers interactive, with a clear instruction to select a country.
+- Renders the GCC navigation illustration from SVG paths embedded directly in `index.html`; it does not fetch map geometry at runtime.
+- Makes the six country navigation shapes, labels and markers interactive, with a clear instruction to select a country. The schematic is not a scale-accurate geographic map.
 - Keeps a country directory as an alternative navigation route.
 - Opens a shared country observatory view with the unified four-stage workflow and continuous-learning layer.
-- Supports English and Arabic, including right-to-left layout and accessible map-control labels.
+- Supports English and Arabic page content and right-to-left layout. Some SVG map labels and accessibility labels remain English and are documented as a localization gap.
 - Keeps the AI Observatory and timeline concepts out of the primary navigation until those views are ready for release.
 
 ## 2026 GCC strategic actions register
@@ -57,7 +57,8 @@ All six country observatories use the same shared workflow. Selecting a country 
 - [Signal 007 — The Governance–Ownership Gap: Who Owns AI Agents After Deployment?](./signal-007-governance-ownership-gap-uae-healthcare-health-insurance.md) — An anonymised UAE healthcare TPA's recruitment descriptions separate AI solution delivery from business-process outcome ownership; Al Wathba has disclosed production Agentic AI in case management; EHS lists an AI physician-assistant initiative. A named post-deployment operational owner is not established in the examined cases.
 - [Signal 008 — ADOC and the Shift from Regulatory Reform to Market Readiness](./signal-008-adoc-market-readiness-uae-health-insurance.md) — DoH's mandatory shadow-billing transition is directly evidenced; adjacent private-sector capabilities are documented separately from unverified ADOC-specific implementation and organisation-level readiness.
 - [Signal 009 — Vertical Integration and Claims Decision-Layer Control in UAE Healthcare](./signal-009-purehealth-daman-claims-decision-control-uae-health-insurance.md) — audited group disclosures establish PureHealth ownership of Daman and SEHA, Daman ownership of TPA and IT subsidiaries, and a separately announced AI document-processing deployment; operational decision control and economic advantage remain under investigation.
-- [Signal 010 — Patient Data Flow and Decision Power in UAE Healthcare](./signal-010-patient-data-flow-decision-power-uae-healthcare.md) — maps Riayati/NUMR, Malaffi, NABIDH, clinical data governance and the separate e-Claims Post Office; Abu Dhabi's 2026 data-standardisation and clinical-use requirements are verified, while insurer/TPA access to longitudinal clinical records remains unverified.\n- [Signal 011 — PureHealth's Acquisition of Hayah: Life Insurance, Pension and Long-term Savings](./signal-011-purehealth-hayah-life-pension-insurance-acquisition-uae.md) — announced 24 November 2026; agreement for a 67.5% controlling stake through Daman, with completion pending regulatory approvals and post-close integration still to be tested.
+- [Signal 010 — Patient Data Flow and Decision Power in UAE Healthcare](./signal-010-patient-data-flow-decision-power-uae-healthcare.md) — maps Riayati/NUMR, Malaffi, NABIDH, clinical data governance and the separate e-Claims Post Office; Abu Dhabi's 2026 data-standardisation and clinical-use requirements are verified, while insurer/TPA access to longitudinal clinical records remains unverified.
+- [Signal 011 — PureHealth's Acquisition of Hayah: Life Insurance, Pension and Long-term Savings](./signal-011-purehealth-hayah-life-pension-insurance-acquisition-uae.md) — announced 24 November 2026; agreement for a 67.5% controlling stake through Daman, with completion pending regulatory approvals and post-close integration still to be tested.
 
 ## Saudi Arabia research baseline
 
@@ -74,16 +75,15 @@ All six country observatories use the same shared workflow. Selecting a country 
 
 ## Evidence and limitations
 
-The map uses Natural Earth country-boundary geography through the `world-atlas` TopoJSON distribution (Natural Earth 1:10m Admin 0, world-atlas 2.0.2 / Natural Earth 4.1.0). It is a regional reference map, not a cadastral or legal boundary authority. Natural Earth applies a de facto boundary policy; disputed alignments may differ from individual governments' claims. GCC country shapes, markers and labels are navigation controls, not evidence of signal volume or market activity. The map geometry is loaded from jsDelivr at runtime, so a network connection is required for the map to render.
+The GCC map is a schematic SVG illustration embedded in `index.html`. Its country shapes, markers and labels are navigation controls only; they do not represent precise national boundaries, signal volume, market activity or geographic intensity. The SVG is part of the page source and does not require a separate map-data request at runtime.
 
 No live monitoring, automated ingestion, database, API or evidence-verification workflow is implemented in this interface-only release. Country-specific signals, entities and sources must be added only after research and evidence review.
 
-## Geographic data attribution
+## Map implementation
 
-- Boundary source: [Natural Earth — 1:10m Cultural Vectors](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)
-- Browser distribution: [world-atlas](https://github.com/topojson/world-atlas), a TopoJSON redistribution of Natural Earth 4.1.0.
-- Boundary type: Admin 0 country polygons; 1:10m large-scale geography.
-- Natural Earth data is public domain. The map is intended for regional market orientation, not legal or cadastral use.
+- Rendering: inline SVG paths in `index.html`.
+- Runtime map-data dependency: none.
+- Interpretation: schematic navigation illustration only; not a boundary dataset, geographic measurement or market-activity map.
 
 ## Research principles
 
@@ -95,7 +95,7 @@ No live monitoring, automated ingestion, database, API or evidence-verification 
 
 ## Run locally
 
-Open `index.html` in a browser. No build step, backend or database is required. The geographic map loads D3 Geo, TopoJSON Client and the Natural Earth-derived `world-atlas` country data from jsDelivr.
+Open `index.html` in a browser. No build step, backend, database or external map-data library is required. Google Fonts may be requested for typography; system fallback fonts are defined.
 
 ## Roadmap
 
