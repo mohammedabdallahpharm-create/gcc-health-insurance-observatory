@@ -64,7 +64,7 @@ The radar catalogue itself defines the seven observation lenses. Signal-to-radar
 
 ## Current scope and next architecture phase
 
-- UAE currently contains ten canonical signal records (UAE-HI-001 through UAE-HI-010); totals are derived from the records in `index.html`.
+- UAE currently contains eleven canonical signal records (UAE-HI-001 through UAE-HI-011); totals are derived from the records in `index.html`.
 - The seven radar lenses are shared across GCC countries.
 - Other GCC markets must remain visibly unpopulated until evidence is documented.
 - Cross-radar themes currently represent UAE analysis.
