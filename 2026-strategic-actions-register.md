@@ -1,9 +1,9 @@
 # 2026 Strategic Actions Register — GCC Health Insurance Market
 
 **Record type:** Strategic action chronology / market baseline for 2027 outlook  
-**Research period:** 1 January–11 November 2026  
+**Research period:** 1 January–24 November 2026  
 **Geographic scope:** GCC six markets, with UAE and Saudi Arabia priority and country-specific jurisdiction preserved  
-**Version:** Working inventory v0.1 — 11 November 2026  
+**Version:** Working inventory v0.2 — 24 November 2026  
 **Purpose:** Reconstruct dated institutional, regulatory, commercial and operational actions that may shape the GCC health-insurance market in 2027. This is not a forecast and is not yet an exhaustive census.
 
 ## Research question
@@ -113,6 +113,18 @@ These patterns are **preliminary**. They do not establish that every GCC market 
 - **2027 implication to test:** Whether AI moves from pilots and isolated workflows into governed production operations, and whether named business owners, exception handlers, audit controls and human decision rights become explicit.
 
 ---
+
+### UAE-08 — PureHealth agrees to acquire a controlling stake in Hayah Insurance
+
+- **Date:** 24 November 2026
+- **Actors:** PureHealth Holding PJSC; The National Insurance Company – Daman PJSC; Hayah Insurance Company PJSC
+- **Action:** PureHealth announced an agreement to acquire a 67.5% controlling stake in Hayah through Daman.
+- **Evidence status:** Official corporate announcement confirms the agreement and proposed stake. The transaction remains subject to customary closing conditions, including relevant regulatory approvals; completion is not yet verified.
+- **Stated business scope:** Life insurance, pension management, loan protection, retirement and long-term savings. PureHealth says Daman will deliver the expanded offering, including individual retirement savings plans and workplace savings programmes for employers.
+- **Strategic mechanism:** Adds life and long-term financial-protection capabilities to PureHealth's health-led and expanding multi-line insurance platform. It may broaden the Group's relationships with individuals and employers beyond health coverage.
+- **2027 implication to test:** Whether the transaction completes and produces new product launches, employer workplace-savings programmes, coordinated distribution, changes in Daman's product mix or measurable recurring financial-services revenue.
+- **Do not infer:** That the acquisition is complete; that health, life and pension products are already bundled; that employers have adopted the programmes; or that operating integration and financial synergies have been realised.
+- **Primary source:** [PureHealth — PureHealth Acquires Majority Stake in Hayah Insurance and Expands into Life Insurance and Pension Management](https://purehealth.ae/purehealth-acquires-majority-stake-in-hayah-insurance-and-expands-into-life-insurance-and-pension-management/), 24 November 2026.
 
 ## B. Saudi Arabia
 
