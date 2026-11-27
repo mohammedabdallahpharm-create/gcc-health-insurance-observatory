@@ -108,7 +108,7 @@ The CBUAE Financial Stability Report 2025 reports:
 
 These figures establish the scale and economic significance of the insurance segment. They do not establish the amount of avoidable expenditure, the cost of chronic disease alone, or the savings achievable through prevention.
 
-Primary source: [CBUAE — Financial Stability Report 2025, Insurance Sector Assessment](https://centralbank.ae/media/t1jnwh13/fsr-2025-en-3.pdf)
+Primary source: [CBUAE — Financial Stability Report 2025, Insurance Sector Assessment](https://centralbank.ae/media/t1jnfrc3/fsr-2025-en-3.pdf)
 
 ## 4. Adjacent evidence: prevention and continuous health signals
 
