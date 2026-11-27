@@ -36,6 +36,7 @@ All six country observatories use the same shared workflow. Selecting a country 
 ## Strategic investigations
 
 - [Beyond 2027 — Who Will Control Healthcare Decisions?](./beyond-2027-healthcare-decision-power-investigation.md) — cross-signal investigation of patient, clinical, insurance, agent and regulatory decision power across GCC, with UAE as the primary evidence case. Working synthesis; evidence gaps and competing scenarios remain explicit.
+- [Beyond Claims — UAE Predictive Health and Insurance Economics](./uae-predictive-health-insurance-economics-investigation.md) — cross-system investigation connecting Emirates Health/EDW/Bayan, Abu Dhabi Population Health Intelligence, clinical costing, Shafafiya and UAE health-insurance economics. Working synthesis; direct system integration, payer participation and attributable cost outcomes remain unverified.
 
 ## UAE ADOC research dossier
 
